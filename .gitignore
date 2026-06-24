@@ -1,0 +1,10 @@
+# Large dataset files (exceed GitHub 100MB limit)
+ ISCX-VPN-Dataset/NonVPN-PCAPs-01.zip
+samples/cic2018/Thursday-01-03-2018.csv
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
