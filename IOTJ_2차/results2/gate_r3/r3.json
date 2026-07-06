@@ -1,0 +1,489 @@
+{
+ "note": "Gate R3 IoT CF 정박. 진짜 IoT(N-BaIoT) 다기기 CF≈0 실측 + CF²법칙 gap 상한. ★발견 아님(정적결합=CF0 자명)·정박/정량화 목적. cyclic CF-LP=kink 무수정 재사용. supremacy 아님. 단정 금지.",
+ "params": {
+  "seed": 20260705,
+  "rows": 500000,
+  "k": 8,
+  "boot": 500,
+  "c_gate_e": 0.125,
+  "definitions": {
+   "a": "feature-block k-cycle",
+   "b": "time-window 3-cycle(행순서)"
+  }
+ },
+ "data_source": {
+  "dataset": "N-BaIoT (UCI 442)",
+  "url": "https://archive.ics.uci.edu/static/public/442/detection+of+iot+botnet+attacks+n+baiot.zip",
+  "zip_md5": "56bf8e22debda482596f6d2be1260afd",
+  "devices": {
+   "Danmini_Doorbell": {
+    "rows": 49548,
+    "n_features": 112,
+    "files": [
+     "benign_traffic.csv"
+    ]
+   },
+   "Ecobee_Thermostat": {
+    "rows": 13113,
+    "n_features": 115,
+    "files": [
+     "benign_traffic.csv"
+    ]
+   },
+   "Ennio_Doorbell": {
+    "rows": 39100,
+    "n_features": 115,
+    "files": [
+     "benign_traffic.csv"
+    ]
+   }
+  },
+  "note_tononbot": "TON_IoT/BoT-IoT: CloudStor(AARNET) 폐지로 접근 불가 → N-BaIoT 다기기로 진행(정직)."
+ },
+ "self_check": {
+  "cyclic3_frustrated": 1.0,
+  "cyclic3_consistent": 0.0
+ },
+ "cells": [
+  {
+   "device": "Danmini_Doorbell",
+   "definition": "a",
+   "method": "highvar",
+   "k": 8,
+   "N": 49548,
+   "subset": [
+    1,
+    2,
+    5,
+    4,
+    6,
+    7,
+    9,
+    8
+   ],
+   "cf": 3.3306690738754696e-16,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32
+  },
+  {
+   "device": "Danmini_Doorbell",
+   "definition": "a",
+   "method": "targeted",
+   "k": 8,
+   "N": 49548,
+   "subset": [
+    1,
+    2,
+    9,
+    6,
+    69,
+    79,
+    58,
+    7
+   ],
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32
+  },
+  {
+   "device": "Danmini_Doorbell",
+   "definition": "a",
+   "method": "random1",
+   "k": 8,
+   "N": 49548,
+   "subset": [
+    7,
+    24,
+    39,
+    45,
+    48,
+    56,
+    61,
+    106
+   ],
+   "cf": 7.771561172376096e-16,
+   "cf_ci": [
+    0.0,
+    2.1094237467877974e-15
+   ],
+   "no_sig_L1": 5.206880933361635e-17,
+   "cf_upper": 2.1094237467877974e-15,
+   "gap_upper": 5.562085679390337e-31
+  },
+  {
+   "device": "Danmini_Doorbell",
+   "definition": "a",
+   "method": "random2",
+   "k": 8,
+   "N": 49548,
+   "subset": [
+    14,
+    28,
+    40,
+    45,
+    61,
+    64,
+    70,
+    72
+   ],
+   "cf": 1.1102230246251565e-16,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 4.5102810375396984e-17,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32
+  },
+  {
+   "device": "Danmini_Doorbell",
+   "definition": "a",
+   "method": "random3",
+   "k": 8,
+   "N": 49548,
+   "subset": [
+    2,
+    25,
+    26,
+    27,
+    31,
+    53,
+    89,
+    107
+   ],
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    1.3322676295501878e-15
+   ],
+   "no_sig_L1": 2.949029909160572e-17,
+   "cf_upper": 1.3322676295501878e-15,
+   "gap_upper": 2.2186712959340957e-31
+  },
+  {
+   "device": "Ecobee_Thermostat",
+   "definition": "a",
+   "method": "highvar",
+   "k": 8,
+   "N": 13113,
+   "subset": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "cf": 1.1102230246251565e-16,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 2.7755575615628914e-17,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32
+  },
+  {
+   "device": "Ecobee_Thermostat",
+   "definition": "a",
+   "method": "targeted",
+   "k": 8,
+   "N": 13113,
+   "subset": [
+    0,
+    1,
+    47,
+    10,
+    5,
+    33,
+    42,
+    25
+   ],
+   "cf": 2.220446049250313e-16,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 1.3877787807814457e-17,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33
+  },
+  {
+   "device": "Ecobee_Thermostat",
+   "definition": "a",
+   "method": "random1",
+   "k": 8,
+   "N": 13113,
+   "subset": [
+    7,
+    24,
+    40,
+    46,
+    49,
+    57,
+    63,
+    109
+   ],
+   "cf": 1.1102230246251565e-16,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 2.7755575615628914e-17,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32
+  },
+  {
+   "device": "Ecobee_Thermostat",
+   "definition": "a",
+   "method": "random2",
+   "k": 8,
+   "N": 13113,
+   "subset": [
+    15,
+    29,
+    41,
+    46,
+    63,
+    65,
+    72,
+    74
+   ],
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    8.881784197001252e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 8.881784197001252e-16,
+   "gap_upper": 9.860761315262648e-32
+  },
+  {
+   "device": "Ecobee_Thermostat",
+   "definition": "a",
+   "method": "random3",
+   "k": 8,
+   "N": 13113,
+   "subset": [
+    2,
+    25,
+    26,
+    27,
+    28,
+    32,
+    55,
+    92
+   ],
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 2.0816681711721685e-17,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33
+  },
+  {
+   "device": "Ennio_Doorbell",
+   "definition": "a",
+   "method": "highvar",
+   "k": 8,
+   "N": 39100,
+   "subset": [
+    0,
+    1,
+    3,
+    4,
+    7,
+    6,
+    9,
+    8
+   ],
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32
+  },
+  {
+   "device": "Ennio_Doorbell",
+   "definition": "a",
+   "method": "targeted",
+   "k": 8,
+   "N": 39100,
+   "subset": [
+    0,
+    1,
+    108,
+    60,
+    59,
+    8,
+    62,
+    9
+   ],
+   "cf": 1.1102230246251565e-16,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33
+  },
+  {
+   "device": "Ennio_Doorbell",
+   "definition": "a",
+   "method": "random1",
+   "k": 8,
+   "N": 39100,
+   "subset": [
+    7,
+    24,
+    40,
+    46,
+    49,
+    57,
+    63,
+    109
+   ],
+   "cf": 3.3306690738754696e-16,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 6.938893903907228e-18,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32
+  },
+  {
+   "device": "Ennio_Doorbell",
+   "definition": "a",
+   "method": "random2",
+   "k": 8,
+   "N": 39100,
+   "subset": [
+    15,
+    29,
+    41,
+    46,
+    63,
+    65,
+    72,
+    74
+   ],
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    1.887379141862766e-15
+   ],
+   "no_sig_L1": 2.0816681711721685e-17,
+   "cf_upper": 1.887379141862766e-15,
+   "gap_upper": 4.452750031423289e-31
+  },
+  {
+   "device": "Ennio_Doorbell",
+   "definition": "a",
+   "method": "random3",
+   "k": 8,
+   "N": 39100,
+   "subset": [
+    2,
+    25,
+    26,
+    27,
+    28,
+    32,
+    55,
+    92
+   ],
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 4.2500725161431774e-17,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32
+  },
+  {
+   "device": "Danmini_Doorbell",
+   "definition": "b",
+   "method": "highvar",
+   "k": 3,
+   "N": 49548,
+   "subset": [
+    1
+   ],
+   "cf": 2.0183264037409998e-05,
+   "cf_ci": [
+    0.0,
+    4.036652807504204e-05
+   ],
+   "no_sig_L1": 2.6911018716639184e-05,
+   "cf_upper": 4.036652807504204e-05,
+   "gap_upper": 2.0368207360414466e-10
+  },
+  {
+   "device": "Ecobee_Thermostat",
+   "definition": "b",
+   "method": "highvar",
+   "k": 3,
+   "N": 13113,
+   "subset": [
+    0
+   ],
+   "cf": 7.62718328121137e-05,
+   "cf_ci": [
+    0.0,
+    0.0001525436656243384
+   ],
+   "no_sig_L1": 0.00010169577708296629,
+   "cf_upper": 0.0001525436656243384,
+   "gap_upper": 2.9086962402637456e-09
+  },
+  {
+   "device": "Ennio_Doorbell",
+   "definition": "b",
+   "method": "highvar",
+   "k": 3,
+   "N": 39100,
+   "subset": [
+    0
+   ],
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    2.55767558443587e-05
+   ],
+   "no_sig_L1": 1.1102230246251565e-16,
+   "cf_upper": 2.55767558443587e-05,
+   "gap_upper": 8.177130494024212e-11
+  }
+ ],
+ "verdict": {
+  "cf_range": [
+   0.0,
+   7.62718328121137e-05
+  ],
+  "cf_upper_max": 0.0001525436656243384,
+  "gap_upper_max": 2.9086962402637456e-09,
+  "all_near_zero": true,
+  "reading": "전 데이터셋·정의에서 CF≈0 (CI 상단 max=0.0002<0.05) → 실 IoT 텔레메트리는 비맥락. 잔여 CF 기준 gap 상한 ≤ 2.91e-09 (c=1/8 경계근사). = IoT 꺼진 앵커 정박."
+ },
+ "limits": "N-BaIoT 다기기(단일 저장소; TON/BoT 접근불가)·행샘플 ≤500000·중앙값 이진화·부분집합 선택 의존. 정적 결합분포는 이론상 CF=0(측정=정박/정량화). (a)(b)는 조작적 구성. c=1/8 경계근사(CF≤0.1). 관측/앵커이지 quantum supremacy 아님."
+}

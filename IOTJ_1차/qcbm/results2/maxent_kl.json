@@ -1,0 +1,72 @@
+{
+ "note": "benign-train empirical dist p 의 KL(p||p2): p2=1·2차 marginal 보존 max-entropy(IPF). KL(p||p2)=순수 ≥3차 고차 상관(confound 제거). KL(p||p1)=독립 초과 전체 상관(p1=marginal_dist). KL2/KL1=전체 상관 중 ≥3차 비율. 학습 없음. 단정 금지.",
+ "params": {
+  "max_iter": 20000,
+  "tol": 1e-08,
+  "eps": 1e-12,
+  "units": "nats(주)/bits"
+ },
+ "self_check": {
+  "independent_KL2_nats": 2.605908812919755e-16,
+  "pairwise_ising_KL2_nats": 2.7336067700609226e-16,
+  "parity3_KL2_nats": 0.09712617415802696,
+  "lbfgs_independent_iters": 15,
+  "lbfgs_parity3_iters": 18
+ },
+ "datasets": {
+  "UNSW": {
+   "bits": 10,
+   "nstates": 1024,
+   "occ": 174,
+   "KL_2nd_nats": 0.6170003552281438,
+   "KL_2nd_bits": 0.8901433527143718,
+   "KL_1st_nats": 2.2841299748734594,
+   "KL_1st_bits": 3.2953029874957727,
+   "KL_2nd_over_1st": 0.27012488869523527,
+   "KL_p2_p1_nats": 1.6671295535888153,
+   "H_p_nats": 4.027629782696666,
+   "KL_2nd_over_H": 0.1531919239148729,
+   "pythagoras_residual": 6.605650026969556e-08,
+   "ipf_converged": true,
+   "ipf_iters": 4130,
+   "ipf_max_violation": 1.9473689799598404e-08,
+   "raw_high_order_ratio": 0.8603440669307661
+  },
+  "Bot": {
+   "bits": 12,
+   "nstates": 4096,
+   "occ": 361,
+   "KL_2nd_nats": 0.5493303111130805,
+   "KL_2nd_bits": 0.7925161156528326,
+   "KL_1st_nats": 2.9191226793329172,
+   "KL_1st_bits": 4.2114038132201035,
+   "KL_2nd_over_1st": 0.18818335899422164,
+   "KL_p2_p1_nats": 2.3697666429032282,
+   "H_p_nats": 3.952707357778831,
+   "KL_2nd_over_H": 0.13897570990981964,
+   "pythagoras_residual": 2.5725316608493642e-05,
+   "ipf_converged": true,
+   "ipf_iters": 4127,
+   "ipf_max_violation": 4.0060702438671214e-07,
+   "raw_high_order_ratio": 0.9355131957629416
+  },
+  "HOIC": {
+   "bits": 12,
+   "nstates": 4096,
+   "occ": 94,
+   "KL_2nd_nats": 0.01734187483448816,
+   "KL_2nd_bits": 0.02501903682343318,
+   "KL_1st_nats": 1.460761313811542,
+   "KL_1st_bits": 2.1074331033583587,
+   "KL_2nd_over_1st": 0.011871805934700086,
+   "KL_p2_p1_nats": 1.4434176504304665,
+   "H_p_nats": 4.148840221964185,
+   "KL_2nd_over_H": 0.004179933163653624,
+   "pythagoras_residual": 1.788546587278006e-06,
+   "ipf_converged": false,
+   "ipf_iters": 20000,
+   "ipf_max_violation": 1.387063719650479e-07,
+   "raw_high_order_ratio": 0.8183040701964507
+  }
+ }
+}

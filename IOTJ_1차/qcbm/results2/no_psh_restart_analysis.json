@@ -1,0 +1,132 @@
+{
+  "case": "B (best p_final만 저장; 16개 AUC 재학습 없이 복원 불가)",
+  "n_restarts_parsed": 16,
+  "restarts": [
+    {
+      "seed": 13,
+      "mmd2": 0.00036285,
+      "tv": 0.1074,
+      "grad_fin": 7.293e-06
+    },
+    {
+      "seed": 4,
+      "mmd2": 0.00019686,
+      "tv": 0.1001,
+      "grad_fin": 1.517e-05
+    },
+    {
+      "seed": 9,
+      "mmd2": 0.00037405,
+      "tv": 0.1086,
+      "grad_fin": 5.319e-06
+    },
+    {
+      "seed": 6,
+      "mmd2": 0.00037976,
+      "tv": 0.1114,
+      "grad_fin": 6.448e-06
+    },
+    {
+      "seed": 8,
+      "mmd2": 0.00029122,
+      "tv": 0.1086,
+      "grad_fin": 1.687e-05
+    },
+    {
+      "seed": 3,
+      "mmd2": 0.00048246,
+      "tv": 0.1095,
+      "grad_fin": 2.27e-06
+    },
+    {
+      "seed": 1,
+      "mmd2": 0.00030353,
+      "tv": 0.1199,
+      "grad_fin": 0.0006412
+    },
+    {
+      "seed": 2,
+      "mmd2": 0.00029148,
+      "tv": 0.1138,
+      "grad_fin": 1.052e-05
+    },
+    {
+      "seed": 10,
+      "mmd2": 0.00023258,
+      "tv": 0.1056,
+      "grad_fin": 8.807e-06
+    },
+    {
+      "seed": 11,
+      "mmd2": 0.00024333,
+      "tv": 0.1023,
+      "grad_fin": 1.444e-05
+    },
+    {
+      "seed": 7,
+      "mmd2": 0.00026017,
+      "tv": 0.1111,
+      "grad_fin": 6.9e-06
+    },
+    {
+      "seed": 5,
+      "mmd2": 0.0020467,
+      "tv": 0.2671,
+      "grad_fin": 0.003726
+    },
+    {
+      "seed": 0,
+      "mmd2": 0.0003248,
+      "tv": 0.1009,
+      "grad_fin": 0.0001826
+    },
+    {
+      "seed": 14,
+      "mmd2": 0.0003208,
+      "tv": 0.1047,
+      "grad_fin": 2.373e-05
+    },
+    {
+      "seed": 15,
+      "mmd2": 6.6567e-05,
+      "tv": 0.0622,
+      "grad_fin": 8.132e-06
+    },
+    {
+      "seed": 12,
+      "mmd2": 0.00035495,
+      "tv": 0.1122,
+      "grad_fin": 9.49e-06
+    }
+  ],
+  "mmd2_stats": {
+    "min": 6.6567e-05,
+    "median": 0.000312165,
+    "max": 0.0020467,
+    "mean": 0.0004082566875,
+    "std": 0.0004323798300881874
+  },
+  "tv_stats": {
+    "min": 0.0622,
+    "median": 0.1086,
+    "max": 0.2671,
+    "mean": 0.11533750000000001,
+    "std": 0.04102467055017018
+  },
+  "best_restart": {
+    "seed": 15,
+    "mmd2": 6.6567e-05,
+    "tv": 0.0622,
+    "grad_fin": 8.132e-06
+  },
+  "best_tv_percentile_low_is_better": 6.25,
+  "well_learned_tv_le_0_15": 15,
+  "failed_tv_gt_0_4": 0,
+  "baseline_auc": {
+    "marginal": 0.5136,
+    "emp_joint": 0.7773,
+    "qcbm_best": 0.8023
+  },
+  "auc_per_restart": "UNAVAILABLE — p_final 미저장. emp_joint 초과 restart 수 측정엔 1회 재실행(16 p_final 저장) 필요.",
+  "note": "재학습 없음. 로그 MMD²/TV 분포만. 판정은 웹 AI."
+}

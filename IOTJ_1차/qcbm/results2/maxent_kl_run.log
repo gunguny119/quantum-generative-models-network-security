@@ -1,0 +1,40 @@
+=== self-check (n=4 합성 분포) ===
+  독립 KL2=2.606e-16 (≈0 PASS) | 2차Ising KL2=2.734e-16 (≈0 PASS) | 3차parity KL2=0.0971 (>>0 PASS)
+
+=== UNSW (10 bit / 1024 states) ===
+[12:31:40] CSV 로드: ['data/unsw_nb15_training-set.csv', 'data/unsw_nb15_testing-set.csv']
+[12:31:40] dropna 제거=0 | benign(Normal)=93000  attack(ALL,label1)=164673
+[12:31:40] UNSW 인코딩(10bit): 점유 174/1024 (16.99%) | benign train=65099 test=27901 attack=164673
+  maxent(2차) L-BFGS 적합...
+    L-BFGS: success=True iters=4130  max_moment_violation=1.947e-08
+  점유 174/1024 | H(p)=4.0276 nats
+  KL(p||p1=1차)=2.2841 | KL(p||p2=2차)=0.6170 nats (=0.8901 bits) | KL(p2||p1)=1.6671
+  ≥3차 비율 KL2/KL1=0.270 | KL2/H(p)=0.1532 | maxent conv=True iters=4130 viol=1.95e-08 | Pythagoras잔차=6.61e-08
+  (대조) raw high_order_ratio=0.8603440669307661
+
+=== Bot (12 bit / 4096 states) ===
+[12:31:41] CSV 로드: data/cic_bot_0203.csv
+[12:31:44] dropna 제거=0 | benign=762384  bot=286191
+[12:31:45] Bot 인코딩: 점유 361/4096 (8.81%) | benign train=533668 test=228716 attack=286191
+  maxent(2차) L-BFGS 적합...
+    L-BFGS: success=True iters=4127  max_moment_violation=4.006e-07
+  점유 361/4096 | H(p)=3.9527 nats
+  KL(p||p1=1차)=2.9191 | KL(p||p2=2차)=0.5493 nats (=0.7925 bits) | KL(p2||p1)=2.3698
+  ≥3차 비율 KL2/KL1=0.188 | KL2/H(p)=0.1390 | maxent conv=True iters=4127 viol=4.01e-07 | Pythagoras잔차=2.57e-05
+  (대조) raw high_order_ratio=0.9355131957629416
+
+=== HOIC (12 bit / 4096 states) ===
+[12:31:46] CSV 로드: data/cic_0221_ddos.csv
+[12:31:49] benign=360833  ddos attack-hoic=686012
+[12:31:49] Fwd IAT  log1p inner edges = [5.739, 5.9067, 7.8581]
+[12:31:49] Flow IAT log1p inner edges = [5.3351, 5.5026, 7.4548]
+[12:31:49] B2 점유 상태=94/4096 (2.3%) | benign train=252583 test=108250 attack=686012
+  maxent(2차) L-BFGS 적합...
+    L-BFGS: success=False iters=20000  max_moment_violation=1.387e-07
+  점유 94/4096 | H(p)=4.1488 nats
+  KL(p||p1=1차)=1.4608 | KL(p||p2=2차)=0.0173 nats (=0.0250 bits) | KL(p2||p1)=1.4434
+  ≥3차 비율 KL2/KL1=0.012 | KL2/H(p)=0.0042 | maxent conv=False iters=20000 viol=1.39e-07 | Pythagoras잔차=1.79e-06
+  (대조) raw high_order_ratio=0.8183040701964507
+
+[저장] results2/maxent_kl.json
+[저장] results2/maxent_kl.png

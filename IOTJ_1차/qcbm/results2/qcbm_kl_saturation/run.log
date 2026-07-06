@@ -1,0 +1,11 @@
+저차 t=0: share=0.000 | 샘플링 KL바닥(p_true‖q_emp)=0.0009 | 기준 MLP=0.001 NMF=0.005
+  L=3 ep= 250 rs= 3 params=54 -> best KL(p_true)=0.1967 (restart 분포 min=0.1967 max=0.2174) train_KL=0.1966  (124s)
+  L=3 ep= 750 rs= 5 params=54 -> best KL(p_true)=0.1946 (restart 분포 min=0.1946 max=0.2172) train_KL=0.1946 개선=1.0% (619s)
+  -> 포화(개선<5%) at ep=750 rs=5. ladder 중단.
+참고 L=6(P=108, 예산↑):
+  L=6 ep=1000 rs=4 params=108 -> best KL(p_true)=0.0002 (2096s)
+고랭크 random t=0.6:
+  random t=0.6 share=0.178 L=3 ep=1200 rs=8 -> best KL(p_true)=0.2772 (1425s)
+[저장] results2/qcbm_kl_saturation/saturation.json | 포화 KL=0.1946 (MLP 0.001, NMF 0.005, 샘플바닥 0.0009)
+self-check: ladder 비증가=True | 곡선 감소=True
+[저장] results2/qcbm_kl_saturation/saturation.png

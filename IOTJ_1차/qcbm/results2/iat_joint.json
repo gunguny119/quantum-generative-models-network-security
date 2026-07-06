@@ -1,0 +1,127 @@
+{
+  "data": "data/cic_0221_ddos.csv",
+  "attack": "ddos attack-hoic",
+  "split": {
+    "seed": 7,
+    "benign_train_frac": 0.7
+  },
+  "subsample_seed": 12345,
+  "iat_bits_per_feature": 2,
+  "iat_buckets": 4,
+  "iat_discretization": "log1p then benign-train quantile (4 buckets)",
+  "fwd_iat_log1p_inner_edges": [
+    5.738988730390821,
+    5.906723318652891,
+    7.8580608894435695
+  ],
+  "flow_iat_log1p_inner_edges": [
+    5.335131339670753,
+    5.502617829924897,
+    7.454768172443553
+  ],
+  "packing": "state = (8bit_base << iat_bits) | iat ; base=proto2 syn1 psh1 size4 (MSB->LSB)",
+  "n_benign_train": 252583,
+  "n_benign_test": 108250,
+  "n_attack": 686012,
+  "eval": "s(x)=-log p(x), attack=positive, raw Mann-Whitney U (no direction selection)",
+  "results_full": {
+    "A": {
+      "config": "A:8bit",
+      "nbits": 8,
+      "nstates": 256,
+      "occupied": 24,
+      "occ_frac": 0.09375,
+      "n_attack": 686012,
+      "emp_joint_auc": 0.8807216956082037,
+      "marginal_auc": 0.8775156603082065,
+      "joint_gain": 0.0032060352999971897,
+      "emp_joint_auc_flipped": 0.11927830439179632,
+      "youden_j_emp": 0.761162983447027,
+      "youden_j_marg": 0.7557680642784358,
+      "logp_gap_emp": 4.7684620613085436,
+      "logp_gap_marg": 3.8770301864586787
+    },
+    "B1": {
+      "config": "B1:+FwdIAT",
+      "nbits": 10,
+      "nstates": 1024,
+      "occupied": 79,
+      "occ_frac": 0.0771484375,
+      "n_attack": 686012,
+      "emp_joint_auc": 0.8856451808982018,
+      "marginal_auc": 0.872610307741235,
+      "joint_gain": 0.01303487315696672,
+      "emp_joint_auc_flipped": 0.11435481910179823,
+      "youden_j_emp": 0.7605352062263698,
+      "youden_j_marg": 0.7557680642784358,
+      "logp_gap_emp": 4.885087582083757,
+      "logp_gap_marg": 3.875838642582263
+    },
+    "B2": {
+      "config": "B2:+FlowIAT",
+      "nbits": 12,
+      "nstates": 4096,
+      "occupied": 94,
+      "occ_frac": 0.02294921875,
+      "n_attack": 686012,
+      "emp_joint_auc": 0.9258479792817742,
+      "marginal_auc": 0.8740609250581858,
+      "joint_gain": 0.051787054223588425,
+      "emp_joint_auc_flipped": 0.0741520207182258,
+      "youden_j_emp": 0.8447839177168024,
+      "youden_j_marg": 0.7557680642784358,
+      "logp_gap_emp": 8.054298982597128,
+      "logp_gap_marg": 3.8740171483028485
+    }
+  },
+  "results_subsample": {
+    "A": {
+      "config": "A:8bit(sub)",
+      "nbits": 8,
+      "nstates": 256,
+      "occupied": 24,
+      "occ_frac": 0.09375,
+      "n_attack": 108250,
+      "emp_joint_auc": 0.880476406658524,
+      "marginal_auc": 0.8767906322397581,
+      "joint_gain": 0.0036857744187659414,
+      "emp_joint_auc_flipped": 0.119523593341476,
+      "youden_j_emp": 0.7602494226327945,
+      "youden_j_marg": 0.7548545034642032,
+      "logp_gap_emp": 4.762880809951049,
+      "logp_gap_marg": 3.8721974084095296
+    },
+    "B1": {
+      "config": "B1:+FwdIAT(sub)",
+      "nbits": 10,
+      "nstates": 1024,
+      "occupied": 79,
+      "occ_frac": 0.0771484375,
+      "n_attack": 108250,
+      "emp_joint_auc": 0.8855547969214194,
+      "marginal_auc": 0.8718316021953288,
+      "joint_gain": 0.013723194726090515,
+      "emp_joint_auc_flipped": 0.11444520307858064,
+      "youden_j_emp": 0.7596027713625866,
+      "youden_j_marg": 0.7548545034642032,
+      "logp_gap_emp": 4.879974064547121,
+      "logp_gap_marg": 3.8710042277063987
+    },
+    "B2": {
+      "config": "B2:+FlowIAT(sub)",
+      "nbits": 12,
+      "nstates": 4096,
+      "occupied": 94,
+      "occ_frac": 0.02294921875,
+      "n_attack": 108250,
+      "emp_joint_auc": 0.9255422165567047,
+      "marginal_auc": 0.8733203321794879,
+      "joint_gain": 0.052221884377216754,
+      "emp_joint_auc_flipped": 0.07445778344329534,
+      "youden_j_emp": 0.8438983833718244,
+      "youden_j_marg": 0.7548545034642032,
+      "logp_gap_emp": 8.050956567026773,
+      "logp_gap_marg": 3.8691836472530747
+    }
+  }
+}

@@ -1,0 +1,258 @@
+{
+ "note": "split1 이상 신호(고차−M2 AUC +0.15) 원인 진단. 측정 전용(새 학습 없음). 1구조상속 2이탈차수분해 3아티팩트 4선택정합 을 split별 AUC 이득과 정렬. 정의: unseen=y_test에만 있는 가족(양성), known=train 가족(음성). base=known-test/train. KL Laplace 평활(c=1/2^k). conn3=연결 3점상관. 판정 H1~H4는 정렬로. 단정 금지.",
+ "params": {
+  "splits": [
+   0,
+   1,
+   2
+  ],
+  "k": 10,
+  "topk": 10,
+  "ge3_order": 4,
+  "eps": 1e-12,
+  "laplace_c": "1/2^k",
+  "auc_source": "results2/drift_auc/drift_auc.json"
+ },
+ "results": {
+  "0": {
+   "split": 0,
+   "k": 10,
+   "unseen": [
+    0
+   ],
+   "subset": [
+    489,
+    330,
+    278,
+    246,
+    437,
+    1247,
+    431,
+    505,
+    443,
+    340
+   ],
+   "m1_structure": {
+    "kl_unseen_M1train": 4.78390081993394,
+    "kl_unseen_M2train": 4.309900938513722,
+    "kl_unseen_fulltrain": 7.705381824670543,
+    "ladder_r2": 0.47399988142021865,
+    "ladder_rge3": -3.395480886156821,
+    "conn3_jaccard_mean": 0.28442956129820346,
+    "conn3_cosine_perfam_mean": -0.0074503880659995995,
+    "conn3_cosine_knownpooled": 0.10181421274480525
+   },
+   "m2_deviation": {
+    "known_base": {
+     "base": "known_test",
+     "diss1": 0.6481292705562436,
+     "diss2": 0.6990459555874449,
+     "diss3": 0.8981857872551947,
+     "share_1st": 0.2886525893558413,
+     "share_2nd": 0.31132898069218456,
+     "share_ge3": 0.40001842995197406,
+     "l2dev_1st": 2.792737414015123,
+     "l2dev_2nd": 0.9607802091626315,
+     "l2dev_3rd": 1.0467433436835976
+    },
+    "train_base": {
+     "base": "train",
+     "diss1": 0.6158022921642108,
+     "diss2": 0.9009821365471946,
+     "diss3": 1.1885267131698491,
+     "share_1st": 0.22762716000791916,
+     "share_2nd": 0.33304196423064963,
+     "share_ge3": 0.43933087576143126,
+     "l2dev_1st": 2.439201931090191,
+     "l2dev_2nd": 1.9357732211700776,
+     "l2dev_3rd": 2.134115908456189
+    }
+   },
+   "m3_artifact": {
+    "n_unseen": 925,
+    "n_known": 478,
+    "ratio_known_over_unseen": 0.5167567567567568,
+    "occ_unseen": 11,
+    "occ_known": 52,
+    "occ_train": 123,
+    "feat_act_train_mean": 0.44597280334728023,
+    "feat_act_train_var": 0.01811773745645209,
+    "feat_act_unseen_mean": 0.23016216216216218,
+    "feat_act_unseen_var": 0.10141228926223522,
+    "feat_act_shift_L1": 3.45308549134909
+   },
+   "m4_selection": {
+    "overlap_subset_vs_unseen_topk": 1,
+    "overlap_subset_vs_train_topk": 0,
+    "subset_mean_act_in_unseen": 0.23016216216216218,
+    "subset_mean_act_in_train": 0.44597280334728023
+   },
+   "auc": {
+    "gap": -0.06896641411285764,
+    "M1": 0.8657616193599457,
+    "M2": 0.8885095555806853,
+    "Mfull": 0.815050322288816
+   }
+  },
+  "1": {
+   "split": 1,
+   "k": 10,
+   "unseen": [
+    1
+   ],
+   "subset": [
+    359,
+    212,
+    207,
+    310,
+    313,
+    297,
+    251,
+    296,
+    1082,
+    205
+   ],
+   "m1_structure": {
+    "kl_unseen_M1train": 3.3288092509769784,
+    "kl_unseen_M2train": 3.4285164373113233,
+    "kl_unseen_fulltrain": 7.197853387519571,
+    "ladder_r2": -0.09970718633434483,
+    "ladder_rge3": -3.769336950208248,
+    "conn3_jaccard_mean": 0.0,
+    "conn3_cosine_perfam_mean": 0.04148611548461002,
+    "conn3_cosine_knownpooled": 0.10844338883235731
+   },
+   "m2_deviation": {
+    "known_base": {
+     "base": "known_test",
+     "diss1": 1.2875314554794521,
+     "diss2": 0.7063532345267471,
+     "diss3": 0.8915566111676427,
+     "share_1st": 0.4462164782058344,
+     "share_2nd": 0.24479903099723144,
+     "share_ge3": 0.3089844907969342,
+     "l2dev_1st": 2.716893966839696,
+     "l2dev_2nd": 1.950328451544014,
+     "l2dev_3rd": 2.1318152125643928
+    },
+    "train_base": {
+     "base": "train",
+     "diss1": 0.7327014186538414,
+     "diss2": 0.719389676224802,
+     "diss3": 1.0107944716209387,
+     "share_1st": 0.2974971426281919,
+     "share_2nd": 0.29209220517997786,
+     "share_ge3": 0.41041065219183015,
+     "l2dev_1st": 1.8220358641425576,
+     "l2dev_2nd": 1.4681432308062994,
+     "l2dev_3rd": 2.3494074645569465
+    }
+   },
+   "m3_artifact": {
+    "n_unseen": 667,
+    "n_known": 529,
+    "ratio_known_over_unseen": 0.7931034482758621,
+    "occ_unseen": 82,
+    "occ_known": 43,
+    "occ_train": 168,
+    "feat_act_train_mean": 0.47207547169811315,
+    "feat_act_train_var": 0.013943876824492708,
+    "feat_act_unseen_mean": 0.49925037481259366,
+    "feat_act_unseen_var": 0.0874546235128313,
+    "feat_act_shift_L1": 2.3118596362196255
+   },
+   "m4_selection": {
+    "overlap_subset_vs_unseen_topk": 0,
+    "overlap_subset_vs_train_topk": 0,
+    "subset_mean_act_in_unseen": 0.49925037481259366,
+    "subset_mean_act_in_train": 0.47207547169811315
+   },
+   "auc": {
+    "gap": 0.15219091777362737,
+    "M1": 0.5281513307618403,
+    "M2": 0.605015545157478,
+    "Mfull": 0.7589126041893987
+   }
+  },
+  "2": {
+   "split": 2,
+   "k": 10,
+   "unseen": [
+    2
+   ],
+   "subset": [
+    413,
+    311,
+    305,
+    415,
+    236,
+    244,
+    291,
+    309,
+    327,
+    330
+   ],
+   "m1_structure": {
+    "kl_unseen_M1train": 3.5438191423644487,
+    "kl_unseen_M2train": 5.064217594104351,
+    "kl_unseen_fulltrain": 8.985799841542468,
+    "ladder_r2": -1.520398451739902,
+    "ladder_rge3": -3.921582247438117,
+    "conn3_jaccard_mean": 0.061821219715956555,
+    "conn3_cosine_perfam_mean": 0.015082591181956621,
+    "conn3_cosine_knownpooled": 0.17044611611883553
+   },
+   "m2_deviation": {
+    "known_base": {
+     "base": "known_test",
+     "diss1": 0.9752579684736846,
+     "diss2": 0.8501973839379893,
+     "diss3": 0.8295538838811645,
+     "share_1st": 0.36732752381510625,
+     "share_2nd": 0.32022388936209917,
+     "share_ge3": 0.3124485868227946,
+     "l2dev_1st": 3.159752479444178,
+     "l2dev_2nd": 1.4585955068959755,
+     "l2dev_3rd": 1.426835956834064
+    },
+    "train_base": {
+     "base": "train",
+     "diss1": 0.5868425419291665,
+     "diss2": 0.8873196602024316,
+     "diss3": 1.0786833417307844,
+     "share_1st": 0.22987780962309634,
+     "share_2nd": 0.34758062912805227,
+     "share_ge3": 0.4225415612488515,
+     "l2dev_1st": 2.243768887516444,
+     "l2dev_2nd": 1.5881131826225408,
+     "l2dev_3rd": 1.85658026901573
+    }
+   },
+   "m3_artifact": {
+    "n_unseen": 625,
+    "n_known": 538,
+    "ratio_known_over_unseen": 0.8608,
+    "occ_unseen": 60,
+    "occ_known": 27,
+    "occ_train": 169,
+    "feat_act_train_mean": 0.5244423791821562,
+    "feat_act_train_var": 0.00984008132833985,
+    "feat_act_unseen_mean": 0.5923200000000001,
+    "feat_act_unseen_var": 0.13936680959999997,
+    "feat_act_shift_L1": 3.197371003717472
+   },
+   "m4_selection": {
+    "overlap_subset_vs_unseen_topk": 1,
+    "overlap_subset_vs_train_topk": 0,
+    "subset_mean_act_in_unseen": 0.5923200000000001,
+    "subset_mean_act_in_train": 0.5244423791821562
+   },
+   "auc": {
+    "gap": -0.09432416356877327,
+    "M1": 0.22589442379182156,
+    "M2": 0.8804282527881041,
+    "Mfull": 0.7917457249070632
+   }
+  }
+ }
+}

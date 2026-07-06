@@ -1,0 +1,8 @@
+{
+  "smoke_wall_sec": 73.60417890548706,
+  "sec_per_epoch": 1.4720835781097412,
+  "est_300_sec": 441.62507343292236,
+  "chosen_restarts": 16,
+  "chosen_epochs": 300,
+  "est_final_sec": 441.62507343292236
+}

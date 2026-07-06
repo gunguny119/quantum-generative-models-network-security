@@ -1,0 +1,33 @@
+
+=== n=10 (L=6, epochs=400, seeds=3, lr=0.10) 4 방법 ===
+  n=10 uniform         best=0.6794 mean=1.1613 spread=0.8065 (1528s)
+  n=10 near_identity   best=0.3928 mean=0.6965 spread=0.6782 (1566s)
+  n=10 identity_block  best=0.1389 mean=0.1725 spread=0.0683 (1929s)
+  n=10 layerwise       best=0.5583 mean=0.9520 spread=0.6889 (845s)
+  [grad] uniform Var=3.345e-04 | identity-block Var=6.244e-03 (18.7x)
+
+=== n=8 (L=6, epochs=400, seeds=3, lr=0.10) 4 방법 ===
+  n=8 uniform         best=0.0064 mean=0.0065 spread=0.0003 (1025s)
+  n=8 near_identity   best=0.0097 mean=0.0125 spread=0.0069 (1085s)
+  n=8 identity_block  best=0.0022 mean=0.0098 spread=0.0151 (1217s)
+  n=8 layerwise       best=0.0146 mean=0.0296 spread=0.0380 (558s)
+  [grad] uniform Var=1.108e-03 | identity-block Var=6.109e-03 (5.5x)
+
+[저장] results2/strong_bp_mitigation/strong_bp.json
+/home/elicer/IOTJ/qcbm/tools/exp_strong_bp_mitigation.py:261: UserWarning: Glyph 48372 (\N{HANGUL SYLLABLE BO}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_strong_bp_mitigation.py:261: UserWarning: Glyph 51316 (\N{HANGUL SYLLABLE JON}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_strong_bp_mitigation.py:261: UserWarning: Glyph 50756 (\N{HANGUL SYLLABLE WAN}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_strong_bp_mitigation.py:261: UserWarning: Glyph 54868 (\N{HANGUL SYLLABLE HWA}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_strong_bp_mitigation.py:262: UserWarning: Glyph 48372 (\N{HANGUL SYLLABLE BO}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "strong_bp%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_strong_bp_mitigation.py:262: UserWarning: Glyph 51316 (\N{HANGUL SYLLABLE JON}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "strong_bp%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_strong_bp_mitigation.py:262: UserWarning: Glyph 50756 (\N{HANGUL SYLLABLE WAN}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "strong_bp%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_strong_bp_mitigation.py:262: UserWarning: Glyph 54868 (\N{HANGUL SYLLABLE HWA}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "strong_bp%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+[저장] strong_bp png

@@ -1,0 +1,74 @@
+=== self-check (합성 QCBM KL 감소) ===
+=== qcbm_kl self-test (KL 감소 확인) ===
+  CE: 3.1212 -> 2.4616 | KL(q||p): start≈0.6596 end≈0.0001 (최종모델 KL=0.0001)
+  PASS (KL 단조 감소)
+  QK.selftest PASS=True
+
+=== split 0 (k=10, L=4, ep=120, seeds=3) ===
+      QCBM seed0 KL=1.4107 (CE 7.465→5.325, ↓, 80s)
+      QCBM seed1 KL=1.4195 (CE 7.493→5.334, ↓, 80s)
+      QCBM seed2 KL=1.1445 (CE 7.744→5.068, ↓, 80s)
+    [loword_highvar/k10 tgtA] ≥3차=0.23 | KL: M1=2.618 M2=0.594 QCBM=1.325±0.128 | gapQCBM-M2=+0.731 gapQCBM-M1=-1.293
+      QCBM seed0 KL=1.4659 (CE 7.460→5.374, ↓, 80s)
+      QCBM seed1 KL=1.2963 (CE 7.491→5.211, ↓, 80s)
+      QCBM seed2 KL=1.2564 (CE 7.740→5.163, ↓, 79s)
+    [loword_highvar/k10 tgtB] ≥3차=0.23 | KL: M1=2.625 M2=0.607 QCBM=1.340±0.091 | gapQCBM-M2=+0.733 gapQCBM-M1=-1.286
+      QCBM seed0 KL=1.3026 (CE 7.373→5.256, ↓, 80s)
+      QCBM seed1 KL=1.5599 (CE 7.583→5.509, ↓, 79s)
+      QCBM seed2 KL=0.9061 (CE 7.361→4.855, ↓, 79s)
+    [highord_targeted/k10 tgtA] ≥3차=0.34 | KL: M1=2.555 M2=0.865 QCBM=1.256±0.269 | gapQCBM-M2=+0.391 gapQCBM-M1=-1.298
+      QCBM seed0 KL=1.1299 (CE 7.370→5.078, ↓, 80s)
+      QCBM seed1 KL=1.4806 (CE 7.586→5.431, ↓, 79s)
+      QCBM seed2 KL=1.2227 (CE 7.366→5.174, ↓, 79s)
+    [highord_targeted/k10 tgtB] ≥3차=0.34 | KL: M1=2.555 M2=0.874 QCBM=1.278±0.148 | gapQCBM-M2=+0.404 gapQCBM-M1=-1.277
+
+=== split 1 (k=10, L=4, ep=120, seeds=3) ===
+      QCBM seed0 KL=1.1843 (CE 7.244→4.784, ↓, 80s)
+      QCBM seed1 KL=1.4014 (CE 7.145→5.000, ↓, 78s)
+      QCBM seed2 KL=1.4517 (CE 7.342→5.050, ↓, 79s)
+    [loword_highvar/k10 tgtA] ≥3차=0.18 | KL: M1=3.271 M2=0.584 QCBM=1.346±0.116 | gapQCBM-M2=+0.762 gapQCBM-M1=-1.925
+      QCBM seed0 KL=1.3349 (CE 7.243→4.941, ↓, 79s)
+      QCBM seed1 KL=1.3293 (CE 7.145→4.932, ↓, 80s)
+      QCBM seed2 KL=1.4390 (CE 7.343→5.044, ↓, 78s)
+    [loword_highvar/k10 tgtB] ≥3차=0.18 | KL: M1=3.267 M2=0.587 QCBM=1.368±0.050 | gapQCBM-M2=+0.781 gapQCBM-M1=-1.899
+      QCBM seed0 KL=1.3807 (CE 7.453→5.455, ↓, 79s)
+      QCBM seed1 KL=1.4808 (CE 7.206→5.554, ↓, 79s)
+      QCBM seed2 KL=1.3688 (CE 7.357→5.442, ↓, 83s)
+    [highord_targeted/k10 tgtA] ≥3차=0.62 | KL: M1=2.558 M2=1.588 QCBM=1.410±0.050 | gapQCBM-M2=-0.178 gapQCBM-M1=-1.148
+      QCBM seed0 KL=1.3776 (CE 7.453→5.457, ↓, 80s)
+      QCBM seed1 KL=1.4770 (CE 7.206→5.555, ↓, 80s)
+      QCBM seed2 KL=1.3638 (CE 7.357→5.442, ↓, 79s)
+    [highord_targeted/k10 tgtB] ≥3차=0.62 | KL: M1=2.554 M2=1.585 QCBM=1.406±0.050 | gapQCBM-M2=-0.179 gapQCBM-M1=-1.148
+
+=== split 2 (k=10, L=4, ep=120, seeds=3) ===
+      QCBM seed0 KL=1.2999 (CE 7.254→5.051, ↓, 81s)
+      QCBM seed1 KL=1.4492 (CE 7.201→5.194, ↓, 80s)
+      QCBM seed2 KL=1.0741 (CE 7.185→4.819, ↓, 80s)
+    [loword_highvar/k10 tgtA] ≥3차=0.15 | KL: M1=3.084 M2=0.449 QCBM=1.274±0.154 | gapQCBM-M2=+0.826 gapQCBM-M1=-1.810
+      QCBM seed0 KL=1.2820 (CE 7.241→5.024, ↓, 80s)
+      QCBM seed1 KL=1.4207 (CE 7.189→5.161, ↓, 80s)
+      QCBM seed2 KL=1.1199 (CE 7.179→4.863, ↓, 80s)
+    [loword_highvar/k10 tgtB] ≥3차=0.15 | KL: M1=3.090 M2=0.460 QCBM=1.274±0.123 | gapQCBM-M2=+0.815 gapQCBM-M1=-1.816
+      QCBM seed0 KL=1.4486 (CE 7.852→5.533, ↓, 80s)
+      QCBM seed1 KL=1.4183 (CE 7.667→5.504, ↓, 80s)
+      QCBM seed2 KL=1.3905 (CE 7.109→5.475, ↓, 80s)
+    [highord_targeted/k10 tgtA] ≥3차=0.59 | KL: M1=2.635 M2=1.560 QCBM=1.419±0.024 | gapQCBM-M2=-0.140 gapQCBM-M1=-1.216
+      QCBM seed0 KL=1.4448 (CE 7.851→5.534, ↓, 80s)
+      QCBM seed1 KL=1.4211 (CE 7.667→5.511, ↓, 80s)
+      QCBM seed2 KL=1.3872 (CE 7.110→5.476, ↓, 79s)
+    [highord_targeted/k10 tgtB] ≥3차=0.59 | KL: M1=2.630 M2=1.556 QCBM=1.418±0.024 | gapQCBM-M2=-0.139 gapQCBM-M1=-1.213
+
+[저장] results2/qcbm_order_comp/qcbm_order_comp.json (12 cells)
+/home/elicer/IOTJ/qcbm/tools/exp_qcbm_order_competitiveness.py:191: UserWarning: Glyph 51200 (\N{HANGUL SYLLABLE JEO}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_qcbm_order_competitiveness.py:191: UserWarning: Glyph 52264 (\N{HANGUL SYLLABLE CA}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_qcbm_order_competitiveness.py:191: UserWarning: Glyph 44256 (\N{HANGUL SYLLABLE GO}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_qcbm_order_competitiveness.py:192: UserWarning: Glyph 51200 (\N{HANGUL SYLLABLE JEO}) missing from font(s) DejaVu Sans.
+  plt.savefig(OUT_PNG, dpi=125); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_qcbm_order_competitiveness.py:192: UserWarning: Glyph 52264 (\N{HANGUL SYLLABLE CA}) missing from font(s) DejaVu Sans.
+  plt.savefig(OUT_PNG, dpi=125); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_qcbm_order_competitiveness.py:192: UserWarning: Glyph 44256 (\N{HANGUL SYLLABLE GO}) missing from font(s) DejaVu Sans.
+  plt.savefig(OUT_PNG, dpi=125); plt.close()
+[저장] results2/qcbm_order_comp/qcbm_order_comp.png

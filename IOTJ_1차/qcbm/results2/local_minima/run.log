@@ -1,0 +1,102 @@
+n=10 L=6 P=180 pert=0.5 loss=KL(EPS=1e-10) | 직전 pert0.5 best=0.087
+
+=== 축1 restart↑ (12 seed @ 400ep) ===
+  seed  0: KL=0.0867 (568s)
+  seed  1: KL=0.4938 (565s)
+  seed  2: KL=0.1380 (566s)
+  seed  3: KL=0.1367 (566s)
+  seed  4: KL=0.1498 (565s)
+  seed  5: KL=0.1135 (565s)
+  seed  6: KL=0.1359 (565s)
+  seed  7: KL=0.1028 (565s)
+  seed  8: KL=0.2474 (570s)
+  seed  9: KL=0.1891 (571s)
+  seed 10: KL=0.2033 (570s)
+  seed 11: KL=0.1681 (569s)
+  → best=0.0867 median=0.1439 max=0.4938 (직전 0.087 대비 내려감)
+
+=== 축2 epoch↑ 곡선 (2 seed @ 1200ep, ckpt) ===
+  seed 0 curve: {400: 0.0867, 800: 0.0748, 1200: 0.0683}
+  seed 1 curve: {400: 0.4938, 800: 0.4821, 1200: 0.4807}
+
+=== 축3 지배모드 seed 일관성 (상위5) ===
+  평균 Jaccard(상위5 겹침율)=0.401 | 반복 상태(빈도): [(958, 10), (808, 9), (1018, 9), (517, 8), (1, 5)]
+
+[저장] results2/local_minima/local_minima.json | self-check pert0.5(2seed)=0.0867 (직전 0.087)
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 52629 (\N{HANGUL SYLLABLE CUG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 48516 (\N{HANGUL SYLLABLE BUN}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 54252 (\N{HANGUL SYLLABLE PO}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 51649 (\N{HANGUL SYLLABLE JIG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 51204 (\N{HANGUL SYLLABLE JEON}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 49688 (\N{HANGUL SYLLABLE SU}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 47156 (\N{HANGUL SYLLABLE RYEOM}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 44257 (\N{HANGUL SYLLABLE GOG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 49440 (\N{HANGUL SYLLABLE SEON}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 46321 (\N{HANGUL SYLLABLE DEUNG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 51109 (\N{HANGUL SYLLABLE JANG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 48712 (\N{HANGUL SYLLABLE BIN}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 46020 (\N{HANGUL SYLLABLE DO}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 48152 (\N{HANGUL SYLLABLE BAN}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 48373 (\N{HANGUL SYLLABLE BOG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 51648 (\N{HANGUL SYLLABLE JI}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 48176 (\N{HANGUL SYLLABLE BAE}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 47784 (\N{HANGUL SYLLABLE MO}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:155: UserWarning: Glyph 46300 (\N{HANGUL SYLLABLE DEU}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 52629 (\N{HANGUL SYLLABLE CUG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 48516 (\N{HANGUL SYLLABLE BUN}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 54252 (\N{HANGUL SYLLABLE PO}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 51649 (\N{HANGUL SYLLABLE JIG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 51204 (\N{HANGUL SYLLABLE JEON}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 49688 (\N{HANGUL SYLLABLE SU}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 47156 (\N{HANGUL SYLLABLE RYEOM}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 44257 (\N{HANGUL SYLLABLE GOG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 49440 (\N{HANGUL SYLLABLE SEON}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 46321 (\N{HANGUL SYLLABLE DEUNG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 51109 (\N{HANGUL SYLLABLE JANG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 48712 (\N{HANGUL SYLLABLE BIN}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 46020 (\N{HANGUL SYLLABLE DO}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 48152 (\N{HANGUL SYLLABLE BAN}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 48373 (\N{HANGUL SYLLABLE BOG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 51648 (\N{HANGUL SYLLABLE JI}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 48176 (\N{HANGUL SYLLABLE BAE}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 47784 (\N{HANGUL SYLLABLE MO}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_local_minima.py:156: UserWarning: Glyph 46300 (\N{HANGUL SYLLABLE DEU}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "local_minima%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+[저장] local_minima png

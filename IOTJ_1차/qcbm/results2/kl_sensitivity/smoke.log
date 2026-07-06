@@ -1,0 +1,82 @@
+n=10 L=6 | H(p_true)=2.2107, support=1024/1024 | EPS=1e-10
+  pert=0.1 | 초기 max p=0.8543 H=1.155 | 학습후 best KL=0.4442 (spread 0.0000) (165s)
+  pert=0.5 | 초기 max p=0.0166 H=6.299 | 학습후 best KL=0.2399 (spread 0.0000) (163s)
+
+[축2] best p (pert=0.5, KL=0.2399): support=1024, 상위5 누적=79.0%, 상위10=92.0%
+      ε 민감도 KL: 1e-10=0.2399 1e-08=0.2399 1e-06=0.2394 1e-04=0.2237
+      상위 기여 상태(q,p): s1018(q0.128,p7.7e-02) s517(q0.389,p3.5e-01) s812(q0.076,p4.9e-02) s1(q0.016,p3.8e-03) s549(q0.041,p2.4e-02)
+
+[저장] results2/kl_sensitivity/kl_sensitivity_smoke.json | self-check: pert0.1 재현=0.4441890918755963, 초기maxp 단조=True
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 52629 (\N{HANGUL SYLLABLE CUG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 49884 (\N{HANGUL SYLLABLE SI}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 51089 (\N{HANGUL SYLLABLE JAG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 54869 (\N{HANGUL SYLLABLE HWAG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 49328 (\N{HANGUL SYLLABLE SAN}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 49345 (\N{HANGUL SYLLABLE SANG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 53468 (\N{HANGUL SYLLABLE TAE}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 45572 (\N{HANGUL SYLLABLE NU}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 51201 (\N{HANGUL SYLLABLE JEOG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 44592 (\N{HANGUL SYLLABLE GI}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 50668 (\N{HANGUL SYLLABLE YEO}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 50948 (\N{HANGUL SYLLABLE WI}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 51648 (\N{HANGUL SYLLABLE JI}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 48176 (\N{HANGUL SYLLABLE BAE}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 50984 (\N{HANGUL SYLLABLE YUL}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 48124 (\N{HANGUL SYLLABLE MIN}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 44048 (\N{HANGUL SYLLABLE GAM}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:163: UserWarning: Glyph 46020 (\N{HANGUL SYLLABLE DO}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 52629 (\N{HANGUL SYLLABLE CUG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 49884 (\N{HANGUL SYLLABLE SI}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 51089 (\N{HANGUL SYLLABLE JAG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 54869 (\N{HANGUL SYLLABLE HWAG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 49328 (\N{HANGUL SYLLABLE SAN}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 45572 (\N{HANGUL SYLLABLE NU}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 51201 (\N{HANGUL SYLLABLE JEOG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 44592 (\N{HANGUL SYLLABLE GI}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 50668 (\N{HANGUL SYLLABLE YEO}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 49345 (\N{HANGUL SYLLABLE SANG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 50948 (\N{HANGUL SYLLABLE WI}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 53468 (\N{HANGUL SYLLABLE TAE}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 51648 (\N{HANGUL SYLLABLE JI}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 48176 (\N{HANGUL SYLLABLE BAE}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 50984 (\N{HANGUL SYLLABLE YUL}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 48124 (\N{HANGUL SYLLABLE MIN}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 44048 (\N{HANGUL SYLLABLE GAM}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_kl_sensitivity.py:164: UserWarning: Glyph 46020 (\N{HANGUL SYLLABLE DO}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "kl_sensitivity%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+[저장] kl_sensitivity png

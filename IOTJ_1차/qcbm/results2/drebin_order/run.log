@@ -1,0 +1,42 @@
+=== self-check (도구 유효성 + flow 재현) ===
+  (i) OD.self_check 합성(parity/ising)...
+  (ii) flow UNSW 재빌드→OD.decompose 재현 중...
+[06:35:02] CSV 로드: ['data/unsw_nb15_training-set.csv', 'data/unsw_nb15_testing-set.csv']
+[06:35:02] dropna 제거=0 | benign(Normal)=93000  attack(ALL,label1)=164673
+[06:35:02] UNSW 인코딩(10bit): 점유 174/1024 (16.99%) | benign train=65099 test=27901 attack=164673
+  합성 parity3_c3=0.131 parity4_c4=0.131 ising2_c3=4.1e-17 mono=True
+  flow UNSW 재현: ge3비중 현재=0.270 저장=0.270 (Δ=0.0e+00)
+
+=== Drebin split 0 | pooled N=3315, 1376 features ===
+  highfreq  k=10 | occ=  39/1024 | KL1=1.1358 | 2차=98.2% ≥3차=1.8% | conv=True fine mono=True (1.9s)
+  highfreq  k=12 | occ=  72/4096 | KL1=1.7567 | 2차=87.6% ≥3차=12.4% | conv=True headline만(12bit) (1.8s)
+  highvar   k=10 | occ= 162/1024 | KL1=3.1748 | 2차=84.8% ≥3차=15.2% | conv=True fine mono=True (11.5s)
+  highvar   k=12 | occ= 289/4096 | KL1=4.0353 | 2차=78.2% ≥3차=21.8% | conv=True headline만(12bit) (0.7s)
+  category  k=10 | occ= 112/1024 | KL1=2.5854 | 2차=86.8% ≥3차=13.2% | conv=True fine mono=True (10.1s)
+  category  k=12 | occ= 165/4096 | KL1=3.2458 | 2차=88.2% ≥3차=11.8% | conv=True headline만(12bit) (1.8s)
+
+=== Drebin split 1 | pooled N=3316, 1168 features ===
+  highfreq  k=10 | occ=  44/1024 | KL1=1.1858 | 2차=97.4% ≥3차=2.6% | conv=True fine mono=True (2.0s)
+  highfreq  k=12 | occ=  78/4096 | KL1=1.8127 | 2차=88.9% ≥3차=11.1% | conv=True headline만(12bit) (2.3s)
+  highvar   k=10 | occ= 162/1024 | KL1=3.1739 | 2차=84.8% ≥3차=15.2% | conv=True fine mono=True (9.9s)
+  highvar   k=12 | occ= 290/4096 | KL1=4.0338 | 2차=78.2% ≥3차=21.8% | conv=True headline만(12bit) (1.2s)
+  category  k=10 | occ= 112/1024 | KL1=2.5850 | 2차=86.8% ≥3차=13.2% | conv=True fine mono=True (9.2s)
+  category  k=12 | occ= 167/4096 | KL1=3.3721 | 2차=88.1% ≥3차=11.9% | conv=True headline만(12bit) (1.2s)
+
+=== Drebin split 2 | pooled N=3315, 1131 features ===
+  highfreq  k=10 | occ=  42/1024 | KL1=1.1106 | 2차=97.4% ≥3차=2.6% | conv=True fine mono=True (1.7s)
+  highfreq  k=12 | occ=  74/4096 | KL1=1.7359 | 2차=88.6% ≥3차=11.4% | conv=True headline만(12bit) (2.1s)
+  highvar   k=10 | occ= 162/1024 | KL1=3.1748 | 2차=84.8% ≥3차=15.2% | conv=True fine mono=True (13.1s)
+  highvar   k=12 | occ= 289/4096 | KL1=4.0353 | 2차=78.2% ≥3차=21.8% | conv=False headline만(12bit) (1.2s)
+  category  k=10 | occ= 110/1024 | KL1=2.5633 | 2차=85.3% ≥3차=14.7% | conv=True fine mono=True (8.6s)
+  category  k=12 | occ= 162/4096 | KL1=3.2059 | 2차=86.8% ≥3차=13.2% | conv=True headline만(12bit) (1.3s)
+
+=== 고차 집중 조합 (ge3 최대 부분집합: highvar k=12 split=2, ≥3차=21.8%) ===
+  |conn3|=0.395  permission + real_permission + call
+  |conn3|=0.393  permission + api_call + call
+  |conn3|=0.300  permission + real_permission + feature
+  |conn3|=0.297  call + permission + feature
+  |conn3|=0.285  feature + call + feature
+
+[저장] results2/drebin_order/drebin_order.json
+[저장] results2/drebin_order/drebin_order.png

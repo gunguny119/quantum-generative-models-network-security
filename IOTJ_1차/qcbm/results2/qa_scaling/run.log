@@ -1,0 +1,56 @@
+
+##### MODE=low (t=0.0, disjoint) #####
+  n=6: N=32000 샘플바닥=0.0024 ge3_share=0.000 rank99=2
+    L=2 P= 36 | QCBM=0.0535(min0.0535 max0.5100) | MLP=0.0025 | NMF=0.0062 | marg=2.415 (116s)
+    L=3 P= 54 | QCBM=0.1969(min0.1969 max0.2177) | MLP=0.0005 | NMF=0.0061 | marg=2.415 (220s)
+    L=4 P= 72 | QCBM=0.0034(min0.0034 max0.0084) | MLP=0.0006 | NMF=0.0061 | marg=2.415 (359s)
+    L=6 P=108 | QCBM=0.0006(min0.0006 max0.0013) | MLP=0.0005 | NMF=0.0036 | marg=2.415 (790s)
+  n=8: N=128000 샘플바닥=0.0012 ge3_share=0.000 rank99=1
+    L=2 P= 48 | QCBM=0.9114(min0.9114 max0.9151) | MLP=0.0046 | NMF=0.0197 | marg=0.044 (202s)
+    L=3 P= 72 | QCBM=0.4403(min0.4403 max0.6068) | MLP=0.0010 | NMF=0.0197 | marg=0.044 (395s)
+    L=4 P= 96 | QCBM=0.0140(min0.0140 max0.6923) | MLP=0.0007 | NMF=0.0120 | marg=0.044 (671s)
+    L=6 P=144 | QCBM=0.0036(min0.0036 max0.0071) | MLP=0.0003 | NMF=0.0233 | marg=0.044 (1442s)
+  n=10: N=512000 샘플바닥=0.0010 ge3_share=-0.000 rank99=3
+    L=2 P= 60 | QCBM=1.6855(min1.6855 max1.6864) | MLP=0.0328 | NMF=5.3125 | marg=3.395 (305s)
+    L=3 P= 90 | QCBM=1.4265(min1.4265 max1.5604) | MLP=0.0122 | NMF=5.3125 | marg=3.395 (584s)
+    L=4 P=120 | QCBM=0.6535(min0.6535 max1.0974) | MLP=0.0029 | NMF=1.8651 | marg=3.395 (974s)
+    L=6 P=180 | QCBM=0.4210(min0.4210 max0.5399) | MLP=0.0010 | NMF=0.0922 | marg=3.395 (1997s)
+
+[저장] results2/qa_scaling/qa_scaling_low.json | trend P*(by n): {'low': {6: None, 8: None, 10: None}}
+/home/elicer/IOTJ/qcbm/tools/exp_quantum_advantage_scaling.py:167: UserWarning: Glyph 52572 (\N{HANGUL SYLLABLE COE}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_quantum_advantage_scaling.py:167: UserWarning: Glyph 49548 (\N{HANGUL SYLLABLE SO}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_quantum_advantage_scaling.py:168: UserWarning: Glyph 52572 (\N{HANGUL SYLLABLE COE}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "qa_scaling%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_quantum_advantage_scaling.py:168: UserWarning: Glyph 49548 (\N{HANGUL SYLLABLE SO}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "qa_scaling%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+[저장] qa_scaling png
+
+##### MODE=highrank (t=0.6, random) #####
+  n=6: N=32000 샘플바닥=0.0015 ge3_share=0.178 rank99=4
+    L=2 P= 36 | QCBM=0.5006(min0.5006 max0.5010) | MLP=0.0078 | NMF=3.1460 | marg=1.991 (119s)
+    L=3 P= 54 | QCBM=0.3204(min0.3204 max0.5793) | MLP=0.0011 | NMF=1.4219 | marg=1.991 (238s)
+    L=4 P= 72 | QCBM=0.0225(min0.0225 max0.0579) | MLP=0.0008 | NMF=1.4217 | marg=1.991 (374s)
+    L=6 P=108 | QCBM=0.0093(min0.0093 max0.0164) | MLP=0.0005 | NMF=0.2547 | marg=1.991 (716s)
+  n=8: N=128000 샘플바닥=0.0009 ge3_share=0.020 rank99=3
+    L=2 P= 48 | QCBM=1.1174(min1.1174 max1.1894) | MLP=0.0203 | NMF=2.0974 | marg=2.296 (202s)
+    L=3 P= 72 | QCBM=0.6090(min0.6090 max0.6097) | MLP=0.0045 | NMF=2.0974 | marg=2.296 (378s)
+    L=4 P= 96 | QCBM=0.4522(min0.4522 max0.7391) | MLP=0.0012 | NMF=0.0580 | marg=2.296 (631s)
+    L=6 P=144 | QCBM=0.0208(min0.0208 max0.1451) | MLP=0.0009 | NMF=0.0580 | marg=2.296 (1352s)
+  n=10: N=512000 샘플바닥=0.0007 ge3_share=0.139 rank99=6
+    L=2 P= 60 | QCBM=2.3706(min2.3706 max2.3791) | MLP=0.0626 | NMF=14.7824 | marg=4.154 (303s)
+    L=3 P= 90 | QCBM=1.4552(min1.4547 max1.5967) | MLP=0.0249 | NMF=14.7824 | marg=4.154 (602s)
+    L=4 P=120 | QCBM=0.7969(min0.7969 max1.1829) | MLP=0.0074 | NMF=7.8360 | marg=4.154 (1002s)
+    L=6 P=180 | QCBM=0.6364(min0.6364 max1.3776) | MLP=0.0029 | NMF=5.1484 | marg=4.154 (2139s)
+
+[저장] results2/qa_scaling/qa_scaling_highrank.json | trend P*(by n): {'highrank': {6: None, 8: None, 10: None}}
+/home/elicer/IOTJ/qcbm/tools/exp_quantum_advantage_scaling.py:167: UserWarning: Glyph 52572 (\N{HANGUL SYLLABLE COE}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_quantum_advantage_scaling.py:167: UserWarning: Glyph 49548 (\N{HANGUL SYLLABLE SO}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_quantum_advantage_scaling.py:168: UserWarning: Glyph 52572 (\N{HANGUL SYLLABLE COE}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "qa_scaling%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_quantum_advantage_scaling.py:168: UserWarning: Glyph 49548 (\N{HANGUL SYLLABLE SO}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "qa_scaling%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+[저장] qa_scaling png

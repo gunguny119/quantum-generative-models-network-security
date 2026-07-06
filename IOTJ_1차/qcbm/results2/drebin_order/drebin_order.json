@@ -1,0 +1,1202 @@
+{
+ "note": "Drebin binary static feature 차수 측정. 기존 OD.decompose(kmax=4) 재사용(무수정). 지표=KL1 중 2차(c2)/≥3차(ge3) 비중. flow(UNSW ge3 27%, Bot 19%, HOIC 1%)와 같은 잣대·규모(k=10,12) 대비. 선정 3방식(고빈도/고분산/카테고리)·split{0,1,2} 강건성. 측정값만, 단정 금지, 우위·QCBM 언급 없음.",
+ "params": {
+  "splits": [
+   0,
+   1,
+   2
+  ],
+  "ks": [
+   10,
+   12
+  ],
+  "methods": [
+   "highfreq",
+   "highvar",
+   "category"
+  ],
+  "kmax": 4,
+  "eps": 1e-12,
+  "pooling": "X_train+X_test (측정전용, 학습아님)",
+  "units": "nats/share"
+ },
+ "self_check": {
+  "synthetic": {
+   "parity3_c3": 0.1308120359411369,
+   "parity4_c4": 0.13081203594113683,
+   "ising2_c3": 4.1049134855783905e-17,
+   "all_monotonic": true
+  },
+  "flow_reproduce_unsw": {
+   "current": {
+    "share_2nd": 0.7298751113047647,
+    "share_ge3": 0.27012488869523527,
+    "KL1": 2.2841299748734594
+   },
+   "stored": {
+    "share_2nd": 0.7298751113047647,
+    "share_ge3": 0.27012488869523527,
+    "KL1": 2.2841299748734594
+   },
+   "ge3_share_abs_diff": 0.0
+  },
+  "flow_stored": {
+   "UNSW": {
+    "share_2nd": 0.7298751113047647,
+    "share_ge3": 0.27012488869523527,
+    "c2": 1.6671296196453156,
+    "ge3": 0.6170003552281438,
+    "KL1": 2.2841299748734594,
+    "bits": 10
+   },
+   "Bot": {
+    "share_2nd": 0.8118166410057783,
+    "share_ge3": 0.18818335899422167,
+    "c2": 2.3697923682198367,
+    "ge3": 0.5493303111130806,
+    "KL1": 2.9191226793329172,
+    "bits": 12
+   },
+   "HOIC": {
+    "share_2nd": 0.988128194065301,
+    "share_ge3": 0.011871805934699014,
+    "c2": 1.4434194389771857,
+    "ge3": 0.01734187483448816,
+    "KL1": 1.460761313811674,
+    "bits": 12
+   }
+  }
+ },
+ "per_split": {
+  "highfreq": {
+   "10": [
+    {
+     "method": "highfreq",
+     "k": 10,
+     "subset": [
+      343,
+      418,
+      357,
+      427,
+      378,
+      494,
+      498,
+      322,
+      289,
+      351
+     ],
+     "occ": 39,
+     "nstates": 1024,
+     "N": 3315,
+     "KL_1": 1.1357920271621125,
+     "KL_2": 0.020521013328781604,
+     "H": 1.809644410564688,
+     "share_2nd": 0.9819324199870857,
+     "share_ge3": 0.018067580012914305,
+     "headline_converged": true,
+     "cats_selected": [
+      "feature",
+      "permission",
+      "intent",
+      "permission",
+      "intent",
+      "real_permission",
+      "real_permission",
+      "call",
+      "api_call",
+      "intent"
+     ],
+     "fine": {
+      "c2": 1.1152710138333308,
+      "c3": 0.02052101299555634,
+      "c4": 3.2795589915100054e-10,
+      "resid5": 5.269365609968244e-12,
+      "monotonic_ok": true,
+      "per_k_conv": {
+       "1": true,
+       "2": true,
+       "3": false,
+       "4": true
+      }
+     },
+     "split": 0
+    },
+    {
+     "method": "highfreq",
+     "k": 10,
+     "subset": [
+      287,
+      208,
+      234,
+      295,
+      253,
+      358,
+      361,
+      204,
+      172,
+      230
+     ],
+     "occ": 44,
+     "nstates": 1024,
+     "N": 3316,
+     "KL_1": 1.1858214805292557,
+     "KL_2": 0.030388945743521703,
+     "H": 1.7992968735026584,
+     "share_2nd": 0.9743730854580585,
+     "share_ge3": 0.025626914541941433,
+     "headline_converged": true,
+     "cats_selected": [
+      "permission",
+      "call",
+      "intent",
+      "permission",
+      "intent",
+      "real_permission",
+      "real_permission",
+      "call",
+      "api_call",
+      "intent"
+     ],
+     "fine": {
+      "c2": 1.155432534785734,
+      "c3": 0.030388945662789532,
+      "c4": 7.848265191859408e-11,
+      "resid5": 2.2495205622350754e-12,
+      "monotonic_ok": true,
+      "per_k_conv": {
+       "1": true,
+       "2": true,
+       "3": true,
+       "4": true
+      }
+     },
+     "split": 1
+    },
+    {
+     "method": "highfreq",
+     "k": 10,
+     "subset": [
+      329,
+      402,
+      312,
+      411,
+      363,
+      462,
+      466,
+      308,
+      276,
+      337
+     ],
+     "occ": 42,
+     "nstates": 1024,
+     "N": 3315,
+     "KL_1": 1.110621506476802,
+     "KL_2": 0.02866067250236962,
+     "H": 1.8025623756240452,
+     "share_2nd": 0.9741940234947464,
+     "share_ge3": 0.02580597650525352,
+     "headline_converged": true,
+     "cats_selected": [
+      "feature",
+      "permission",
+      "call",
+      "permission",
+      "intent",
+      "real_permission",
+      "real_permission",
+      "call",
+      "api_call",
+      "intent"
+     ],
+     "fine": {
+      "c2": 1.0819608339744322,
+      "c3": 0.0286606723995158,
+      "c4": 1.0048120053104666e-10,
+      "resid5": 2.372617801493261e-12,
+      "monotonic_ok": true,
+      "per_k_conv": {
+       "1": true,
+       "2": true,
+       "3": true,
+       "4": false
+      }
+     },
+     "split": 2
+    }
+   ],
+   "12": [
+    {
+     "method": "highfreq",
+     "k": 12,
+     "subset": [
+      343,
+      418,
+      357,
+      427,
+      378,
+      494,
+      498,
+      322,
+      289,
+      351,
+      504,
+      327
+     ],
+     "occ": 72,
+     "nstates": 4096,
+     "N": 3315,
+     "KL_1": 1.7567257992082297,
+     "KL_2": 0.21725943350288845,
+     "H": 2.3681236028322394,
+     "share_2nd": 0.8763270661814102,
+     "share_ge3": 0.12367293381858968,
+     "headline_converged": true,
+     "cats_selected": [
+      "feature",
+      "permission",
+      "intent",
+      "permission",
+      "intent",
+      "real_permission",
+      "real_permission",
+      "call",
+      "api_call",
+      "intent",
+      "real_permission",
+      "call"
+     ],
+     "fine": null,
+     "split": 0
+    },
+    {
+     "method": "highfreq",
+     "k": 12,
+     "subset": [
+      287,
+      208,
+      234,
+      295,
+      253,
+      358,
+      361,
+      204,
+      172,
+      230,
+      366,
+      210
+     ],
+     "occ": 78,
+     "nstates": 4096,
+     "N": 3316,
+     "KL_1": 1.8127183257662618,
+     "KL_2": 0.20054961219678497,
+     "H": 2.351947407966894,
+     "share_2nd": 0.889365264671217,
+     "share_ge3": 0.11063473532878297,
+     "headline_converged": true,
+     "cats_selected": [
+      "permission",
+      "call",
+      "intent",
+      "permission",
+      "intent",
+      "real_permission",
+      "real_permission",
+      "call",
+      "api_call",
+      "intent",
+      "real_permission",
+      "call"
+     ],
+     "fine": null,
+     "split": 1
+    },
+    {
+     "method": "highfreq",
+     "k": 12,
+     "subset": [
+      329,
+      402,
+      312,
+      411,
+      363,
+      462,
+      466,
+      308,
+      276,
+      337,
+      472,
+      314
+     ],
+     "occ": 74,
+     "nstates": 4096,
+     "N": 3315,
+     "KL_1": 1.7359280546031162,
+     "KL_2": 0.19753265331228212,
+     "H": 2.356668791811396,
+     "share_2nd": 0.8862091935270648,
+     "share_ge3": 0.11379080647293523,
+     "headline_converged": true,
+     "cats_selected": [
+      "feature",
+      "permission",
+      "call",
+      "permission",
+      "intent",
+      "real_permission",
+      "real_permission",
+      "call",
+      "api_call",
+      "intent",
+      "real_permission",
+      "call"
+     ],
+     "fine": null,
+     "split": 2
+    }
+   ]
+  },
+  "highvar": {
+   "10": [
+    {
+     "method": "highvar",
+     "k": 10,
+     "subset": [
+      437,
+      255,
+      496,
+      344,
+      321,
+      431,
+      397,
+      505,
+      481,
+      271
+     ],
+     "occ": 162,
+     "nstates": 1024,
+     "N": 3315,
+     "KL_1": 3.1748286842645914,
+     "KL_2": 0.4839706257621793,
+     "H": 3.7376443365354555,
+     "share_2nd": 0.8475600815373492,
+     "share_ge3": 0.15243991846265081,
+     "headline_converged": true,
+     "cats_selected": [
+      "permission",
+      "api_call",
+      "real_permission",
+      "feature",
+      "call",
+      "permission",
+      "permission",
+      "real_permission",
+      "real_permission",
+      "api_call"
+     ],
+     "fine": {
+      "c2": 2.690858058502412,
+      "c3": 0.381185107496852,
+      "c4": 0.09046566717980778,
+      "resid5": 0.012319851085519501,
+      "monotonic_ok": true,
+      "per_k_conv": {
+       "1": true,
+       "2": true,
+       "3": true,
+       "4": false
+      }
+     },
+     "split": 0
+    },
+    {
+     "method": "highvar",
+     "k": 10,
+     "subset": [
+      303,
+      141,
+      359,
+      225,
+      297,
+      203,
+      266,
+      367,
+      345,
+      157
+     ],
+     "occ": 162,
+     "nstates": 1024,
+     "N": 3316,
+     "KL_1": 3.173911259199551,
+     "KL_2": 0.48340568949791546,
+     "H": 3.7385850418436606,
+     "share_2nd": 0.847694012207566,
+     "share_ge3": 0.15230598779243393,
+     "headline_converged": true,
+     "cats_selected": [
+      "permission",
+      "api_call",
+      "real_permission",
+      "feature",
+      "permission",
+      "call",
+      "permission",
+      "real_permission",
+      "real_permission",
+      "api_call"
+     ],
+     "fine": {
+      "c2": 2.6905055697016356,
+      "c3": 0.38100899421760026,
+      "c4": 0.09012498808982179,
+      "resid5": 0.012271707190493373,
+      "monotonic_ok": true,
+      "per_k_conv": {
+       "1": true,
+       "2": true,
+       "3": true,
+       "4": false
+      }
+     },
+     "split": 1
+    },
+    {
+     "method": "highvar",
+     "k": 10,
+     "subset": [
+      421,
+      244,
+      464,
+      330,
+      415,
+      307,
+      380,
+      473,
+      449,
+      260
+     ],
+     "occ": 162,
+     "nstates": 1024,
+     "N": 3315,
+     "KL_1": 3.1748286842645914,
+     "KL_2": 0.4839706225236593,
+     "H": 3.737644336535456,
+     "share_2nd": 0.8475600825574104,
+     "share_ge3": 0.15243991744258947,
+     "headline_converged": true,
+     "cats_selected": [
+      "permission",
+      "api_call",
+      "real_permission",
+      "feature",
+      "permission",
+      "call",
+      "permission",
+      "real_permission",
+      "real_permission",
+      "api_call"
+     ],
+     "fine": {
+      "c2": 2.690858061740932,
+      "c3": 0.3811849544104733,
+      "c4": 0.09046575519679424,
+      "resid5": 0.012319912916391793,
+      "monotonic_ok": true,
+      "per_k_conv": {
+       "1": true,
+       "2": true,
+       "3": true,
+       "4": false
+      }
+     },
+     "split": 2
+    }
+   ],
+   "12": [
+    {
+     "method": "highvar",
+     "k": 12,
+     "subset": [
+      437,
+      255,
+      496,
+      344,
+      321,
+      431,
+      397,
+      505,
+      481,
+      271,
+      444,
+      340
+     ],
+     "occ": 289,
+     "nstates": 4096,
+     "N": 3315,
+     "KL_1": 4.035317422803547,
+     "KL_2": 0.8799150369371125,
+     "H": 4.250068343308964,
+     "share_2nd": 0.7819465125680771,
+     "share_ge3": 0.21805348743192285,
+     "headline_converged": true,
+     "cats_selected": [
+      "permission",
+      "api_call",
+      "real_permission",
+      "feature",
+      "call",
+      "permission",
+      "permission",
+      "real_permission",
+      "real_permission",
+      "api_call",
+      "permission",
+      "feature"
+     ],
+     "fine": null,
+     "split": 0
+    },
+    {
+     "method": "highvar",
+     "k": 12,
+     "subset": [
+      303,
+      141,
+      359,
+      225,
+      297,
+      203,
+      266,
+      367,
+      345,
+      157,
+      310,
+      223
+     ],
+     "occ": 290,
+     "nstates": 4096,
+     "N": 3316,
+     "KL_1": 4.033814219556938,
+     "KL_2": 0.8786843499726386,
+     "H": 4.251532847342048,
+     "share_2nd": 0.7821703474313325,
+     "share_ge3": 0.21782965256866751,
+     "headline_converged": true,
+     "cats_selected": [
+      "permission",
+      "api_call",
+      "real_permission",
+      "feature",
+      "permission",
+      "call",
+      "permission",
+      "real_permission",
+      "real_permission",
+      "api_call",
+      "permission",
+      "feature"
+     ],
+     "fine": null,
+     "split": 1
+    },
+    {
+     "method": "highvar",
+     "k": 12,
+     "subset": [
+      421,
+      244,
+      464,
+      330,
+      415,
+      307,
+      380,
+      473,
+      449,
+      260,
+      427,
+      327
+     ],
+     "occ": 289,
+     "nstates": 4096,
+     "N": 3315,
+     "KL_1": 4.035317422803548,
+     "KL_2": 0.8799150390248072,
+     "H": 4.250068343308964,
+     "share_2nd": 0.7819465120507215,
+     "share_ge3": 0.21805348794927853,
+     "headline_converged": false,
+     "cats_selected": [
+      "permission",
+      "api_call",
+      "real_permission",
+      "feature",
+      "permission",
+      "call",
+      "permission",
+      "real_permission",
+      "real_permission",
+      "api_call",
+      "permission",
+      "feature"
+     ],
+     "fine": null,
+     "split": 2
+    }
+   ]
+  },
+  "category": {
+   "10": [
+    {
+     "method": "category",
+     "k": 10,
+     "subset": [
+      1286,
+      50,
+      580,
+      437,
+      255,
+      376,
+      496,
+      321,
+      344,
+      479
+     ],
+     "occ": 112,
+     "nstates": 1024,
+     "N": 3315,
+     "KL_1": 2.5853521036410734,
+     "KL_2": 0.340242929350679,
+     "H": 3.466432717049222,
+     "share_2nd": 0.8683959028746998,
+     "share_ge3": 0.1316040971253002,
+     "headline_converged": true,
+     "cats_selected": [
+      "url",
+      "activity",
+      "service_receiver",
+      "permission",
+      "api_call",
+      "intent",
+      "real_permission",
+      "call",
+      "feature",
+      "provider"
+     ],
+     "fine": {
+      "c2": 2.2451091742903944,
+      "c3": 0.3086196527687895,
+      "c4": 0.0316232478253749,
+      "resid5": 2.8756514629365674e-08,
+      "monotonic_ok": true,
+      "per_k_conv": {
+       "1": true,
+       "2": true,
+       "3": true,
+       "4": true
+      }
+     },
+     "split": 0
+    },
+    {
+     "method": "category",
+     "k": 10,
+     "subset": [
+      1082,
+      435,
+      25,
+      303,
+      141,
+      251,
+      203,
+      359,
+      225,
+      343
+     ],
+     "occ": 112,
+     "nstates": 1024,
+     "N": 3316,
+     "KL_1": 2.585030297792767,
+     "KL_2": 0.3402627753679777,
+     "H": 3.4663869643702734,
+     "share_2nd": 0.8683718424273356,
+     "share_ge3": 0.13162815757266433,
+     "headline_converged": true,
+     "cats_selected": [
+      "url",
+      "service_receiver",
+      "activity",
+      "permission",
+      "api_call",
+      "intent",
+      "call",
+      "real_permission",
+      "feature",
+      "provider"
+     ],
+     "fine": {
+      "c2": 2.244767522424789,
+      "c3": 0.3086395950395665,
+      "c4": 0.031623142805165365,
+      "resid5": 3.752324585388224e-08,
+      "monotonic_ok": true,
+      "per_k_conv": {
+       "1": true,
+       "2": true,
+       "3": true,
+       "4": true
+      }
+     },
+     "split": 1
+    },
+    {
+     "method": "category",
+     "k": 10,
+     "subset": [
+      1071,
+      49,
+      534,
+      421,
+      244,
+      361,
+      464,
+      307,
+      330,
+      447
+     ],
+     "occ": 110,
+     "nstates": 1024,
+     "N": 3315,
+     "KL_1": 2.56329194883402,
+     "KL_2": 0.3760753519012539,
+     "H": 3.418571205679051,
+     "share_2nd": 0.8532842300416378,
+     "share_ge3": 0.14671576995836216,
+     "headline_converged": true,
+     "cats_selected": [
+      "url",
+      "activity",
+      "service_receiver",
+      "permission",
+      "api_call",
+      "intent",
+      "real_permission",
+      "call",
+      "feature",
+      "provider"
+     ],
+     "fine": {
+      "c2": 2.1872165969327657,
+      "c3": 0.34683342087112834,
+      "c4": 0.029241929764135578,
+      "resid5": 1.2659899957585616e-09,
+      "monotonic_ok": true,
+      "per_k_conv": {
+       "1": true,
+       "2": true,
+       "3": true,
+       "4": true
+      }
+     },
+     "split": 2
+    }
+   ],
+   "12": [
+    {
+     "method": "category",
+     "k": 12,
+     "subset": [
+      1286,
+      50,
+      580,
+      437,
+      255,
+      376,
+      496,
+      321,
+      344,
+      479,
+      1248,
+      207
+     ],
+     "occ": 165,
+     "nstates": 4096,
+     "N": 3315,
+     "KL_1": 3.24582776488655,
+     "KL_2": 0.38235852343457377,
+     "H": 3.8071493029773906,
+     "share_2nd": 0.882199996077753,
+     "share_ge3": 0.11780000392224699,
+     "headline_converged": true,
+     "cats_selected": [
+      "url",
+      "activity",
+      "service_receiver",
+      "permission",
+      "api_call",
+      "intent",
+      "real_permission",
+      "call",
+      "feature",
+      "provider",
+      "url",
+      "activity"
+     ],
+     "fine": null,
+     "split": 0
+    },
+    {
+     "method": "category",
+     "k": 12,
+     "subset": [
+      1082,
+      435,
+      25,
+      303,
+      141,
+      251,
+      203,
+      359,
+      225,
+      343,
+      1051,
+      417
+     ],
+     "occ": 167,
+     "nstates": 4096,
+     "N": 3316,
+     "KL_1": 3.3720907366507262,
+     "KL_2": 0.40195454638216216,
+     "H": 3.7143351887772633,
+     "share_2nd": 0.8807996054158979,
+     "share_ge3": 0.11920039458410212,
+     "headline_converged": true,
+     "cats_selected": [
+      "url",
+      "service_receiver",
+      "activity",
+      "permission",
+      "api_call",
+      "intent",
+      "call",
+      "real_permission",
+      "feature",
+      "provider",
+      "url",
+      "service_receiver"
+     ],
+     "fine": null,
+     "split": 1
+    },
+    {
+     "method": "category",
+     "k": 12,
+     "subset": [
+      1071,
+      49,
+      534,
+      421,
+      244,
+      361,
+      464,
+      307,
+      330,
+      447,
+      1045,
+      202
+     ],
+     "occ": 162,
+     "nstates": 4096,
+     "N": 3315,
+     "KL_1": 3.2058964536151926,
+     "KL_2": 0.4244940093274914,
+     "H": 3.777158948071526,
+     "share_2nd": 0.8675896070040559,
+     "share_ge3": 0.13241039299594418,
+     "headline_converged": true,
+     "cats_selected": [
+      "url",
+      "activity",
+      "service_receiver",
+      "permission",
+      "api_call",
+      "intent",
+      "real_permission",
+      "call",
+      "feature",
+      "provider",
+      "url",
+      "activity"
+     ],
+     "fine": null,
+     "split": 2
+    }
+   ]
+  }
+ },
+ "summary": {
+  "highfreq": {
+   "10": {
+    "n_splits": 3,
+    "share_2nd_mean": 0.9768331763132968,
+    "share_2nd_min": 0.9741940234947464,
+    "share_2nd_max": 0.9819324199870857,
+    "share_ge3_mean": 0.023166823686703086,
+    "share_ge3_min": 0.018067580012914305,
+    "share_ge3_max": 0.02580597650525352,
+    "KL2_mean": 0.026523543858224308,
+    "KL1_mean": 1.1440783380560566,
+    "all_headline_converged": true,
+    "fine_available": true
+   },
+   "12": {
+    "n_splits": 3,
+    "share_2nd_mean": 0.8839671747932307,
+    "share_2nd_min": 0.8763270661814102,
+    "share_2nd_max": 0.889365264671217,
+    "share_ge3_mean": 0.11603282520676929,
+    "share_ge3_min": 0.11063473532878297,
+    "share_ge3_max": 0.12367293381858968,
+    "KL2_mean": 0.20511389967065186,
+    "KL1_mean": 1.768457393192536,
+    "all_headline_converged": true,
+    "fine_available": false
+   }
+  },
+  "highvar": {
+   "10": {
+    "n_splits": 3,
+    "share_2nd_mean": 0.8476047254341085,
+    "share_2nd_min": 0.8475600815373492,
+    "share_2nd_max": 0.847694012207566,
+    "share_ge3_mean": 0.15239527456589141,
+    "share_ge3_min": 0.15230598779243393,
+    "share_ge3_max": 0.15243991846265081,
+    "KL2_mean": 0.48378231259458465,
+    "KL1_mean": 3.174522875909578,
+    "all_headline_converged": true,
+    "fine_available": true
+   },
+   "12": {
+    "n_splits": 3,
+    "share_2nd_mean": 0.7820211240167104,
+    "share_2nd_min": 0.7819465120507215,
+    "share_2nd_max": 0.7821703474313325,
+    "share_ge3_mean": 0.2179788759832896,
+    "share_ge3_min": 0.21782965256866751,
+    "share_ge3_max": 0.21805348794927853,
+    "KL2_mean": 0.8795048086448528,
+    "KL1_mean": 4.034816355054677,
+    "all_headline_converged": false,
+    "fine_available": false
+   }
+  },
+  "category": {
+   "10": {
+    "n_splits": 3,
+    "share_2nd_mean": 0.863350658447891,
+    "share_2nd_min": 0.8532842300416378,
+    "share_2nd_max": 0.8683959028746998,
+    "share_ge3_mean": 0.1366493415521089,
+    "share_ge3_min": 0.1316040971253002,
+    "share_ge3_max": 0.14671576995836216,
+    "KL2_mean": 0.35219368553997016,
+    "KL1_mean": 2.577891450089287,
+    "all_headline_converged": true,
+    "fine_available": true
+   },
+   "12": {
+    "n_splits": 3,
+    "share_2nd_mean": 0.8768630694992355,
+    "share_2nd_min": 0.8675896070040559,
+    "share_2nd_max": 0.882199996077753,
+    "share_ge3_mean": 0.12313693050076442,
+    "share_ge3_min": 0.11780000392224699,
+    "share_ge3_max": 0.13241039299594418,
+    "KL2_mean": 0.4029356930480758,
+    "KL1_mean": 3.2746049850508228,
+    "all_headline_converged": true,
+    "fine_available": false
+   }
+  }
+ },
+ "flow_comparison": {
+  "UNSW": {
+   "share_2nd": 0.7298751113047647,
+   "share_ge3": 0.27012488869523527,
+   "c2": 1.6671296196453156,
+   "ge3": 0.6170003552281438,
+   "KL1": 2.2841299748734594,
+   "bits": 10
+  },
+  "Bot": {
+   "share_2nd": 0.8118166410057783,
+   "share_ge3": 0.18818335899422167,
+   "c2": 2.3697923682198367,
+   "ge3": 0.5493303111130806,
+   "KL1": 2.9191226793329172,
+   "bits": 12
+  },
+  "HOIC": {
+   "share_2nd": 0.988128194065301,
+   "share_ge3": 0.011871805934699014,
+   "c2": 1.4434194389771857,
+   "ge3": 0.01734187483448816,
+   "KL1": 1.460761313811674,
+   "bits": 12
+  }
+ },
+ "high_order_triples": {
+  "from_subset": {
+   "method": "highvar",
+   "k": 12,
+   "split": 2,
+   "share_ge3": 0.21805348794927853
+  },
+  "top_triples": [
+   {
+    "triple": [
+     0,
+     2,
+     5
+    ],
+    "connected_3body": -0.39494555847446444,
+    "features": [
+     "permission::android.permission.SEND_SMS",
+     "real_permission::android.permission.READ_CONTACTS",
+     "call::Read/Write External Storage"
+    ],
+    "cats": [
+     "permission",
+     "real_permission",
+     "call"
+    ]
+   },
+   {
+    "triple": [
+     0,
+     1,
+     5
+    ],
+    "connected_3body": -0.3926688356293281,
+    "features": [
+     "permission::android.permission.SEND_SMS",
+     "api_call::android/content/ContentResolver;->query",
+     "call::Read/Write External Storage"
+    ],
+    "cats": [
+     "permission",
+     "api_call",
+     "call"
+    ]
+   },
+   {
+    "triple": [
+     4,
+     8,
+     11
+    ],
+    "connected_3body": 0.30036030119685964,
+    "features": [
+     "permission::android.permission.RECEIVE_BOOT_COMPLETED",
+     "real_permission::android.permission.ACCESS_FINE_LOCATION",
+     "feature::android.hardware.screen.portrait"
+    ],
+    "cats": [
+     "permission",
+     "real_permission",
+     "feature"
+    ]
+   },
+   {
+    "triple": [
+     5,
+     6,
+     11
+    ],
+    "connected_3body": 0.29746219381005,
+    "features": [
+     "call::Read/Write External Storage",
+     "permission::android.permission.ACCESS_WIFI_STATE",
+     "feature::android.hardware.screen.portrait"
+    ],
+    "cats": [
+     "call",
+     "permission",
+     "feature"
+    ]
+   },
+   {
+    "triple": [
+     3,
+     5,
+     11
+    ],
+    "connected_3body": 0.2847049458809829,
+    "features": [
+     "feature::android.hardware.wifi",
+     "call::Read/Write External Storage",
+     "feature::android.hardware.screen.portrait"
+    ],
+    "cats": [
+     "feature",
+     "call",
+     "feature"
+    ]
+   },
+   {
+    "triple": [
+     2,
+     4,
+     11
+    ],
+    "connected_3body": 0.26504845904400526,
+    "features": [
+     "real_permission::android.permission.READ_CONTACTS",
+     "permission::android.permission.RECEIVE_BOOT_COMPLETED",
+     "feature::android.hardware.screen.portrait"
+    ],
+    "cats": [
+     "real_permission",
+     "permission",
+     "feature"
+    ]
+   },
+   {
+    "triple": [
+     1,
+     4,
+     11
+    ],
+    "connected_3body": 0.25976648225560117,
+    "features": [
+     "api_call::android/content/ContentResolver;->query",
+     "permission::android.permission.RECEIVE_BOOT_COMPLETED",
+     "feature::android.hardware.screen.portrait"
+    ],
+    "cats": [
+     "api_call",
+     "permission",
+     "feature"
+    ]
+   },
+   {
+    "triple": [
+     4,
+     5,
+     11
+    ],
+    "connected_3body": 0.25103912425227093,
+    "features": [
+     "permission::android.permission.RECEIVE_BOOT_COMPLETED",
+     "call::Read/Write External Storage",
+     "feature::android.hardware.screen.portrait"
+    ],
+    "cats": [
+     "permission",
+     "call",
+     "feature"
+    ]
+   }
+  ]
+ }
+}

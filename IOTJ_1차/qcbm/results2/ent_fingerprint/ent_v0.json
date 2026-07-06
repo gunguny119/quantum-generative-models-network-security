@@ -1,0 +1,223 @@
+{
+ "note": "얽힘 지문 v0. ψ=√p̂(Born, 위상없음) 의 39절단 Schmidt 스펙트럼/엔트로피 거리(ENT-L2/W) 가 배치수준 drift 탐지(unseen vs known)서 NLL-full/NLL-M2/CONN3-dist/MARG-L1 을 이기는지. split1 전용 여부 위해 0,2 병기. 단정 금지. 배치수준·위상없음·k10·관측정렬 한계.",
+ "params": {
+  "k": 10,
+  "splits": [
+   0,
+   1,
+   2
+  ],
+  "B": 200,
+  "ns": [
+   10,
+   20,
+   50,
+   100,
+   200
+  ],
+  "n_cuts": 39,
+  "n_rand_cuts": 30,
+  "laplace_c": 0.0009765625,
+  "seed_cuts": 777,
+  "seed_boot": 20260703,
+  "scores": [
+   "ENT_L2",
+   "ENT_W",
+   "NLL_full",
+   "NLL_M2",
+   "CONN3_dist",
+   "MARG_L1"
+  ]
+ },
+ "results": {
+  "0": {
+   "unseen": [
+    0
+   ],
+   "n_pos": 925,
+   "n_neg": 478,
+   "per_n": {
+    "10": {
+     "ENT_L2": 0.905625,
+     "ENT_W": 0.890425,
+     "NLL_full": 0.995925,
+     "NLL_M2": 0.875,
+     "CONN3_dist": 0.92665,
+     "MARG_L1": 0.99485
+    },
+    "20": {
+     "ENT_L2": 0.942175,
+     "ENT_W": 0.937175,
+     "NLL_full": 1.0,
+     "NLL_M2": 0.9565,
+     "CONN3_dist": 0.990575,
+     "MARG_L1": 0.999575
+    },
+    "50": {
+     "ENT_L2": 0.9942,
+     "ENT_W": 0.994525,
+     "NLL_full": 1.0,
+     "NLL_M2": 0.99635,
+     "CONN3_dist": 1.0,
+     "MARG_L1": 1.0
+    },
+    "100": {
+     "ENT_L2": 0.997425,
+     "ENT_W": 0.99655,
+     "NLL_full": 1.0,
+     "NLL_M2": 1.0,
+     "CONN3_dist": 1.0,
+     "MARG_L1": 1.0
+    },
+    "200": {
+     "ENT_L2": 0.9982,
+     "ENT_W": 0.998925,
+     "NLL_full": 1.0,
+     "NLL_M2": 1.0,
+     "CONN3_dist": 1.0,
+     "MARG_L1": 1.0
+    }
+   },
+   "smoothing": {
+    "c_half": {
+     "ENT_L2": 0.99915,
+     "ENT_W": 0.99825,
+     "NLL_full": 1.0,
+     "CONN3_dist": 1.0
+    },
+    "c_2x": {
+     "ENT_L2": 0.9978,
+     "ENT_W": 0.9985,
+     "NLL_full": 1.0,
+     "CONN3_dist": 1.0
+    }
+   }
+  },
+  "1": {
+   "unseen": [
+    1
+   ],
+   "n_pos": 667,
+   "n_neg": 529,
+   "per_n": {
+    "10": {
+     "ENT_L2": 0.660375,
+     "ENT_W": 0.659675,
+     "NLL_full": 0.9756,
+     "NLL_M2": 0.876525,
+     "CONN3_dist": 0.92815,
+     "MARG_L1": 0.817175
+    },
+    "20": {
+     "ENT_L2": 0.774875,
+     "ENT_W": 0.771925,
+     "NLL_full": 0.997925,
+     "NLL_M2": 0.943975,
+     "CONN3_dist": 0.9798,
+     "MARG_L1": 0.8944625
+    },
+    "50": {
+     "ENT_L2": 0.886375,
+     "ENT_W": 0.8681,
+     "NLL_full": 1.0,
+     "NLL_M2": 0.99565,
+     "CONN3_dist": 0.999675,
+     "MARG_L1": 0.964525
+    },
+    "100": {
+     "ENT_L2": 0.984675,
+     "ENT_W": 0.976675,
+     "NLL_full": 1.0,
+     "NLL_M2": 1.0,
+     "CONN3_dist": 1.0,
+     "MARG_L1": 0.990675
+    },
+    "200": {
+     "ENT_L2": 0.9997,
+     "ENT_W": 0.9996,
+     "NLL_full": 1.0,
+     "NLL_M2": 1.0,
+     "CONN3_dist": 1.0,
+     "MARG_L1": 0.999525
+    }
+   },
+   "smoothing": {
+    "c_half": {
+     "ENT_L2": 0.988025,
+     "ENT_W": 0.98105,
+     "NLL_full": 1.0,
+     "CONN3_dist": 1.0
+    },
+    "c_2x": {
+     "ENT_L2": 0.992925,
+     "ENT_W": 0.986925,
+     "NLL_full": 1.0,
+     "CONN3_dist": 1.0
+    }
+   }
+  },
+  "2": {
+   "unseen": [
+    2
+   ],
+   "n_pos": 625,
+   "n_neg": 538,
+   "per_n": {
+    "10": {
+     "ENT_L2": 0.880725,
+     "ENT_W": 0.903075,
+     "NLL_full": 0.998825,
+     "NLL_M2": 0.999775,
+     "CONN3_dist": 0.742475,
+     "MARG_L1": 0.73705
+    },
+    "20": {
+     "ENT_L2": 0.9364,
+     "ENT_W": 0.9496,
+     "NLL_full": 1.0,
+     "NLL_M2": 1.0,
+     "CONN3_dist": 0.76435,
+     "MARG_L1": 0.7534
+    },
+    "50": {
+     "ENT_L2": 0.997675,
+     "ENT_W": 0.998075,
+     "NLL_full": 1.0,
+     "NLL_M2": 1.0,
+     "CONN3_dist": 0.8522,
+     "MARG_L1": 0.858225
+    },
+    "100": {
+     "ENT_L2": 1.0,
+     "ENT_W": 1.0,
+     "NLL_full": 1.0,
+     "NLL_M2": 1.0,
+     "CONN3_dist": 0.94195,
+     "MARG_L1": 0.9077
+    },
+    "200": {
+     "ENT_L2": 1.0,
+     "ENT_W": 1.0,
+     "NLL_full": 1.0,
+     "NLL_M2": 1.0,
+     "CONN3_dist": 0.97025,
+     "MARG_L1": 0.965325
+    }
+   },
+   "smoothing": {
+    "c_half": {
+     "ENT_L2": 1.0,
+     "ENT_W": 1.0,
+     "NLL_full": 1.0,
+     "CONN3_dist": 0.915175
+    },
+    "c_2x": {
+     "ENT_L2": 1.0,
+     "ENT_W": 1.0,
+     "NLL_full": 1.0,
+     "CONN3_dist": 0.915175
+    }
+   }
+  }
+ }
+}

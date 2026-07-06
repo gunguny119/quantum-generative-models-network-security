@@ -1,0 +1,48 @@
+=== self-check (합성 분포, 차수 분해) ===
+  parity3: c3=0.1308 c4=4.51e-17 resid5=6.94e-18 (PASS)
+  parity4: c3=0.00e+00 c4=0.1308 (PASS)
+  ising2 : c3=4.10e-17 c4=-1.74e-16 (PASS) | 단조성 all=True
+
+=== UNSW (10 bit / 1024 states) ===
+[00:53:57] CSV 로드: ['data/unsw_nb15_training-set.csv', 'data/unsw_nb15_testing-set.csv']
+[00:53:58] dropna 제거=0 | benign(Normal)=93000  attack(ALL,label1)=164673
+[00:53:58] UNSW 인코딩(10bit): 점유 174/1024 (16.99%) | benign train=65099 test=27901 attack=164673
+  점유 174/1024 | 차수별 maxent 적합(k=1..4)...
+    k≤1: L-BFGS success=True iters=11  D=10  max_moment_violation=3.534e-09
+    k≤2: L-BFGS success=True iters=4130  D=55  max_moment_violation=1.947e-08
+    k≤3: L-BFGS success=True iters=17012  D=175  max_moment_violation=1.348e-07
+    k≤4: L-BFGS success=False iters=20000  D=385  max_moment_violation=9.223e-07
+  KL: k1=2.2841 k2=0.6170 k3=0.1771 k4=0.0541
+  기여(nats): c2=1.6671 c3=0.4399 c4=0.1230 ≥5차잔여=0.0541 | ≥3차합=0.6170 (직전KL2=0.6170003552281438, Δ=0.0)
+  단조성=True | 음수기여={'c2': False, 'c3': False, 'c4': False, 'resid5': False} | per_k 수렴={'1': True, '2': True, '3': True, '4': False}
+
+=== Bot (12 bit / 4096 states) ===
+[00:54:09] CSV 로드: data/cic_bot_0203.csv
+[00:54:13] dropna 제거=0 | benign=762384  bot=286191
+[00:54:13] Bot 인코딩: 점유 361/4096 (8.81%) | benign train=533668 test=228716 attack=286191
+  점유 361/4096 | 차수별 maxent 적합(k=1..4)...
+    k≤1: L-BFGS success=True iters=17  D=12  max_moment_violation=6.563e-09
+    k≤2: L-BFGS success=True iters=4127  D=78  max_moment_violation=4.006e-07
+    k≤3: L-BFGS success=False iters=20000  D=298  max_moment_violation=1.499e-06
+    k≤4: L-BFGS success=False iters=20000  D=793  max_moment_violation=5.585e-06
+  KL: k1=2.9191 k2=0.5493 k3=0.0263 k4=0.0005
+  기여(nats): c2=2.3698 c3=0.5231 c4=0.0257 ≥5차잔여=0.0005 | ≥3차합=0.5493 (직전KL2=0.5493303111130805, Δ=0.0)
+  단조성=True | 음수기여={'c2': False, 'c3': False, 'c4': False, 'resid5': False} | per_k 수렴={'1': True, '2': True, '3': False, '4': False}
+
+=== HOIC (12 bit / 4096 states) ===
+[01:51:56] CSV 로드: data/cic_0221_ddos.csv
+[01:51:59] benign=360833  ddos attack-hoic=686012
+[01:51:59] Fwd IAT  log1p inner edges = [5.739, 5.9067, 7.8581]
+[01:51:59] Flow IAT log1p inner edges = [5.3351, 5.5026, 7.4548]
+[01:51:59] B2 점유 상태=94/4096 (2.3%) | benign train=252583 test=108250 attack=686012
+  점유 94/4096 | 차수별 maxent 적합(k=1..4)...
+    k≤1: L-BFGS success=True iters=57  D=12  max_moment_violation=1.020e-08
+    k≤2: L-BFGS success=False iters=20000  D=78  max_moment_violation=1.387e-07
+    k≤3: L-BFGS success=False iters=20000  D=298  max_moment_violation=6.248e-07
+    k≤4: L-BFGS success=True iters=18306  D=793  max_moment_violation=1.749e-07
+  KL: k1=1.4608 k2=0.0173 k3=0.0037 k4=0.0000
+  기여(nats): c2=1.4434 c3=0.0137 c4=0.0036 ≥5차잔여=0.0000 | ≥3차합=0.0173 (직전KL2=0.01734187483448816, Δ=0.0)
+  단조성=True | 음수기여={'c2': False, 'c3': False, 'c4': False, 'resid5': False} | per_k 수렴={'1': True, '2': False, '3': False, '4': True}
+
+[저장] results2/order_decomposition.json
+[저장] results2/order_decomposition.png

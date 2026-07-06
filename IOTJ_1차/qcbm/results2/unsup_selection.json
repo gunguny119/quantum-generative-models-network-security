@@ -1,0 +1,163 @@
+{
+  "encoding": "B2 12bit (4096), Bot. raw MWU(s=-log p). QCBM 재학습 없음.",
+  "unsup_condition": "선택 기준 S1~S6, 앙상블 E1~E3은 공격(st_atk)/라벨 미사용. AUC는 기준 성능 평가에만 사용.",
+  "consistency": {
+    "auc_recompute_maxdiff": 0.0,
+    "tv_recompute_maxdiff": 0.0,
+    "occ": 361,
+    "ok": true,
+    "mmd2_pearson_vs_prior_0.077": 0.07744139525090095
+  },
+  "classical_best_le216": 0.7063764867284203,
+  "qcbm_auc": {
+    "all_sorted": [
+      0.5235,
+      0.5937,
+      0.6043,
+      0.6125,
+      0.6138,
+      0.6198,
+      0.6349,
+      0.6557,
+      0.6744,
+      0.6773,
+      0.7059,
+      0.7207,
+      0.7259,
+      0.7359,
+      0.7458,
+      0.8167
+    ],
+    "min": 0.5234860740978741,
+    "median": 0.665009058628486,
+    "max": 0.8167107522629038,
+    "best_seed": 8
+  },
+  "criteria": [
+    {
+      "name": "S1_MMD2",
+      "desc": "MMD²(p,q_train) — 학습 기준(기준선)",
+      "direction": "min",
+      "pearson": 0.07744139525090095,
+      "spearman": 0.02058823529411765,
+      "pick_seed": 7,
+      "pick_auc": 0.7458100932538602,
+      "beats_classical": true,
+      "argmin_seed": 7,
+      "argmin_auc": 0.7458100932538602,
+      "argmax_seed": 13,
+      "argmax_auc": 0.7207309302798749
+    },
+    {
+      "name": "S2_TV",
+      "desc": "TV(p,q_train)",
+      "direction": "min",
+      "pearson": -0.013630890272323485,
+      "spearman": 0.03823529411764706,
+      "pick_seed": 7,
+      "pick_auc": 0.7458100932538602,
+      "beats_classical": true,
+      "argmin_seed": 7,
+      "argmin_auc": 0.7458100932538602,
+      "argmax_seed": 13,
+      "argmax_auc": 0.7207309302798749
+    },
+    {
+      "name": "S3a_KL_q||p",
+      "desc": "KL(q_train || p)",
+      "direction": "min",
+      "pearson": 0.7092584873003894,
+      "spearman": 0.7147058823529412,
+      "pick_seed": 10,
+      "pick_auc": 0.6556501771991408,
+      "beats_classical": false,
+      "argmin_seed": 10,
+      "argmin_auc": 0.6556501771991408,
+      "argmax_seed": 5,
+      "argmax_auc": 0.7358918910397191
+    },
+    {
+      "name": "S3b_KL_p||q",
+      "desc": "KL(p || q_train)",
+      "direction": "min",
+      "pearson": 0.25401199469483443,
+      "spearman": 0.19705882352941176,
+      "pick_seed": 4,
+      "pick_auc": 0.5234860740978741,
+      "beats_classical": false,
+      "argmin_seed": 4,
+      "argmin_auc": 0.5234860740978741,
+      "argmax_seed": 1,
+      "argmax_auc": 0.6348505767735219
+    },
+    {
+      "name": "S4_NLL_test",
+      "desc": "held-out benign NLL = mean(-log p[st_te])",
+      "direction": "min",
+      "pearson": 0.7107054181051164,
+      "spearman": 0.7441176470588236,
+      "pick_seed": 10,
+      "pick_auc": 0.6556501771991408,
+      "beats_classical": false,
+      "argmin_seed": 10,
+      "argmin_auc": 0.6556501771991408,
+      "argmax_seed": 5,
+      "argmax_auc": 0.7358918910397191
+    },
+    {
+      "name": "S5a_entropy",
+      "desc": "엔트로피 H(p) (구조적; 방향 불명, min 가정)",
+      "direction": "min",
+      "pearson": -0.35547616053527464,
+      "spearman": -0.37058823529411766,
+      "pick_seed": 7,
+      "pick_auc": 0.7458100932538602,
+      "beats_classical": true,
+      "argmin_seed": 7,
+      "argmin_auc": 0.7458100932538602,
+      "argmax_seed": 2,
+      "argmax_auc": 0.6198153432055384
+    },
+    {
+      "name": "S5b_eff_support",
+      "desc": "유효 support exp(H) (구조적; min 가정)",
+      "direction": "min",
+      "pearson": -0.36786033202386015,
+      "spearman": -0.37058823529411766,
+      "pick_seed": 7,
+      "pick_auc": 0.7458100932538602,
+      "beats_classical": true,
+      "argmin_seed": 7,
+      "argmin_auc": 0.7458100932538602,
+      "argmax_seed": 2,
+      "argmax_auc": 0.6198153432055384
+    },
+    {
+      "name": "S6_gen_gap",
+      "desc": "일반화 갭 NLL_test - NLL_train",
+      "direction": "min",
+      "pearson": 0.5501390664522253,
+      "spearman": 0.6205882352941177,
+      "pick_seed": 2,
+      "pick_auc": 0.6198153432055384,
+      "beats_classical": false,
+      "argmin_seed": 2,
+      "argmin_auc": 0.6198153432055384,
+      "argmax_seed": 7,
+      "argmax_auc": 0.7458100932538602
+    }
+  ],
+  "best_predictor": "S4_NLL_test",
+  "ensembles": {
+    "E1_arith_mean": 0.6987004943481885,
+    "E2_geo_mean": 0.6960117170912564,
+    "E3_top4_by_MMD2": 0.6869119660182441,
+    "E3_top4_by_NLL_test": 0.6281556929234227
+  },
+  "ensemble_vs": {
+    "median": 0.665009058628486,
+    "classical": 0.7063764867284203,
+    "best": 0.8167107522629038
+  },
+  "note": "사실 측정만. 판정은 웹 AI. 기존 소스/데이터/결과 무수정."
+}

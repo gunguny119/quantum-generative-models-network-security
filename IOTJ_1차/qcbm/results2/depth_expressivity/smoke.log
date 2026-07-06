@@ -1,0 +1,11 @@
+=== 저차 t=0 (n=6) ===
+share=0.000 | 샘플바닥=0.0009 | epochs=150 restarts=2
+  L=2 P= 36 | QCBM=0.0541 | MLP=0.0044(p33) | NMF=0.0052(r2,p32) | marg=2.4152 (24s)
+  L=3 P= 54 | QCBM=0.1980 | MLP=0.0024(p57) | NMF=0.0051(r3,p48) | marg=2.4152 (45s)
+  L=6 P=108 | QCBM=0.0019 | MLP=0.0008(p113) | NMF=0.0051(r7,p112) | marg=2.4152 (151s)
+=== 고랭크 random t=0.6 (n=6) ===
+share=0.178 rank99=4
+  L=3 P= 54 | QCBM=0.5003 | MLP=0.0081(p57) | NMF=3.0530(r3,p48) | marg=1.9904 (44s)
+  L=6 P=108 | QCBM=0.0295 | MLP=0.0023(p113) | NMF=0.4848(r7,p112) | marg=1.9904 (150s)
+[저장] depth_n6.json | 교차점 P(저차)=None 고랭크=None | self-check 단조=False L3=0.1980 L6=0.0019
+[저장] depth_n6.png

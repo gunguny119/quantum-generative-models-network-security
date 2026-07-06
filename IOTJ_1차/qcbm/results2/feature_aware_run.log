@@ -1,0 +1,52 @@
+=== self-check ===
+  (i) 1feature=joint KL=0.00e+00 | (ii) 1bit=bitmarg KL=5.03e-17 | (iii) indep cross=1.43e-04 | (iv) 단조=True
+
+=== UNSW (10 bit, 4 features) ===
+[05:27:19] CSV 로드: ['data/unsw_nb15_training-set.csv', 'data/unsw_nb15_testing-set.csv']
+[05:27:19] dropna 제거=0 | benign(Normal)=93000  attack(ALL,label1)=164673
+[05:27:19] UNSW 인코딩(10bit): 점유 174/1024 (16.99%) | benign train=65099 test=27901 attack=164673
+  AUC bit=0.7027 feat=0.7460 joint=0.8705 | contamination=0.0433 pure_cross=0.1245
+  KL total=2.2841 within(A)=0.0837 cross(B)=2.2005 | B/total=0.963 | Pythagoras잔차=4.44e-16
+    order1    D=  10 KL=2.2841 conv=True viol=3.53e-09
+    within2   D=  19 KL=2.2222 conv=True viol=9.30e-09
+    cross2    D=  55 KL=0.6170 conv=True viol=3.81e-08
+    within3   D=  59 KL=0.6070 conv=True viol=3.81e-08
+    cross3    D= 175 KL=0.1771 conv=True viol=4.31e-08
+    within4   D= 176 KL=0.1769 conv=False viol=2.21e-06
+    cross4    D= 385 KL=0.0541 conv=False viol=6.22e-07
+  ≥3차: within=0.0103 cross=0.6067 (resid_top=0.0541) | ≥3차 cross 비중=0.983 | 단조=True
+
+=== Bot (12 bit, 6 features) ===
+[05:27:33] CSV 로드: data/cic_bot_0203.csv
+[05:27:37] dropna 제거=0 | benign=762384  bot=286191
+[05:27:37] Bot 인코딩: 점유 361/4096 (8.81%) | benign train=533668 test=228716 attack=286191
+  AUC bit=0.2870 feat=0.2037 joint=0.8749 | contamination=-0.0833 pure_cross=0.6712
+  KL total=2.9191 within(A)=0.2895 cross(B)=2.6296 | B/total=0.901 | Pythagoras잔차=0.00e+00
+    order1    D=  12 KL=2.9191 conv=True viol=6.56e-09
+    within2   D=  21 KL=2.7855 conv=True viol=2.06e-08
+    cross2    D=  78 KL=0.5493 conv=True viol=2.10e-07
+    within3   D=  82 KL=0.4645 conv=True viol=1.52e-07
+    cross3    D= 298 KL=0.0263 conv=False viol=2.67e-06
+    within4   D= 299 KL=0.0263 conv=True viol=3.26e-07
+    cross4    D= 793 KL=0.0005 conv=False viol=3.64e-06
+  ≥3차: within=0.0848 cross=0.4645 (resid_top=0.0005) | ≥3차 cross 비중=0.846 | 단조=True
+
+=== HOIC (12 bit, 6 features) ===
+[05:28:10] CSV 로드: data/cic_0221_ddos.csv
+[05:28:13] benign=360833  ddos attack-hoic=686012
+[05:28:13] Fwd IAT  log1p inner edges = [5.739, 5.9067, 7.8581]
+[05:28:13] Flow IAT log1p inner edges = [5.3351, 5.5026, 7.4548]
+[05:28:13] B2 점유 상태=94/4096 (2.3%) | benign train=252583 test=108250 attack=686012
+  AUC bit=0.8741 feat=0.8774 joint=0.9258 | contamination=0.0034 pure_cross=0.0484
+  KL total=1.4608 within(A)=0.0191 cross(B)=1.4416 | B/total=0.987 | Pythagoras잔차=-9.16e-11
+    order1    D=  12 KL=1.4608 conv=True viol=1.02e-08
+    within2   D=  21 KL=1.4506 conv=True viol=1.65e-08
+    cross2    D=  78 KL=0.0173 conv=False viol=9.87e-07
+    within3   D=  82 KL=0.0121 conv=False viol=1.44e-06
+    cross3    D= 298 KL=0.0037 conv=True viol=1.06e-07
+    within4   D= 299 KL=0.0002 conv=True viol=8.65e-08
+    cross4    D= 793 KL=0.0000 conv=False viol=1.74e-06
+  ≥3차: within=0.0087 cross=0.0086 (resid_top=0.0000) | ≥3차 cross 비중=0.497 | 단조=True
+
+[저장] results2/feature_aware_decomposition.json
+[저장] results2/feature_aware_decomposition.png

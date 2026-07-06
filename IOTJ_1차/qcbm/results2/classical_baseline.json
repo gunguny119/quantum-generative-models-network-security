@@ -1,0 +1,99 @@
+{
+  "setup": {
+    "nq": 8,
+    "nstates": 256,
+    "features": [
+      [
+        "proto",
+        2
+      ],
+      [
+        "syn",
+        1
+      ],
+      [
+        "psh",
+        1
+      ],
+      [
+        "size",
+        4
+      ]
+    ],
+    "split": {
+      "seed": 7,
+      "benign_train_frac": 0.7
+    },
+    "n_benign_train": 166625,
+    "n_benign_test": 71412,
+    "n_attack": 93063,
+    "attack_label": "infilteration",
+    "eval": "s(x)=-log p(x), attack=positive, raw Mann-Whitney U (no direction selection)"
+  },
+  "marginal_p_bit_lsb_to_msb": [
+    0.6450292573143286,
+    0.37888072018004504,
+    0.3123780945236309,
+    0.31272618154538634,
+    0.39607501875468865,
+    0.06526631657914479,
+    0.3553728432108027,
+    0.02527231807951988
+  ],
+  "bit_feature_map": {
+    "7": "proto[hi]",
+    "6": "proto[lo]",
+    "5": "syn",
+    "4": "psh",
+    "3": "size[b3]",
+    "2": "size[b2]",
+    "1": "size[b1]",
+    "0": "size[b0]"
+  },
+  "results": [
+    {
+      "model": "emp_joint",
+      "auc": 0.4282551601787331,
+      "auc_flipped": 0.5717448398212669,
+      "youden_j": 0.030442562174763044,
+      "mean_logp_ben": -2.9552663877523324,
+      "mean_logp_atk": -2.79417653687052,
+      "logp_gap": -0.1610898508818126,
+      "mean_p_ben": 0.06853091310132187,
+      "mean_p_atk": 0.07834575993535794
+    },
+    {
+      "model": "marginal",
+      "auc": 0.43834451617855125,
+      "auc_flipped": 0.5616554838214487,
+      "youden_j": 0.030442562174763044,
+      "mean_logp_ben": -4.239602501142004,
+      "mean_logp_atk": -3.9967429316243326,
+      "logp_gap": -0.2428595695176714,
+      "mean_p_ben": 0.023230003293143783,
+      "mean_p_atk": 0.027940567828154073
+    },
+    {
+      "model": "QCBM_L3",
+      "auc": 0.4333490436564,
+      "auc_flipped": 0.5666509563436,
+      "youden_j": 0.030442562174763044,
+      "mean_logp_ben": -3.8947487258681956,
+      "mean_logp_atk": -3.581672605453356,
+      "logp_gap": -0.31307612041483956,
+      "mean_p_ben": 0.03532794268638423,
+      "mean_p_atk": 0.04522134905137406
+    },
+    {
+      "model": "QCBM_L6",
+      "auc": 0.428945486952857,
+      "auc_flipped": 0.5710545130471429,
+      "youden_j": 0.030442562174763044,
+      "mean_logp_ben": -3.144785085218233,
+      "mean_logp_atk": -2.936403486271726,
+      "logp_gap": -0.2083815989465072,
+      "mean_p_ben": 0.06465785052704494,
+      "mean_p_atk": 0.0752791682937481
+    }
+  ]
+}

@@ -1,0 +1,707 @@
+{
+  "purpose": "UNSW flow_iat 매핑(dinpkt/rate/(sinpkt+dinpkt)/2) 민감도. CIC는 Flow IAT Mean 고정.",
+  "mappings": {
+    "M0_dinpkt": "dinpkt(Dest interpacket)",
+    "M1_rate": "rate(pkts/s, 흐름속도)",
+    "M2_sinpkt_dinpkt_mean": "(sinpkt+dinpkt)/2 양방향 평균 interpacket"
+  },
+  "encoding": "proto2+size4+fwd_iat2+flow_iat2=10bit(1024), seed7 0.7 split, raw MWU. 전수.",
+  "joint_gt_marginal_counting": "CIC_HOIC+CIC_Bot(고정 2) + UNSW(9공격+ALL=10) = 12",
+  "cic_fixed": [
+    {
+      "mapping": "fixed",
+      "tag": "CIC_HOIC",
+      "benign_complexity": {
+        "occupied": 85,
+        "occ_frac": 0.0830078125,
+        "reach_tv05": 2,
+        "reach_tv01": 3,
+        "cum_energy_r3": 0.9994800274638145
+      },
+      "rows": [
+        {
+          "attack": "ddos attack-hoic",
+          "n_attack": 686012,
+          "emp_joint": 0.7773314312710263,
+          "marginal": 0.5136349119540177,
+          "joint_gain": 0.26369651931700866,
+          "max_single_feature": "size",
+          "max_single_auc": 0.6347317278797391,
+          "flow_iat_single_auc": 0.5615214431102472,
+          "class": "complex_joint_dependent"
+        }
+      ]
+    },
+    {
+      "mapping": "fixed",
+      "tag": "CIC_Bot",
+      "benign_complexity": {
+        "occupied": 251,
+        "occ_frac": 0.2451171875,
+        "reach_tv05": 8,
+        "reach_tv01": 10,
+        "cum_energy_r3": 0.914856351922758
+      },
+      "rows": [
+        {
+          "attack": "bot",
+          "n_attack": 286191,
+          "emp_joint": 0.8389396017637015,
+          "marginal": 0.2858105903516199,
+          "joint_gain": 0.5531290114120817,
+          "max_single_feature": "proto",
+          "max_single_auc": 0.3595546462591574,
+          "flow_iat_single_auc": 0.12508669320697238,
+          "class": "complex_joint_dependent"
+        }
+      ]
+    }
+  ],
+  "unsw_by_mapping": {
+    "M0_dinpkt": {
+      "mapping": "M0_dinpkt",
+      "tag": "UNSW",
+      "benign_complexity": {
+        "occupied": 173,
+        "occ_frac": 0.1689453125,
+        "reach_tv05": 12,
+        "reach_tv01": 14,
+        "cum_energy_r3": 0.7047232204892552
+      },
+      "rows": [
+        {
+          "attack": "Analysis",
+          "n_attack": 2677,
+          "emp_joint": 0.8478107134681074,
+          "marginal": 0.7743605964613369,
+          "joint_gain": 0.07345011700677051,
+          "max_single_feature": "proto",
+          "max_single_auc": 0.8346726740500395,
+          "flow_iat_single_auc": 0.8159562901419806,
+          "class": "simple_easy"
+        },
+        {
+          "attack": "Backdoor",
+          "n_attack": 2329,
+          "emp_joint": 0.9673401688350067,
+          "marginal": 0.8877768215900577,
+          "joint_gain": 0.07956334724494907,
+          "max_single_feature": "proto",
+          "max_single_auc": 0.8903887755377001,
+          "flow_iat_single_auc": 0.8238377921790547,
+          "class": "simple_easy"
+        },
+        {
+          "attack": "DoS",
+          "n_attack": 16353,
+          "emp_joint": 0.9178327898367443,
+          "marginal": 0.8352015127926091,
+          "joint_gain": 0.0826312770441352,
+          "max_single_feature": "proto",
+          "max_single_auc": 0.8476844225893408,
+          "flow_iat_single_auc": 0.7992359322772853,
+          "class": "simple_easy"
+        },
+        {
+          "attack": "Exploits",
+          "n_attack": 44525,
+          "emp_joint": 0.7912661859839276,
+          "marginal": 0.5377977138668342,
+          "joint_gain": 0.25346847211709345,
+          "max_single_feature": "flow_iat",
+          "max_single_auc": 0.6522070066416147,
+          "flow_iat_single_auc": 0.6522070066416147,
+          "class": "complex_joint_dependent"
+        },
+        {
+          "attack": "Fuzzers",
+          "n_attack": 24246,
+          "emp_joint": 0.6495730463051206,
+          "marginal": 0.5280584296139533,
+          "joint_gain": 0.12151461669116725,
+          "max_single_feature": "flow_iat",
+          "max_single_auc": 0.7001261697837421,
+          "flow_iat_single_auc": 0.7001261697837421,
+          "class": "feature_inadequate"
+        },
+        {
+          "attack": "Generic",
+          "n_attack": 58871,
+          "emp_joint": 0.9930290305399182,
+          "marginal": 0.8807926372257415,
+          "joint_gain": 0.11223639331417667,
+          "max_single_feature": "flow_iat",
+          "max_single_auc": 0.8724328586396385,
+          "flow_iat_single_auc": 0.8724328586396385,
+          "class": "simple_easy"
+        },
+        {
+          "attack": "Reconnaissance",
+          "n_attack": 13987,
+          "emp_joint": 0.8435641622880797,
+          "marginal": 0.5798891663872975,
+          "joint_gain": 0.26367499590078225,
+          "max_single_feature": "flow_iat",
+          "max_single_auc": 0.74016707342723,
+          "flow_iat_single_auc": 0.74016707342723,
+          "class": "complex_joint_dependent"
+        },
+        {
+          "attack": "Shellcode",
+          "n_attack": 1511,
+          "emp_joint": 0.7384511361208562,
+          "marginal": 0.5979197958860452,
+          "joint_gain": 0.14053134023481106,
+          "max_single_feature": "flow_iat",
+          "max_single_auc": 0.7117068999588243,
+          "flow_iat_single_auc": 0.7117068999588243,
+          "class": "feature_inadequate"
+        },
+        {
+          "attack": "Worms",
+          "n_attack": 174,
+          "emp_joint": 0.6961344647557229,
+          "marginal": 0.30275343404244975,
+          "joint_gain": 0.3933810307132732,
+          "max_single_feature": "size",
+          "max_single_auc": 0.71115967499208,
+          "flow_iat_single_auc": 0.560330202806557,
+          "class": "feature_inadequate"
+        },
+        {
+          "attack": "ALL",
+          "n_attack": 164673,
+          "emp_joint": 0.8623696065256871,
+          "marginal": 0.7011931694493417,
+          "joint_gain": 0.16117643707634532,
+          "max_single_feature": "flow_iat",
+          "max_single_auc": 0.7656040319217298,
+          "flow_iat_single_auc": 0.7656040319217298,
+          "class": "complex_joint_dependent"
+        }
+      ]
+    },
+    "M1_rate": {
+      "mapping": "M1_rate",
+      "tag": "UNSW",
+      "benign_complexity": {
+        "occupied": 201,
+        "occ_frac": 0.1962890625,
+        "reach_tv05": 11,
+        "reach_tv01": 14,
+        "cum_energy_r3": 0.6980944347034034
+      },
+      "rows": [
+        {
+          "attack": "Analysis",
+          "n_attack": 2677,
+          "emp_joint": 0.8647444121664121,
+          "marginal": 0.7755356446870416,
+          "joint_gain": 0.08920876747937045,
+          "max_single_feature": "proto",
+          "max_single_auc": 0.8346726740500395,
+          "flow_iat_single_auc": 0.40814666944308414,
+          "class": "simple_easy"
+        },
+        {
+          "attack": "Backdoor",
+          "n_attack": 2329,
+          "emp_joint": 0.9652396533169499,
+          "marginal": 0.8866970053859542,
+          "joint_gain": 0.07854264793099575,
+          "max_single_feature": "proto",
+          "max_single_auc": 0.8903887755377001,
+          "flow_iat_single_auc": 0.42230926469776464,
+          "class": "simple_easy"
+        },
+        {
+          "attack": "DoS",
+          "n_attack": 16353,
+          "emp_joint": 0.9109740440717032,
+          "marginal": 0.834158220090549,
+          "joint_gain": 0.07681582398115427,
+          "max_single_feature": "proto",
+          "max_single_auc": 0.8476844225893408,
+          "flow_iat_single_auc": 0.44880064921386825,
+          "class": "simple_easy"
+        },
+        {
+          "attack": "Exploits",
+          "n_attack": 44525,
+          "emp_joint": 0.7614141852033542,
+          "marginal": 0.5344975292745681,
+          "joint_gain": 0.22691665592878618,
+          "max_single_feature": "size",
+          "max_single_auc": 0.6154374423356699,
+          "flow_iat_single_auc": 0.5694955777406685,
+          "class": "complex_joint_dependent"
+        },
+        {
+          "attack": "Fuzzers",
+          "n_attack": 24246,
+          "emp_joint": 0.6398363991705475,
+          "marginal": 0.5380357928960613,
+          "joint_gain": 0.10180060627448617,
+          "max_single_feature": "size",
+          "max_single_auc": 0.5513757135189428,
+          "flow_iat_single_auc": 0.5069947485781581,
+          "class": "feature_inadequate"
+        },
+        {
+          "attack": "Generic",
+          "n_attack": 58871,
+          "emp_joint": 0.9927354868841483,
+          "marginal": 0.8806062153947639,
+          "joint_gain": 0.11212927148938434,
+          "max_single_feature": "size",
+          "max_single_auc": 0.8559949609285786,
+          "flow_iat_single_auc": 0.38200011170248,
+          "class": "simple_easy"
+        },
+        {
+          "attack": "Reconnaissance",
+          "n_attack": 13987,
+          "emp_joint": 0.8441518861666175,
+          "marginal": 0.602428746122239,
+          "joint_gain": 0.24172314004437856,
+          "max_single_feature": "size",
+          "max_single_auc": 0.6668497418690127,
+          "flow_iat_single_auc": 0.4248763297480169,
+          "class": "complex_joint_dependent"
+        },
+        {
+          "attack": "Shellcode",
+          "n_attack": 1511,
+          "emp_joint": 0.7691653985725411,
+          "marginal": 0.5952623783662055,
+          "joint_gain": 0.17390302020633552,
+          "max_single_feature": "proto",
+          "max_single_auc": 0.6021481454792023,
+          "flow_iat_single_auc": 0.5278058392665701,
+          "class": "complex_joint_dependent"
+        },
+        {
+          "attack": "Worms",
+          "n_attack": 174,
+          "emp_joint": 0.756388144947633,
+          "marginal": 0.28834267053419993,
+          "joint_gain": 0.468045474413433,
+          "max_single_feature": "size",
+          "max_single_auc": 0.71115967499208,
+          "flow_iat_single_auc": 0.6438228638449494,
+          "class": "complex_joint_dependent"
+        },
+        {
+          "attack": "ALL",
+          "n_attack": 164673,
+          "emp_joint": 0.8527194266926019,
+          "marginal": 0.7034783261489198,
+          "joint_gain": 0.14924110054368211,
+          "max_single_feature": "size",
+          "max_single_auc": 0.7096550123937692,
+          "flow_iat_single_auc": 0.4639850054518162,
+          "class": "simple_easy"
+        }
+      ]
+    },
+    "M2_sinpkt_dinpkt_mean": {
+      "mapping": "M2_sinpkt_dinpkt_mean",
+      "tag": "UNSW",
+      "benign_complexity": {
+        "occupied": 174,
+        "occ_frac": 0.169921875,
+        "reach_tv05": 7,
+        "reach_tv01": 10,
+        "cum_energy_r3": 0.7946888171780269
+      },
+      "rows": [
+        {
+          "attack": "Analysis",
+          "n_attack": 2677,
+          "emp_joint": 0.8745085634640982,
+          "marginal": 0.7758802914038733,
+          "joint_gain": 0.09862827206022495,
+          "max_single_feature": "proto",
+          "max_single_auc": 0.8346726740500395,
+          "flow_iat_single_auc": 0.37383964732446867,
+          "class": "simple_easy"
+        },
+        {
+          "attack": "Backdoor",
+          "n_attack": 2329,
+          "emp_joint": 0.965496780626354,
+          "marginal": 0.8861804501098306,
+          "joint_gain": 0.07931633051652343,
+          "max_single_feature": "proto",
+          "max_single_auc": 0.8903887755377001,
+          "flow_iat_single_auc": 0.3757718070496726,
+          "class": "simple_easy"
+        },
+        {
+          "attack": "DoS",
+          "n_attack": 16353,
+          "emp_joint": 0.9176055118558466,
+          "marginal": 0.8327989630185417,
+          "joint_gain": 0.08480654883730487,
+          "max_single_feature": "proto",
+          "max_single_auc": 0.8476844225893408,
+          "flow_iat_single_auc": 0.37383964732446867,
+          "class": "simple_easy"
+        },
+        {
+          "attack": "Exploits",
+          "n_attack": 44525,
+          "emp_joint": 0.7912762415906196,
+          "marginal": 0.5315004537681066,
+          "joint_gain": 0.259775787822513,
+          "max_single_feature": "size",
+          "max_single_auc": 0.6154374423356699,
+          "flow_iat_single_auc": 0.37390702520206553,
+          "class": "complex_joint_dependent"
+        },
+        {
+          "attack": "Fuzzers",
+          "n_attack": 24246,
+          "emp_joint": 0.6884737522612497,
+          "marginal": 0.5382711216577043,
+          "joint_gain": 0.15020263060354544,
+          "max_single_feature": "size",
+          "max_single_auc": 0.5513757135189428,
+          "flow_iat_single_auc": 0.37383964732446867,
+          "class": "feature_inadequate"
+        },
+        {
+          "attack": "Generic",
+          "n_attack": 58871,
+          "emp_joint": 0.9934420362106872,
+          "marginal": 0.8805277269267786,
+          "joint_gain": 0.11291430928390855,
+          "max_single_feature": "size",
+          "max_single_auc": 0.8559949609285786,
+          "flow_iat_single_auc": 0.37383964732446867,
+          "class": "simple_easy"
+        },
+        {
+          "attack": "Reconnaissance",
+          "n_attack": 13987,
+          "emp_joint": 0.8627675800592555,
+          "marginal": 0.6052692184971578,
+          "joint_gain": 0.2574983615620977,
+          "max_single_feature": "size",
+          "max_single_auc": 0.6668497418690127,
+          "flow_iat_single_auc": 0.37383964732446867,
+          "class": "complex_joint_dependent"
+        },
+        {
+          "attack": "Shellcode",
+          "n_attack": 1511,
+          "emp_joint": 0.7560225170725718,
+          "marginal": 0.5908872253273493,
+          "joint_gain": 0.16513529174522257,
+          "max_single_feature": "proto",
+          "max_single_auc": 0.6021481454792023,
+          "flow_iat_single_auc": 0.37383964732446867,
+          "class": "complex_joint_dependent"
+        },
+        {
+          "attack": "Worms",
+          "n_attack": 174,
+          "emp_joint": 0.7687012824901839,
+          "marginal": 0.2874373760755907,
+          "joint_gain": 0.48126390641459316,
+          "max_single_feature": "size",
+          "max_single_auc": 0.71115967499208,
+          "flow_iat_single_auc": 0.37383964732446867,
+          "class": "complex_joint_dependent"
+        },
+        {
+          "attack": "ALL",
+          "n_attack": 164673,
+          "emp_joint": 0.8705019882949697,
+          "marginal": 0.7027380301707428,
+          "joint_gain": 0.16776395812422695,
+          "max_single_feature": "size",
+          "max_single_auc": 0.7096550123937692,
+          "flow_iat_single_auc": 0.3738851921314498,
+          "class": "complex_joint_dependent"
+        }
+      ]
+    }
+  },
+  "summary_by_mapping": {
+    "M0_dinpkt": {
+      "joint_gt_marginal": "12/12",
+      "joint_gt_marginal_count": 12,
+      "denom": 12,
+      "unsw_all_joint_gain": 0.16117643707634532,
+      "unsw_all_emp": 0.8623696065256871,
+      "unsw_all_marginal": 0.7011931694493417,
+      "benign_reach_tv05": 12,
+      "benign_occ_frac": 0.1689453125
+    },
+    "M1_rate": {
+      "joint_gt_marginal": "12/12",
+      "joint_gt_marginal_count": 12,
+      "denom": 12,
+      "unsw_all_joint_gain": 0.14924110054368211,
+      "unsw_all_emp": 0.8527194266926019,
+      "unsw_all_marginal": 0.7034783261489198,
+      "benign_reach_tv05": 11,
+      "benign_occ_frac": 0.1962890625
+    },
+    "M2_sinpkt_dinpkt_mean": {
+      "joint_gt_marginal": "12/12",
+      "joint_gt_marginal_count": 12,
+      "denom": 12,
+      "unsw_all_joint_gain": 0.16776395812422695,
+      "unsw_all_emp": 0.8705019882949697,
+      "unsw_all_marginal": 0.7027380301707428,
+      "benign_reach_tv05": 7,
+      "benign_occ_frac": 0.169921875
+    }
+  },
+  "per_attack_across_mappings": [
+    {
+      "attack": "Analysis",
+      "joint_gain": {
+        "M0_dinpkt": 0.07345011700677051,
+        "M1_rate": 0.08920876747937045,
+        "M2_sinpkt_dinpkt_mean": 0.09862827206022495
+      },
+      "emp_joint": {
+        "M0_dinpkt": 0.8478107134681074,
+        "M1_rate": 0.8647444121664121,
+        "M2_sinpkt_dinpkt_mean": 0.8745085634640982
+      },
+      "class": {
+        "M0_dinpkt": "simple_easy",
+        "M1_rate": "simple_easy",
+        "M2_sinpkt_dinpkt_mean": "simple_easy"
+      },
+      "gain_range": 0.025178155053454443,
+      "all_positive": true,
+      "class_stable": true
+    },
+    {
+      "attack": "Backdoor",
+      "joint_gain": {
+        "M0_dinpkt": 0.07956334724494907,
+        "M1_rate": 0.07854264793099575,
+        "M2_sinpkt_dinpkt_mean": 0.07931633051652343
+      },
+      "emp_joint": {
+        "M0_dinpkt": 0.9673401688350067,
+        "M1_rate": 0.9652396533169499,
+        "M2_sinpkt_dinpkt_mean": 0.965496780626354
+      },
+      "class": {
+        "M0_dinpkt": "simple_easy",
+        "M1_rate": "simple_easy",
+        "M2_sinpkt_dinpkt_mean": "simple_easy"
+      },
+      "gain_range": 0.0010206993139533216,
+      "all_positive": true,
+      "class_stable": true
+    },
+    {
+      "attack": "DoS",
+      "joint_gain": {
+        "M0_dinpkt": 0.0826312770441352,
+        "M1_rate": 0.07681582398115427,
+        "M2_sinpkt_dinpkt_mean": 0.08480654883730487
+      },
+      "emp_joint": {
+        "M0_dinpkt": 0.9178327898367443,
+        "M1_rate": 0.9109740440717032,
+        "M2_sinpkt_dinpkt_mean": 0.9176055118558466
+      },
+      "class": {
+        "M0_dinpkt": "simple_easy",
+        "M1_rate": "simple_easy",
+        "M2_sinpkt_dinpkt_mean": "simple_easy"
+      },
+      "gain_range": 0.0079907248561506,
+      "all_positive": true,
+      "class_stable": true
+    },
+    {
+      "attack": "Exploits",
+      "joint_gain": {
+        "M0_dinpkt": 0.25346847211709345,
+        "M1_rate": 0.22691665592878618,
+        "M2_sinpkt_dinpkt_mean": 0.259775787822513
+      },
+      "emp_joint": {
+        "M0_dinpkt": 0.7912661859839276,
+        "M1_rate": 0.7614141852033542,
+        "M2_sinpkt_dinpkt_mean": 0.7912762415906196
+      },
+      "class": {
+        "M0_dinpkt": "complex_joint_dependent",
+        "M1_rate": "complex_joint_dependent",
+        "M2_sinpkt_dinpkt_mean": "complex_joint_dependent"
+      },
+      "gain_range": 0.0328591318937268,
+      "all_positive": true,
+      "class_stable": true
+    },
+    {
+      "attack": "Fuzzers",
+      "joint_gain": {
+        "M0_dinpkt": 0.12151461669116725,
+        "M1_rate": 0.10180060627448617,
+        "M2_sinpkt_dinpkt_mean": 0.15020263060354544
+      },
+      "emp_joint": {
+        "M0_dinpkt": 0.6495730463051206,
+        "M1_rate": 0.6398363991705475,
+        "M2_sinpkt_dinpkt_mean": 0.6884737522612497
+      },
+      "class": {
+        "M0_dinpkt": "feature_inadequate",
+        "M1_rate": "feature_inadequate",
+        "M2_sinpkt_dinpkt_mean": "feature_inadequate"
+      },
+      "gain_range": 0.04840202432905927,
+      "all_positive": true,
+      "class_stable": true
+    },
+    {
+      "attack": "Generic",
+      "joint_gain": {
+        "M0_dinpkt": 0.11223639331417667,
+        "M1_rate": 0.11212927148938434,
+        "M2_sinpkt_dinpkt_mean": 0.11291430928390855
+      },
+      "emp_joint": {
+        "M0_dinpkt": 0.9930290305399182,
+        "M1_rate": 0.9927354868841483,
+        "M2_sinpkt_dinpkt_mean": 0.9934420362106872
+      },
+      "class": {
+        "M0_dinpkt": "simple_easy",
+        "M1_rate": "simple_easy",
+        "M2_sinpkt_dinpkt_mean": "simple_easy"
+      },
+      "gain_range": 0.0007850377945242126,
+      "all_positive": true,
+      "class_stable": true
+    },
+    {
+      "attack": "Reconnaissance",
+      "joint_gain": {
+        "M0_dinpkt": 0.26367499590078225,
+        "M1_rate": 0.24172314004437856,
+        "M2_sinpkt_dinpkt_mean": 0.2574983615620977
+      },
+      "emp_joint": {
+        "M0_dinpkt": 0.8435641622880797,
+        "M1_rate": 0.8441518861666175,
+        "M2_sinpkt_dinpkt_mean": 0.8627675800592555
+      },
+      "class": {
+        "M0_dinpkt": "complex_joint_dependent",
+        "M1_rate": "complex_joint_dependent",
+        "M2_sinpkt_dinpkt_mean": "complex_joint_dependent"
+      },
+      "gain_range": 0.02195185585640369,
+      "all_positive": true,
+      "class_stable": true
+    },
+    {
+      "attack": "Shellcode",
+      "joint_gain": {
+        "M0_dinpkt": 0.14053134023481106,
+        "M1_rate": 0.17390302020633552,
+        "M2_sinpkt_dinpkt_mean": 0.16513529174522257
+      },
+      "emp_joint": {
+        "M0_dinpkt": 0.7384511361208562,
+        "M1_rate": 0.7691653985725411,
+        "M2_sinpkt_dinpkt_mean": 0.7560225170725718
+      },
+      "class": {
+        "M0_dinpkt": "feature_inadequate",
+        "M1_rate": "complex_joint_dependent",
+        "M2_sinpkt_dinpkt_mean": "complex_joint_dependent"
+      },
+      "gain_range": 0.03337167997152446,
+      "all_positive": true,
+      "class_stable": false
+    },
+    {
+      "attack": "Worms",
+      "joint_gain": {
+        "M0_dinpkt": 0.3933810307132732,
+        "M1_rate": 0.468045474413433,
+        "M2_sinpkt_dinpkt_mean": 0.48126390641459316
+      },
+      "emp_joint": {
+        "M0_dinpkt": 0.6961344647557229,
+        "M1_rate": 0.756388144947633,
+        "M2_sinpkt_dinpkt_mean": 0.7687012824901839
+      },
+      "class": {
+        "M0_dinpkt": "feature_inadequate",
+        "M1_rate": "complex_joint_dependent",
+        "M2_sinpkt_dinpkt_mean": "complex_joint_dependent"
+      },
+      "gain_range": 0.08788287570131997,
+      "all_positive": true,
+      "class_stable": false
+    },
+    {
+      "attack": "ALL",
+      "joint_gain": {
+        "M0_dinpkt": 0.16117643707634532,
+        "M1_rate": 0.14924110054368211,
+        "M2_sinpkt_dinpkt_mean": 0.16776395812422695
+      },
+      "emp_joint": {
+        "M0_dinpkt": 0.8623696065256871,
+        "M1_rate": 0.8527194266926019,
+        "M2_sinpkt_dinpkt_mean": 0.8705019882949697
+      },
+      "class": {
+        "M0_dinpkt": "complex_joint_dependent",
+        "M1_rate": "simple_easy",
+        "M2_sinpkt_dinpkt_mean": "complex_joint_dependent"
+      },
+      "gain_range": 0.018522857580544838,
+      "all_positive": true,
+      "class_stable": false
+    }
+  ],
+  "robustness": {
+    "max_joint_gain_shift_across_mappings": 0.08788287570131997,
+    "any_joint_gt_marginal_broken": false,
+    "n_classification_flips": 3,
+    "flips": [
+      {
+        "attack": "Shellcode",
+        "class_by_mapping": {
+          "M0_dinpkt": "feature_inadequate",
+          "M1_rate": "complex_joint_dependent",
+          "M2_sinpkt_dinpkt_mean": "complex_joint_dependent"
+        }
+      },
+      {
+        "attack": "Worms",
+        "class_by_mapping": {
+          "M0_dinpkt": "feature_inadequate",
+          "M1_rate": "complex_joint_dependent",
+          "M2_sinpkt_dinpkt_mean": "complex_joint_dependent"
+        }
+      },
+      {
+        "attack": "ALL",
+        "class_by_mapping": {
+          "M0_dinpkt": "complex_joint_dependent",
+          "M1_rate": "simple_easy",
+          "M2_sinpkt_dinpkt_mean": "complex_joint_dependent"
+        }
+      }
+    ]
+  },
+  "note": "사실 측정만. 판정은 웹 AI. QCBM 학습 없음. 기존 소스/데이터/결과 무수정."
+}

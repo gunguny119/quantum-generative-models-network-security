@@ -1,0 +1,113 @@
+{
+ "note": "B→A 2층 실증. 층1 문헌(실 contextuality→보안우위), 층2 실데이터 CF>0(KCBS 실측)+후보 게이트. 인공데이터 증거 아님(self-check만). 측정전용·무설치·단정금지·이 세팅 한정·우위주장 없음.",
+ "self_check": {
+  "frustrated_CF": 1.0,
+  "consistent_CF": 0.0,
+  "valid": true
+ },
+ "real_data_CF": {
+  "source": "PMC8827658 / Sci.Adv. abk1660 (loophole-free KCBS, 2 ion species)",
+  "correlations": {
+   "01": 0.6164,
+   "12": 0.625,
+   "23": 0.6678,
+   "30": -0.6166
+  },
+  "C_value": 2.5258000000000003,
+  "noncontextual_bound": 2.0,
+  "CF": 0.2628999999999999,
+  "NCF": 0.7371000000000001,
+  "no_sig_L1": 0.0,
+  "note": "실측 상관→균등marginal 재구성 empirical model. C=2.526>2=contextual. no-sig≈0(state-indep)."
+ },
+ "literature": [
+  {
+   "ref": "arXiv:1512.02256 (Troupe & Farinholt 2015)",
+   "system": "단일 큐빗 prepare&measure QKD(이론 프로토콜)",
+   "ctx_measure": "Spekkens 준비/측정 contextuality(weak-value POVM)",
+   "advantage": "키레이트 ≥ BB84 + detector 공격 면역",
+   "real_data": "이론(실험 미포함)",
+   "no_signalling": "prepare&measure(비국소성 아님)"
+  },
+  {
+   "ref": "Nature Sci.Rep. srep01627 (2013)",
+   "system": "실험(광자/이온계) 단일계 contextuality",
+   "ctx_measure": "KS/KCBS 부등식 위반",
+   "advantage": "인증된 양자난수(min-entropy 하한)",
+   "real_data": "예 (실험 데이터)",
+   "no_signalling": "단일계 state-(in)dependent contextuality"
+  },
+  {
+   "ref": "Phys.Rev.Applied 13,034077 (2020)",
+   "system": "실험 단일계",
+   "ctx_measure": "contextuality 부등식",
+   "advantage": "Randomness Expansion(보안 난수 확장)",
+   "real_data": "예",
+   "no_signalling": "contextuality(단일계)"
+  },
+  {
+   "ref": "Sci.Adv. abk1660 / PMC8827658 (2022)",
+   "system": "실험: 두 원자이온종 (loophole-free)",
+   "ctx_measure": "KCBS(주기형) contextuality, C=2.526>2",
+   "advantage": "상태독립 contextuality 실증(난수/보안 기반)",
+   "real_data": "예 (본 도구서 CF>0 재확인)",
+   "no_signalling": "loophole-free·state-independent(무신호 유사)"
+  },
+  {
+   "ref": "arXiv:2601.08392 (on-chip semi-DI QRNG)",
+   "system": "실험: on-chip 광자계",
+   "ctx_measure": "contextuality(semi-DI)",
+   "advantage": "genuine randomness 21.7 bit/s, min-entropy 0.077/round",
+   "real_data": "예",
+   "no_signalling": "semi-device-independent"
+  }
+ ],
+ "candidates": [
+  {
+   "cand": "1) loophole-free Bell test raw (NIST-2015)",
+   "gate_a_public": "공개(NIST 저장소+AWS, Zenodo 15655461/15655509 분석). 타임태그 3×8B 정수 raw",
+   "gate_b_CF": ">0 원리적(CHSH 위반, 비국소성)",
+   "gate_c_perf": "부적합: 물리 측정데이터(양자상태), 생성모델 KL/AUC 과제 아님",
+   "gate_d_causal": "부적합(동)",
+   "verdict": "탈락: 도메인 불일치(c/d 축)"
+  },
+  {
+   "cand": "2) KCBS contextuality (2-species ion; ETH TIQI public / Sci.Adv.)",
+   "gate_a_public": "공개(논문 Table1 실측 상관; ETH tiqi.ethz.ch 공개 raw)",
+   "gate_b_CF": ">0 (본 도구 CF-LP로 실측 상관서 확인)",
+   "gate_c_perf": "부적합: 물리 측정데이터, 보안 생성/탐지 데이터셋 아님",
+   "gate_d_causal": "부적합",
+   "verdict": "CF>0 실증(b통과), 그러나 c/d 축 도메인 불일치"
+  },
+  {
+   "cand": "3) 공개 QRNG 비트스트림(NIST beacon 등)",
+   "gate_a_public": "공개(비트스트림)",
+   "gate_b_CF": "contextuality 잔존 미보장(후처리된 비트=구조 소거)",
+   "gate_c_perf": "부적합",
+   "gate_d_causal": "부적합",
+   "verdict": "탈락: CF 검증 불가(후처리)+도메인"
+  },
+  {
+   "cand": "4) 공개 QKD sifted-key/QBER",
+   "gate_a_public": "일부 공개/요청필요",
+   "gate_b_CF": "키/QBER는 CF 직접측정 대상 아님",
+   "gate_c_perf": "부적합",
+   "gate_d_causal": "부적합",
+   "verdict": "탈락: CF 측정대상 아님+도메인"
+  },
+  {
+   "cand": "5) IBM Q 등 공개 contextuality 시나리오",
+   "gate_a_public": "재현 가능하나 계정/실행 필요(비-정적 다운로드)",
+   "gate_b_CF": ">0 가능",
+   "gate_c_perf": "부적합(측정 시나리오)",
+   "gate_d_causal": "부적합",
+   "verdict": "탈락: 도메인 불일치(+실행 필요)"
+  }
+ ],
+ "verdict": {
+  "layer1": "확보(원리축): 실제 양자실험서 contextuality(KCBS/Bell 위반)→보안우위(인증난수·키레이트≥BB84·detector면역·randomness expansion)가 문헌에 확립. 단 우위축=**DI-난수/키레이트**(양자 측정/암호), 우리 프로젝트의 **생성모델 KL/AUC 축과 다름**.",
+  "layer2": "실제 contextual 공개데이터(KCBS/Bell) 존재·다운로드 가능(a통과), CF>0 실측 확인(b통과). 그러나 이들은 **양자물리 측정데이터**라 (c)양자>고전 생성/탐지 성능·(d)contextual 제거 인과 축과 **도메인 불일치** → 우리 축에서의 실증은 미완(실 contextual 보안-탐지 데이터셋 부재).",
+  "synthesis": "B→A는 **원리로서 확립**(문헌 인용)되나 **classical 보안-데이터 생성모델링 축으로 전이 안 됨**: contextuality는 양자 측정 시나리오의 성질이고, classical 보안데이터는 non-contextual(gate1 CF=0). 따라서 대우 'CF>0→우위'는 양자물리/암호에서 참이나, malware/traffic 같은 classical 데이터엔 적용 대상(CF>0 데이터)이 없어 QCBM 무우위 결론과 정합. 단정 금지·이 세팅 한정·우위주장 없음.",
+  "precedent_check": "1512.02256은 정확히 우리 생성모델 주장을 replicate 아님(QKD 키레이트 축). 우리 축(고차 분포 생성 KL)의 contextual-우위 실증은 문헌서 미발견 → 우리가 채울 자리이나, 실 contextual 보안-탐지 데이터 부재가 병목."
+ }
+}

@@ -1,0 +1,90 @@
+{
+  "eval": "s=-log p_benign(x)+1e-12, attack=positive, experiment2.auc_score (raw MWU)",
+  "marginal_def_12_11bit": "비트독립 곱 (train_qcbm_iat_b2.marginal_dist)",
+  "marginal_def_pairs": "두 feature 독립 곱 (feature-level)",
+  "verify_12bit": {
+    "emp_joint": 0.9258479792817742,
+    "marginal": 0.8740609250581858,
+    "occupied": 94,
+    "expected": {
+      "emp_joint": 0.9258,
+      "marginal": 0.8741,
+      "occ": 94
+    }
+  },
+  "control_remove_psh": {
+    "full_12bit": {
+      "emp_joint": 0.9258479792817742,
+      "marginal": 0.8740609250581858,
+      "gain": 0.051787054223588425,
+      "occupied": 94,
+      "nstates": 4096
+    },
+    "nopsh_11bit": {
+      "emp_joint": 0.7773159817200459,
+      "marginal": 0.5136187819969457,
+      "gain": 0.26369719972310024,
+      "occupied": 90,
+      "nstates": 2048
+    }
+  },
+  "joint_contribution": {
+    "marginal": 0.8740609250581858,
+    "emp_joint": 0.9258479792817742,
+    "psh_solo": 0.8778840321392178,
+    "emp_minus_marginal": 0.051787054223588425,
+    "emp_minus_psh_solo": 0.04796394714255636,
+    "marginal_minus_psh_solo": -0.003823107081032062
+  },
+  "pairwise_interaction": [
+    {
+      "pair": "pshxsize",
+      "joint_auc": 0.8783832866853479,
+      "marginal_auc": 0.8791220136144778,
+      "gain": -0.000738726929129907
+    },
+    {
+      "pair": "pshxfwd_iat",
+      "joint_auc": 0.9366007183143829,
+      "marginal_auc": 0.8925599068089747,
+      "gain": 0.04404081150540817
+    },
+    {
+      "pair": "pshxflow_iat",
+      "joint_auc": 0.9116064843983163,
+      "marginal_auc": 0.8823237812321411,
+      "gain": 0.029282703166175206
+    },
+    {
+      "pair": "sizexfwd_iat",
+      "joint_auc": 0.542197487863011,
+      "marginal_auc": 0.6366358558504064,
+      "gain": -0.09443836798739536
+    },
+    {
+      "pair": "sizexflow_iat",
+      "joint_auc": 0.49837762354267157,
+      "marginal_auc": 0.6375173274260084,
+      "gain": -0.13913970388333685
+    },
+    {
+      "pair": "fwd_iatxflow_iat",
+      "joint_auc": 0.6501261908655198,
+      "marginal_auc": 0.5557589416658445,
+      "gain": 0.09436724919967532
+    },
+    {
+      "pair": "protoxsize",
+      "joint_auc": 0.7522269288403428,
+      "marginal_auc": 0.6318753906620369,
+      "gain": 0.1203515381783059
+    }
+  ],
+  "max_interaction_pair": {
+    "pair": "protoxsize",
+    "joint_auc": 0.7522269288403428,
+    "marginal_auc": 0.6318753906620369,
+    "gain": 0.1203515381783059
+  },
+  "note": "사실 측정만. 판정(joint 진짜 가치 vs psh artifact)은 웹 AI. QCBM 학습 없음."
+}

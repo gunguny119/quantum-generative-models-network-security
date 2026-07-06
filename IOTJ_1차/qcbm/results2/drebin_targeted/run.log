@@ -1,0 +1,40 @@
+=== self-check (잣대 일관성) ===
+[07:36:52] CSV 로드: ['data/unsw_nb15_training-set.csv', 'data/unsw_nb15_testing-set.csv']
+[07:36:52] dropna 제거=0 | benign(Normal)=93000  attack(ALL,label1)=164673
+[07:36:52] UNSW 인코딩(10bit): 점유 174/1024 (16.99%) | benign train=65099 test=27901 attack=164673
+  pooling highvar k12 재현=0.218 (기대 0.218) | 합성 mono=True | flow UNSW=0.270 (기대 0.270)
+
+=== (b) 표적 greedy 탐색 (selA 선정 → selB holdout, X_test drift) ===
+  [표적] split0 k10 | selA ≥3차=35.2% → selB(holdout)=33.9% (gap 1.3%) | test(drift)=14.1% | occA=104 occB=104 (3s)
+  [표적] split0 k12 | selA ≥3차=41.4% → selB(holdout)=40.8% (gap 0.6%) | test(drift)=18.1% | occA=180 occB=172 (13s)
+  [표적] split1 k10 | selA ≥3차=60.9% → selB(holdout)=64.1% (gap -3.2%) | test(drift)=32.5% | occA=133 occB=132 (2s)
+  [표적] split1 k12 | selA ≥3차=58.4% → selB(holdout)=60.0% (gap -1.7%) | test(drift)=27.6% | occA=188 occB=182 (4s)
+  [표적] split2 k10 | selA ≥3차=58.1% → selB(holdout)=61.2% (gap -3.1%) | test(drift)=18.7% | occA=130 occB=135 (2s)
+  [표적] split2 k12 | selA ≥3차=54.9% → selB(holdout)=57.2% (gap -2.3%) | test(drift)=20.8% | occA=190 occB=202 (5s)
+
+=== (a) per-family 분해 (고정 highvar 부분집합, 가족별 vs pooling) ===
+  [per-family] split0 k10 | pooling ≥3차=15.2% | 가족(n≥150)=5개: f1=9%(n666,occ55) f2=14%(n312,occ40) f3=6%(n201,occ35) f4=11%(n329,occ43) f5=6%(n152,occ12)
+  [per-family] split0 k12 | pooling ≥3차=21.8% | 가족(n≥150)=5개: f1=18%(n666,occ89) f2=25%(n312,occ63) f3=11%(n201,occ50) f4=13%(n329,occ54) f5=4%(n152,occ14)
+  [per-family] split1 k10 | pooling ≥3차=15.2% | 가족(n≥150)=5개: f0=7%(n497,occ12) f2=12%(n564,occ43) f3=12%(n300,occ55) f4=11%(n329,occ43) f5=6%(n152,occ12)
+  [per-family] split1 k12 | pooling ≥3차=21.8% | 가족(n≥150)=5개: f0=3%(n497,occ18) f2=21%(n564,occ75) f3=16%(n300,occ84) f4=13%(n329,occ54) f5=4%(n152,occ14)
+  [per-family] split2 k10 | pooling ≥3차=15.2% | 가족(n≥150)=5개: f0=8%(n453,occ12) f1=9%(n666,occ55) f3=8%(n274,occ47) f4=11%(n329,occ43) f5=6%(n152,occ12)
+  [per-family] split2 k12 | pooling ≥3차=21.8% | 가족(n≥150)=5개: f0=4%(n453,occ18) f1=18%(n666,occ89) f3=12%(n274,occ71) f4=13%(n329,occ54) f5=4%(n152,occ14)
+
+[저장] results2/drebin_targeted/drebin_targeted.json
+/home/elicer/IOTJ/qcbm/tools/diagnose_drebin_targeted.py:276: UserWarning: Glyph 51068 (\N{HANGUL SYLLABLE IL}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/diagnose_drebin_targeted.py:276: UserWarning: Glyph 48152 (\N{HANGUL SYLLABLE BAN}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/diagnose_drebin_targeted.py:276: UserWarning: Glyph 49440 (\N{HANGUL SYLLABLE SEON}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/diagnose_drebin_targeted.py:276: UserWarning: Glyph 51221 (\N{HANGUL SYLLABLE JEONG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/diagnose_drebin_targeted.py:277: UserWarning: Glyph 51068 (\N{HANGUL SYLLABLE IL}) missing from font(s) DejaVu Sans.
+  plt.savefig(OUT_PNG, dpi=125); plt.close()
+/home/elicer/IOTJ/qcbm/tools/diagnose_drebin_targeted.py:277: UserWarning: Glyph 48152 (\N{HANGUL SYLLABLE BAN}) missing from font(s) DejaVu Sans.
+  plt.savefig(OUT_PNG, dpi=125); plt.close()
+/home/elicer/IOTJ/qcbm/tools/diagnose_drebin_targeted.py:277: UserWarning: Glyph 49440 (\N{HANGUL SYLLABLE SEON}) missing from font(s) DejaVu Sans.
+  plt.savefig(OUT_PNG, dpi=125); plt.close()
+/home/elicer/IOTJ/qcbm/tools/diagnose_drebin_targeted.py:277: UserWarning: Glyph 51221 (\N{HANGUL SYLLABLE JEONG}) missing from font(s) DejaVu Sans.
+  plt.savefig(OUT_PNG, dpi=125); plt.close()
+[저장] results2/drebin_targeted/drebin_targeted.png

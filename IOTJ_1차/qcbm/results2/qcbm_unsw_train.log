@@ -1,0 +1,227 @@
+[03:20:37] ##############################################################################
+[03:20:37] UNSW QCBM(MMD) 본 학습 — restart 체크포인트 복원 (NWORKERS=8, RESTARTS=16, ckpt=results2/unsw_ckpt)
+[03:20:37] ##############################################################################
+[03:20:37] CSV 로드: ['data/unsw_nb15_training-set.csv', 'data/unsw_nb15_testing-set.csv']
+[03:20:37] dropna 제거=0 | benign(Normal)=93000  attack(ALL,label1)=164673
+[03:20:37] UNSW 인코딩(10bit): 점유 174/1024 (16.99%) | benign train=65099 test=27901 attack=164673
+[03:20:37] [emp_joint 이상탐지] AUC=0.8705 | mean p(x): benign=2.638e-02 vs attack=5.861e-03 (배율 4.50x)
+[03:20:37] [emp_joint 이상탐지] mean log p(x): benign=-4.046 vs attack=-17.787 (격차 13.741) | Youden J=0.609
+[03:20:37] [marginal 이상탐지] AUC=0.7027 | mean p(x): benign=2.191e-03 vs attack=1.392e-03 (배율 1.57x)
+[03:20:37] [marginal 이상탐지] mean log p(x): benign=-6.314 vs attack=-7.252 (격차 0.938) | Youden J=0.487
+[03:20:37] [정합검증] emp_joint AUC=0.8705 (기준 0.8705) | marginal AUC=0.7027 (기준 0.7027)
+[03:20:37] [정합검증] OK — UNSW 10bit 인코딩이 교차 진단(M2)과 일치.
+[03:20:37] [재개 스캔] 완료=0 [] | 남은 restart=16 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+[03:20:38] MMD 커널 build_kernel(10) 준비 완료.
+[03:20:38] ------------------------------------------------------------------------------
+[03:20:38] [smoke] 1 restart x 50 epoch 시간 측정 (seed=9999, 결과 폐기)
+[03:20:39]   [smoke seed 9999] ep    0/50  MMD^2=3.46410e-02  |grad|=9.811e-03  (1.6s)
+[03:21:39]   [smoke seed 9999] ep   49/50  MMD^2=7.88406e-03  |grad|=2.271e-03  (61.2s)
+[03:21:39]   [smoke seed 9999] 완료 MMD^2=7.8841e-03 TV=0.6307 |grad|_fin=2.271e-03 (61.2s)
+[03:21:39] [smoke] wall=61.3s (1.226s/epoch) | waves=2(NWORKERS=8)
+[03:21:39] [decision] 확정 EPOCHS=300 (추정 full=846s=0.24h)
+[03:21:39] [--smoke-only] full 미실행. EPOCHS 결정=300 저장 완료.
+[03:21:39] DONE(smoke-only)
+[03:22:00] ##############################################################################
+[03:22:00] UNSW QCBM(MMD) 본 학습 — restart 체크포인트 복원 (NWORKERS=8, RESTARTS=16, ckpt=results2/unsw_ckpt)
+[03:22:00] ##############################################################################
+[03:22:00] CSV 로드: ['data/unsw_nb15_training-set.csv', 'data/unsw_nb15_testing-set.csv']
+[03:22:00] dropna 제거=0 | benign(Normal)=93000  attack(ALL,label1)=164673
+[03:22:00] UNSW 인코딩(10bit): 점유 174/1024 (16.99%) | benign train=65099 test=27901 attack=164673
+[03:22:00] [emp_joint 이상탐지] AUC=0.8705 | mean p(x): benign=2.638e-02 vs attack=5.861e-03 (배율 4.50x)
+[03:22:00] [emp_joint 이상탐지] mean log p(x): benign=-4.046 vs attack=-17.787 (격차 13.741) | Youden J=0.609
+[03:22:01] [marginal 이상탐지] AUC=0.7027 | mean p(x): benign=2.191e-03 vs attack=1.392e-03 (배율 1.57x)
+[03:22:01] [marginal 이상탐지] mean log p(x): benign=-6.314 vs attack=-7.252 (격차 0.938) | Youden J=0.487
+[03:22:01] [정합검증] emp_joint AUC=0.8705 (기준 0.8705) | marginal AUC=0.7027 (기준 0.7027)
+[03:22:01] [정합검증] OK — UNSW 10bit 인코딩이 교차 진단(M2)과 일치.
+[03:22:01] [재개 스캔] 완료=0 [] | 남은 restart=16 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+[03:22:01] [decision] 기존 결정 사용: EPOCHS=300 (results2/unsw_ckpt/decision.json)
+[03:22:01] MMD 커널 build_kernel(10) 준비 완료.
+[03:22:01] ==============================================================================
+[03:22:01] [full] 남은 16 restart 학습 시작 (EPOCHS=300, L=6, NWORKERS=8, 완료마다 ckpt저장)
+[03:22:02]   [qcbm_unsw seed  5] ep    0/300  MMD^2=3.94845e-02  |grad|=1.012e-02  (1.3s)
+[03:22:02]   [qcbm_unsw seed  0] ep    0/300  MMD^2=3.69112e-02  |grad|=1.340e-02  (1.4s)
+[03:22:02]   [qcbm_unsw seed  3] ep    0/300  MMD^2=3.62015e-02  |grad|=8.524e-03  (1.5s)
+[03:22:02]   [qcbm_unsw seed  1] ep    0/300  MMD^2=3.65877e-02  |grad|=1.033e-02  (1.5s)
+[03:22:03]   [qcbm_unsw seed  4] ep    0/300  MMD^2=3.67624e-02  |grad|=8.604e-03  (2.6s)
+[03:22:03]   [qcbm_unsw seed  7] ep    0/300  MMD^2=3.88308e-02  |grad|=1.015e-02  (2.6s)
+[03:22:03]   [qcbm_unsw seed  2] ep    0/300  MMD^2=3.76124e-02  |grad|=9.472e-03  (2.7s)
+[03:22:03]   [qcbm_unsw seed  6] ep    0/300  MMD^2=3.74954e-02  |grad|=8.377e-03  (2.7s)
+[03:23:04]   [qcbm_unsw seed  5] ep   50/300  MMD^2=1.26966e-02  |grad|=2.979e-03  (63.7s)
+[03:23:05]   [qcbm_unsw seed  0] ep   50/300  MMD^2=7.69863e-03  |grad|=1.393e-03  (63.9s)
+[03:23:05]   [qcbm_unsw seed  1] ep   50/300  MMD^2=8.11501e-03  |grad|=1.663e-03  (64.6s)
+[03:23:05]   [qcbm_unsw seed  3] ep   50/300  MMD^2=4.62612e-03  |grad|=1.486e-03  (64.6s)
+[03:23:57]   [qcbm_unsw seed  2] ep   50/300  MMD^2=4.93894e-03  |grad|=1.986e-03  (116.6s)
+[03:23:58]   [qcbm_unsw seed  6] ep   50/300  MMD^2=6.28189e-03  |grad|=2.275e-03  (116.9s)
+[03:24:06]   [qcbm_unsw seed  4] ep   50/300  MMD^2=7.14677e-03  |grad|=1.581e-03  (124.7s)
+[03:24:06]   [qcbm_unsw seed  7] ep   50/300  MMD^2=8.16892e-03  |grad|=2.676e-03  (125.0s)
+[03:24:07]   [qcbm_unsw seed  5] ep  100/300  MMD^2=4.69064e-03  |grad|=7.411e-04  (126.4s)
+[03:24:07]   [qcbm_unsw seed  0] ep  100/300  MMD^2=4.33613e-03  |grad|=5.934e-04  (126.7s)
+[03:24:08]   [qcbm_unsw seed  3] ep  100/300  MMD^2=3.71935e-03  |grad|=1.946e-04  (127.6s)
+[03:24:08]   [qcbm_unsw seed  1] ep  100/300  MMD^2=5.03725e-03  |grad|=8.038e-04  (127.6s)
+[03:24:59]   [qcbm_unsw seed  6] ep  100/300  MMD^2=2.65429e-03  |grad|=4.273e-04  (178.5s)
+[03:25:00]   [qcbm_unsw seed  2] ep  100/300  MMD^2=3.39277e-03  |grad|=3.009e-04  (179.4s)
+[03:25:10]   [qcbm_unsw seed  5] ep  150/300  MMD^2=4.28843e-03  |grad|=1.082e-04  (189.0s)
+[03:25:10]   [qcbm_unsw seed  0] ep  150/300  MMD^2=3.43790e-03  |grad|=1.479e-04  (189.2s)
+[03:25:11]   [qcbm_unsw seed  1] ep  150/300  MMD^2=3.82604e-03  |grad|=2.258e-04  (190.7s)
+[03:25:11]   [qcbm_unsw seed  3] ep  150/300  MMD^2=3.65371e-03  |grad|=2.939e-05  (190.7s)
+[03:25:23]   [qcbm_unsw seed  4] ep  100/300  MMD^2=5.11236e-03  |grad|=4.151e-04  (202.0s)
+[03:25:23]   [qcbm_unsw seed  7] ep  100/300  MMD^2=4.16978e-03  |grad|=5.262e-04  (202.3s)
+[03:26:01]   [qcbm_unsw seed  6] ep  150/300  MMD^2=2.44030e-03  |grad|=7.693e-05  (240.6s)
+[03:26:02]   [qcbm_unsw seed  2] ep  150/300  MMD^2=3.18771e-03  |grad|=1.660e-03  (241.7s)
+[03:26:12]   [qcbm_unsw seed  0] ep  200/300  MMD^2=3.34550e-03  |grad|=2.307e-04  (250.8s)
+[03:26:12]   [qcbm_unsw seed  5] ep  200/300  MMD^2=4.18971e-03  |grad|=9.545e-05  (251.3s)
+[03:26:14]   [qcbm_unsw seed  1] ep  200/300  MMD^2=3.68937e-03  |grad|=5.875e-05  (253.5s)
+[03:26:14]   [qcbm_unsw seed  3] ep  200/300  MMD^2=3.63641e-03  |grad|=1.947e-05  (253.5s)
+[03:26:25]   [qcbm_unsw seed  4] ep  150/300  MMD^2=3.94023e-03  |grad|=2.865e-04  (264.2s)
+[03:26:26]   [qcbm_unsw seed  7] ep  150/300  MMD^2=3.92431e-03  |grad|=9.615e-05  (265.1s)
+[03:27:03]   [qcbm_unsw seed  6] ep  200/300  MMD^2=2.39829e-03  |grad|=3.270e-04  (302.6s)
+[03:27:05]   [qcbm_unsw seed  2] ep  200/300  MMD^2=3.00696e-03  |grad|=3.697e-04  (304.1s)
+[03:27:15]   [qcbm_unsw seed  5] ep  250/300  MMD^2=3.90819e-03  |grad|=1.791e-04  (314.2s)
+[03:27:17]   [qcbm_unsw seed  1] ep  250/300  MMD^2=3.39611e-03  |grad|=1.676e-04  (316.4s)
+[03:27:17]   [qcbm_unsw seed  3] ep  250/300  MMD^2=3.58103e-03  |grad|=1.264e-04  (316.4s)
+[03:27:23]   [qcbm_unsw seed  0] ep  250/300  MMD^2=3.27008e-03  |grad|=9.772e-05  (322.2s)
+[03:27:29]   [qcbm_unsw seed  7] ep  200/300  MMD^2=3.77434e-03  |grad|=5.952e-05  (328.0s)
+[03:27:50]   [qcbm_unsw seed  4] ep  200/300  MMD^2=3.28377e-03  |grad|=1.683e-04  (349.5s)
+[03:28:05]   [qcbm_unsw seed  6] ep  250/300  MMD^2=2.37978e-03  |grad|=1.085e-04  (364.7s)
+[03:28:08]   [qcbm_unsw seed  2] ep  250/300  MMD^2=2.99723e-03  |grad|=1.346e-03  (366.9s)
+[03:28:16]   [qcbm_unsw seed  5] ep  299/300  MMD^2=3.43369e-03  |grad|=1.014e-04  (375.6s)
+[03:28:16]   [qcbm_unsw seed  5] 완료 MMD^2=3.4337e-03 TV=0.4181 |grad|_fin=1.014e-04 (375.6s)
+[03:28:16] [qcbm_unsw_s5 이상탐지] AUC=0.7021 | mean p(x): benign=1.531e-02 vs attack=6.242e-03 (배율 2.45x)
+[03:28:16] [qcbm_unsw_s5 이상탐지] mean log p(x): benign=-5.192 vs attack=-7.653 (격차 2.461) | Youden J=0.396
+[03:28:16] [ckpt] seed=5 저장 ✓ AUC=0.7021 MMD²=3.4337e-03 TV=0.4181 | 진행 1/16 (376s)
+[03:28:17]   [qcbm_unsw seed  8] ep    0/300  MMD^2=3.55077e-02  |grad|=8.685e-03  (1.2s)
+[03:28:19]   [qcbm_unsw seed  1] ep  299/300  MMD^2=3.24506e-03  |grad|=8.277e-05  (378.0s)
+[03:28:19]   [qcbm_unsw seed  3] ep  299/300  MMD^2=3.15705e-03  |grad|=1.174e-04  (378.0s)
+[03:28:19]   [qcbm_unsw seed  1] 완료 MMD^2=3.2451e-03 TV=0.4343 |grad|_fin=8.277e-05 (378.0s)
+[03:28:19]   [qcbm_unsw seed  3] 완료 MMD^2=3.1571e-03 TV=0.4143 |grad|_fin=1.174e-04 (378.0s)
+[03:28:19] [qcbm_unsw_s1 이상탐지] AUC=0.7552 | mean p(x): benign=1.483e-02 vs attack=5.149e-03 (배율 2.88x)
+[03:28:19] [qcbm_unsw_s1 이상탐지] mean log p(x): benign=-4.808 vs attack=-6.435 (격차 1.627) | Youden J=0.471
+[03:28:19] [ckpt] seed=1 저장 ✓ AUC=0.7552 MMD²=3.2451e-03 TV=0.4343 | 진행 2/16 (378s)
+[03:28:19] [qcbm_unsw_s3 이상탐지] AUC=0.7636 | mean p(x): benign=1.594e-02 vs attack=4.611e-03 (배율 3.46x)
+[03:28:19] [qcbm_unsw_s3 이상탐지] mean log p(x): benign=-4.988 vs attack=-6.401 (격차 1.413) | Youden J=0.493
+[03:28:19] [ckpt] seed=3 저장 ✓ AUC=0.7636 MMD²=3.1571e-03 TV=0.4143 | 진행 3/16 (378s)
+[03:28:20]   [qcbm_unsw seed 10] ep    0/300  MMD^2=3.90373e-02  |grad|=1.046e-02  (1.2s)
+[03:28:20]   [qcbm_unsw seed  9] ep    0/300  MMD^2=3.50050e-02  |grad|=1.063e-02  (1.3s)
+[03:28:32]   [qcbm_unsw seed  7] ep  250/300  MMD^2=3.72886e-03  |grad|=2.410e-05  (390.8s)
+[03:29:06]   [qcbm_unsw seed  6] ep  299/300  MMD^2=2.37185e-03  |grad|=2.060e-05  (425.4s)
+[03:29:06]   [qcbm_unsw seed  6] 완료 MMD^2=2.3719e-03 TV=0.3724 |grad|_fin=2.060e-05 (425.5s)
+[03:29:06] [qcbm_unsw_s6 이상탐지] AUC=0.7929 | mean p(x): benign=1.803e-02 vs attack=4.986e-03 (배율 3.62x)
+[03:29:06] [qcbm_unsw_s6 이상탐지] mean log p(x): benign=-4.696 vs attack=-6.418 (격차 1.722) | Youden J=0.511
+[03:29:06] [ckpt] seed=6 저장 ✓ AUC=0.7929 MMD²=2.3719e-03 TV=0.3724 | 진행 4/16 (426s)
+[03:29:07]   [qcbm_unsw seed 11] ep    0/300  MMD^2=3.44238e-02  |grad|=1.009e-02  (1.3s)
+[03:29:09]   [qcbm_unsw seed  2] ep  299/300  MMD^2=2.96475e-03  |grad|=1.424e-03  (427.8s)
+[03:29:09]   [qcbm_unsw seed  2] 완료 MMD^2=2.9647e-03 TV=0.3902 |grad|_fin=1.424e-03 (427.9s)
+[03:29:09] [qcbm_unsw_s2 이상탐지] AUC=0.6514 | mean p(x): benign=1.676e-02 vs attack=7.047e-03 (배율 2.38x)
+[03:29:09] [qcbm_unsw_s2 이상탐지] mean log p(x): benign=-4.911 vs attack=-5.771 (격차 0.859) | Youden J=0.365
+[03:29:09] [ckpt] seed=2 저장 ✓ AUC=0.6514 MMD²=2.9647e-03 TV=0.3902 | 진행 5/16 (428s)
+[03:29:10]   [qcbm_unsw seed 12] ep    0/300  MMD^2=3.74626e-02  |grad|=9.684e-03  (1.2s)
+[03:29:20]   [qcbm_unsw seed  8] ep   50/300  MMD^2=5.74158e-03  |grad|=1.532e-03  (63.3s)
+[03:29:22]   [qcbm_unsw seed  0] ep  299/300  MMD^2=2.99359e-03  |grad|=1.396e-04  (441.6s)
+[03:29:22]   [qcbm_unsw seed  0] 완료 MMD^2=2.9936e-03 TV=0.4001 |grad|_fin=1.396e-04 (441.6s)
+[03:29:22] [qcbm_unsw_s0 이상탐지] AUC=0.7870 | mean p(x): benign=1.524e-02 vs attack=5.040e-03 (배율 3.02x)
+[03:29:22] [qcbm_unsw_s0 이상탐지] mean log p(x): benign=-4.847 vs attack=-6.440 (격차 1.594) | Youden J=0.521
+[03:29:22] [ckpt] seed=0 저장 ✓ AUC=0.7870 MMD²=2.9936e-03 TV=0.4001 | 진행 6/16 (442s)
+[03:29:23]   [qcbm_unsw seed  9] ep   50/300  MMD^2=4.38453e-03  |grad|=1.392e-03  (64.1s)
+[03:29:23]   [qcbm_unsw seed 10] ep   50/300  MMD^2=6.00214e-03  |grad|=1.577e-03  (64.1s)
+[03:29:25]   [qcbm_unsw seed 13] ep    0/300  MMD^2=3.39531e-02  |grad|=9.433e-03  (2.4s)
+[03:29:33]   [qcbm_unsw seed  7] ep  299/300  MMD^2=3.69642e-03  |grad|=4.176e-05  (452.2s)
+[03:29:33]   [qcbm_unsw seed  7] 완료 MMD^2=3.6964e-03 TV=0.4720 |grad|_fin=4.176e-05 (452.2s)
+[03:29:33] [qcbm_unsw_s7 이상탐지] AUC=0.7545 | mean p(x): benign=1.454e-02 vs attack=4.594e-03 (배율 3.17x)
+[03:29:33] [qcbm_unsw_s7 이상탐지] mean log p(x): benign=-5.042 vs attack=-6.756 (격차 1.714) | Youden J=0.474
+[03:29:33] [ckpt] seed=7 저장 ✓ AUC=0.7545 MMD²=3.6964e-03 TV=0.4720 | 진행 7/16 (452s)
+[03:29:34]   [qcbm_unsw seed 14] ep    0/300  MMD^2=3.68856e-02  |grad|=9.494e-03  (1.3s)
+[03:29:52]   [qcbm_unsw seed  4] ep  250/300  MMD^2=3.13432e-03  |grad|=4.295e-05  (471.2s)
+[03:30:09]   [qcbm_unsw seed 11] ep   50/300  MMD^2=1.35076e-02  |grad|=3.000e-03  (63.3s)
+[03:30:12]   [qcbm_unsw seed 12] ep   50/300  MMD^2=7.96097e-03  |grad|=2.270e-03  (63.3s)
+[03:30:22]   [qcbm_unsw seed  8] ep  100/300  MMD^2=4.16551e-03  |grad|=3.829e-04  (125.4s)
+[03:30:26]   [qcbm_unsw seed  9] ep  100/300  MMD^2=3.03627e-03  |grad|=2.496e-04  (126.9s)
+[03:30:26]   [qcbm_unsw seed 10] ep  100/300  MMD^2=4.28590e-03  |grad|=2.703e-04  (126.9s)
+[03:30:37]   [qcbm_unsw seed 14] ep   50/300  MMD^2=6.11440e-03  |grad|=1.265e-03  (64.0s)
+[03:31:12]   [qcbm_unsw seed 11] ep  100/300  MMD^2=4.80324e-03  |grad|=9.859e-04  (125.4s)
+[03:31:14]   [qcbm_unsw seed 12] ep  100/300  MMD^2=4.48170e-03  |grad|=5.676e-04  (125.6s)
+[03:31:24]   [qcbm_unsw seed  8] ep  150/300  MMD^2=3.71203e-03  |grad|=1.610e-04  (187.3s)
+[03:31:27]   [qcbm_unsw seed 13] ep   50/300  MMD^2=8.11955e-03  |grad|=1.273e-03  (125.1s)
+[03:31:28]   [qcbm_unsw seed  9] ep  150/300  MMD^2=2.83998e-03  |grad|=6.149e-05  (189.3s)
+[03:31:28]   [qcbm_unsw seed 10] ep  150/300  MMD^2=4.03973e-03  |grad|=1.099e-04  (189.7s)
+[03:31:40]   [qcbm_unsw seed 14] ep  100/300  MMD^2=4.72465e-03  |grad|=2.341e-04  (126.7s)
+[03:31:52]   [qcbm_unsw seed  4] ep  299/300  MMD^2=3.11524e-03  |grad|=1.610e-05  (591.7s)
+[03:31:52]   [qcbm_unsw seed  4] 완료 MMD^2=3.1152e-03 TV=0.4179 |grad|_fin=1.610e-05 (591.7s)
+[03:31:53] [qcbm_unsw_s4 이상탐지] AUC=0.7418 | mean p(x): benign=1.576e-02 vs attack=5.435e-03 (배율 2.90x)
+[03:31:53] [qcbm_unsw_s4 이상탐지] mean log p(x): benign=-4.842 vs attack=-6.144 (격차 1.302) | Youden J=0.448
+[03:31:53] [ckpt] seed=4 저장 ✓ AUC=0.7418 MMD²=3.1152e-03 TV=0.4179 | 진행 8/16 (592s)
+[03:31:55]   [qcbm_unsw seed 15] ep    0/300  MMD^2=3.69030e-02  |grad|=1.144e-02  (2.4s)
+[03:32:14]   [qcbm_unsw seed 11] ep  150/300  MMD^2=4.18093e-03  |grad|=1.567e-04  (187.3s)
+[03:32:16]   [qcbm_unsw seed 12] ep  150/300  MMD^2=4.03522e-03  |grad|=1.132e-04  (187.8s)
+[03:32:26]   [qcbm_unsw seed  8] ep  200/300  MMD^2=3.32899e-03  |grad|=1.952e-04  (250.0s)
+[03:32:30]   [qcbm_unsw seed  9] ep  200/300  MMD^2=2.77940e-03  |grad|=3.600e-05  (251.5s)
+[03:32:31]   [qcbm_unsw seed 10] ep  200/300  MMD^2=3.63495e-03  |grad|=1.180e-04  (252.6s)
+[03:32:43]   [qcbm_unsw seed 14] ep  150/300  MMD^2=4.51620e-03  |grad|=8.870e-05  (189.7s)
+[03:33:16]   [qcbm_unsw seed 11] ep  200/300  MMD^2=4.00536e-03  |grad|=5.553e-05  (249.6s)
+[03:33:19]   [qcbm_unsw seed 12] ep  200/300  MMD^2=3.93490e-03  |grad|=5.910e-05  (250.0s)
+[03:33:29]   [qcbm_unsw seed  8] ep  250/300  MMD^2=3.13598e-03  |grad|=8.077e-05  (313.0s)
+[03:33:29]   [qcbm_unsw seed 13] ep  100/300  MMD^2=4.62849e-03  |grad|=6.639e-04  (247.1s)
+[03:33:32]   [qcbm_unsw seed  9] ep  250/300  MMD^2=2.65781e-03  |grad|=9.766e-05  (313.7s)
+[03:33:34]   [qcbm_unsw seed 10] ep  250/300  MMD^2=3.41345e-03  |grad|=5.544e-05  (315.6s)
+[03:33:46]   [qcbm_unsw seed 14] ep  200/300  MMD^2=4.49003e-03  |grad|=3.724e-05  (252.7s)
+[03:33:57]   [qcbm_unsw seed 15] ep   50/300  MMD^2=1.47773e-02  |grad|=2.259e-03  (124.2s)
+[03:34:18]   [qcbm_unsw seed 11] ep  250/300  MMD^2=3.96173e-03  |grad|=2.501e-05  (311.6s)
+[03:34:21]   [qcbm_unsw seed 12] ep  250/300  MMD^2=3.58987e-03  |grad|=2.173e-04  (312.3s)
+[03:34:31]   [qcbm_unsw seed  8] ep  299/300  MMD^2=2.98220e-03  |grad|=7.377e-05  (374.8s)
+[03:34:31]   [qcbm_unsw seed  8] 완료 MMD^2=2.9822e-03 TV=0.3983 |grad|_fin=7.377e-05 (374.8s)
+[03:34:31] [qcbm_unsw_s8 이상탐지] AUC=0.7767 | mean p(x): benign=1.526e-02 vs attack=5.492e-03 (배율 2.78x)
+[03:34:31] [qcbm_unsw_s8 이상탐지] mean log p(x): benign=-4.810 vs attack=-7.155 (격차 2.345) | Youden J=0.516
+[03:34:31] [ckpt] seed=8 저장 ✓ AUC=0.7767 MMD²=2.9822e-03 TV=0.3983 | 진행 9/16 (751s)
+[03:34:33]   [qcbm_unsw seed  9] ep  299/300  MMD^2=2.62417e-03  |grad|=2.060e-05  (374.6s)
+[03:34:33]   [qcbm_unsw seed  9] 완료 MMD^2=2.6242e-03 TV=0.3952 |grad|_fin=2.060e-05 (374.6s)
+[03:34:33] [qcbm_unsw_s9 이상탐지] AUC=0.7603 | mean p(x): benign=1.581e-02 vs attack=5.710e-03 (배율 2.77x)
+[03:34:33] [qcbm_unsw_s9 이상탐지] mean log p(x): benign=-4.729 vs attack=-6.183 (격차 1.454) | Youden J=0.477
+[03:34:33] [ckpt] seed=9 저장 ✓ AUC=0.7603 MMD²=2.6242e-03 TV=0.3952 | 진행 10/16 (753s)
+[03:34:36]   [qcbm_unsw seed 10] ep  299/300  MMD^2=3.34650e-03  |grad|=3.456e-05  (377.4s)
+[03:34:36]   [qcbm_unsw seed 10] 완료 MMD^2=3.3465e-03 TV=0.4407 |grad|_fin=3.456e-05 (377.4s)
+[03:34:36] [qcbm_unsw_s10 이상탐지] AUC=0.8025 | mean p(x): benign=1.474e-02 vs attack=4.077e-03 (배율 3.61x)
+[03:34:36] [qcbm_unsw_s10 이상탐지] mean log p(x): benign=-5.068 vs attack=-8.901 (격차 3.833) | Youden J=0.563
+[03:34:36] [ckpt] seed=10 저장 ✓ AUC=0.8025 MMD²=3.3465e-03 TV=0.4407 | 진행 11/16 (756s)
+[03:34:48]   [qcbm_unsw seed 14] ep  250/300  MMD^2=4.25743e-03  |grad|=1.069e-04  (315.4s)
+[03:35:19]   [qcbm_unsw seed 11] ep  299/300  MMD^2=3.94087e-03  |grad|=2.338e-05  (372.5s)
+[03:35:19]   [qcbm_unsw seed 11] 완료 MMD^2=3.9409e-03 TV=0.4744 |grad|_fin=2.338e-05 (372.5s)
+[03:35:19] [qcbm_unsw_s11 이상탐지] AUC=0.6327 | mean p(x): benign=1.385e-02 vs attack=7.684e-03 (배율 1.80x)
+[03:35:19] [qcbm_unsw_s11 이상탐지] mean log p(x): benign=-4.847 vs attack=-5.914 (격차 1.067) | Youden J=0.267
+[03:35:19] [ckpt] seed=11 저장 ✓ AUC=0.6327 MMD²=3.9409e-03 TV=0.4744 | 진행 12/16 (798s)
+[03:35:21]   [qcbm_unsw seed 12] ep  299/300  MMD^2=3.20815e-03  |grad|=7.322e-05  (372.4s)
+[03:35:21]   [qcbm_unsw seed 12] 완료 MMD^2=3.2081e-03 TV=0.4055 |grad|_fin=7.322e-05 (372.4s)
+[03:35:21] [qcbm_unsw_s12 이상탐지] AUC=0.7698 | mean p(x): benign=1.546e-02 vs attack=5.400e-03 (배율 2.86x)
+[03:35:21] [qcbm_unsw_s12 이상탐지] mean log p(x): benign=-4.811 vs attack=-6.790 (격차 1.979) | Youden J=0.511
+[03:35:21] [ckpt] seed=12 저장 ✓ AUC=0.7698 MMD²=3.2081e-03 TV=0.4055 | 진행 13/16 (801s)
+[03:35:25]   [qcbm_unsw seed 13] ep  150/300  MMD^2=3.56459e-03  |grad|=2.329e-04  (362.8s)
+[03:35:39]   [qcbm_unsw seed 15] ep  100/300  MMD^2=5.14181e-03  |grad|=1.142e-03  (226.4s)
+[03:35:48]   [qcbm_unsw seed 14] ep  299/300  MMD^2=4.20901e-03  |grad|=4.980e-05  (375.4s)
+[03:35:48]   [qcbm_unsw seed 14] 완료 MMD^2=4.2090e-03 TV=0.4914 |grad|_fin=4.980e-05 (375.4s)
+[03:35:48] [qcbm_unsw_s14 이상탐지] AUC=0.7509 | mean p(x): benign=1.355e-02 vs attack=4.335e-03 (배율 3.12x)
+[03:35:48] [qcbm_unsw_s14 이상탐지] mean log p(x): benign=-5.046 vs attack=-7.193 (격차 2.147) | Youden J=0.458
+[03:35:49] [ckpt] seed=14 저장 ✓ AUC=0.7509 MMD²=4.2090e-03 TV=0.4914 | 진행 14/16 (828s)
+[03:36:27]   [qcbm_unsw seed 13] ep  200/300  MMD^2=3.34806e-03  |grad|=8.102e-05  (424.9s)
+[03:36:41]   [qcbm_unsw seed 15] ep  150/300  MMD^2=3.75051e-03  |grad|=4.453e-04  (288.5s)
+[03:37:29]   [qcbm_unsw seed 13] ep  250/300  MMD^2=3.17455e-03  |grad|=6.381e-05  (487.2s)
+[03:37:43]   [qcbm_unsw seed 15] ep  200/300  MMD^2=3.58620e-03  |grad|=6.106e-05  (350.4s)
+[03:38:30]   [qcbm_unsw seed 13] ep  299/300  MMD^2=3.12148e-03  |grad|=4.264e-05  (547.9s)
+[03:38:30]   [qcbm_unsw seed 13] 완료 MMD^2=3.1215e-03 TV=0.4280 |grad|_fin=4.264e-05 (547.9s)
+[03:38:30] [qcbm_unsw_s13 이상탐지] AUC=0.7822 | mean p(x): benign=1.496e-02 vs attack=5.406e-03 (배율 2.77x)
+[03:38:30] [qcbm_unsw_s13 이상탐지] mean log p(x): benign=-4.702 vs attack=-6.715 (격차 2.013) | Youden J=0.555
+[03:38:30] [ckpt] seed=13 저장 ✓ AUC=0.7822 MMD²=3.1215e-03 TV=0.4280 | 진행 15/16 (990s)
+[03:38:44]   [qcbm_unsw seed 15] ep  250/300  MMD^2=3.44305e-03  |grad|=7.059e-05  (412.0s)
+[03:39:45]   [qcbm_unsw seed 15] ep  299/300  MMD^2=3.36395e-03  |grad|=4.865e-05  (472.3s)
+[03:39:45]   [qcbm_unsw seed 15] 완료 MMD^2=3.3639e-03 TV=0.4373 |grad|_fin=4.865e-05 (472.3s)
+[03:39:45] [qcbm_unsw_s15 이상탐지] AUC=0.7327 | mean p(x): benign=1.448e-02 vs attack=5.830e-03 (배율 2.48x)
+[03:39:45] [qcbm_unsw_s15 이상탐지] mean log p(x): benign=-4.711 vs attack=-6.399 (격차 1.689) | Youden J=0.465
+[03:39:45] [ckpt] seed=15 저장 ✓ AUC=0.7327 MMD²=3.3639e-03 TV=0.4373 | 진행 16/16 (1064s)
+[03:39:45] [full] 학습 루프 종료 wall=1064.3s (0.30h)
+[03:39:45] ==============================================================================
+[03:39:45] [집계] 완료 restart=16/16 | best(최소MMD²) seed=6 MMD²=2.3719e-03 TV=0.3724 AUC=0.7929 (AUC순위 상위2/16)
+[03:39:45] [AUC 분포] min=0.6327 median=0.7578 max=0.8025 std=0.0464
+[03:39:45] [비교] marginal=0.7027 | emp_joint=0.8705 | QCBM best=0.7929 (상한근접 91.1%)
+[03:39:45] [비교] marginal 초과=13/16 | emp_joint 초과=0/16 | corr(MMD²,AUC)=-0.375 corr(TV,AUC)=-0.240
+[03:39:45] 저장: results2/qcbm_unsw.json , results2/qcbm_unsw_restarts.npz
+[03:39:48] [qcbm_unsw 이상탐지] AUC=0.7929 | mean p(x): benign=1.803e-02 vs attack=4.986e-03 (배율 3.62x)
+[03:39:48] [qcbm_unsw 이상탐지] mean log p(x): benign=-4.696 vs attack=-6.418 (격차 1.722) | Youden J=0.511
+[03:39:48] 그림 저장: results2/{train,dist,anomaly}_qcbm_unsw.png
+[03:39:48] DONE

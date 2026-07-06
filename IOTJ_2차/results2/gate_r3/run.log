@@ -1,0 +1,34 @@
+[self-check cyclic CF-LP] 3-cycle 좌절 CF=1.000(기대1) 정합 CF=0.000(기대0)
+[data] N-BaIoT zip MD5=56bf8e22debda482596f6d2be1260afd size=1691MB
+  [Danmini_Doorbell] rows=49548 feat=112 files=['benign_traffic.csv']
+  [Ecobee_Thermostat] rows=13113 feat=115 files=['benign_traffic.csv']
+  [Ennio_Doorbell] rows=39100 feat=115 files=['benign_traffic.csv']
+
+[run] 18 cells (def-a 15 + def-b 3), jobs=16, boot=500
+[run] 18 cells done (8s)
+  Danmini_Doorbell       def-a highvar  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=1.39e-32
+  Danmini_Doorbell       def-a targeted | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=2.47e-32
+  Danmini_Doorbell       def-a random1  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=5.56e-31
+  Danmini_Doorbell       def-a random2  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=1.39e-32
+  Danmini_Doorbell       def-a random3  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=2.22e-31
+  Ecobee_Thermostat      def-a highvar  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=2.47e-32
+  Ecobee_Thermostat      def-a targeted | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=6.16e-33
+  Ecobee_Thermostat      def-a random1  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=1.39e-32
+  Ecobee_Thermostat      def-a random2  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=9.86e-32
+  Ecobee_Thermostat      def-a random3  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=6.16e-33
+  Ennio_Doorbell         def-a highvar  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=2.47e-32
+  Ennio_Doorbell         def-a targeted | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=6.16e-33
+  Ennio_Doorbell         def-a random1  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=2.47e-32
+  Ennio_Doorbell         def-a random2  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=4.45e-31
+  Ennio_Doorbell         def-a random3  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=2.47e-32
+  Danmini_Doorbell       def-b highvar  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=2.04e-10
+  Ecobee_Thermostat      def-b highvar  | CF=0.0001 CI[0.0000,0.0002] no-sig=0.0001 | gap_upper=2.91e-09
+  Ennio_Doorbell         def-b highvar  | CF=0.0000 CI[0.0000,0.0000] no-sig=0.0000 | gap_upper=8.18e-11
+
+[저장] results2/gate_r3/r3.json
+[판정] 전 데이터셋·정의에서 CF≈0 (CI 상단 max=0.0002<0.05) → 실 IoT 텔레메트리는 비맥락. 잔여 CF 기준 gap 상한 ≤ 2.91e-09 (c=1/8 경계근사). = IoT 꺼진 앵커 정박.
+/home/elicer/IOTJ/IOTJ_2차/tools/gate_r3_iot_cf.py:331: UserWarning: Glyph 44592 (\N{HANGUL SYLLABLE GI}) missing from font(s) DejaVu Sans.
+  plt.tight_layout(); plt.savefig(OUT_PNG, dpi=130); plt.close()
+/home/elicer/IOTJ/IOTJ_2차/tools/gate_r3_iot_cf.py:331: UserWarning: Glyph 51456 (\N{HANGUL SYLLABLE JUN}) missing from font(s) DejaVu Sans.
+  plt.tight_layout(); plt.savefig(OUT_PNG, dpi=130); plt.close()
+[저장] results2/gate_r3/r3.png

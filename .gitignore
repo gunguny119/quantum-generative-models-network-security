@@ -1,10 +1,20 @@
-# Large dataset files (exceed GitHub 100MB limit)
- ISCX-VPN-Dataset/NonVPN-PCAPs-01.zip
-samples/cic2018/Thursday-01-03-2018.csv
+# ── 원시 데이터/다운로드 (용량 커서 백업 제외) ──
+data/
+samples/
+*ISCX-VPN-Dataset/
+*.zip
+*.rar
+*.pcap
+*.pcapng
 
-# macOS
-.DS_Store
+# ── 대용량 바이너리 산출물 (데이터/가중치) ──
+*.npz
+*.npy
 
-# Python
+# ── Python ──
 __pycache__/
 *.pyc
+*.pyo
+
+# ── OS ──
+.DS_Store

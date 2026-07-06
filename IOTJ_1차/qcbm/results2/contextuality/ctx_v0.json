@@ -1,0 +1,876 @@
+{
+ "note": "contextuality(k) v0. k̂=context×outcome empirical model 의 추정 비음수랭크−1 (E 재현 최소 은닉상태 프록시, NMF greedy). 정의 b(가족=context,지도적,signalling)·a(feature블록=context,단일결합→자명 non-contextual). 부분집합 3종(표적고차/저차/랜덤)×split. ★진짜 AB-contextuality 아님(정적결합=전역절편 존재)—잠재복잡도 프록시. 단정 금지.",
+ "params": {
+  "splits": [
+   0,
+   1,
+   2
+  ],
+  "k": 10,
+  "tol": 0.05,
+  "laplace_c": 0.0009765625,
+  "n_partitions": 5,
+  "seed": 4242,
+  "khat_def": "NMF non-negative rank (rel Frob err<=tol) minus 1"
+ },
+ "results": {
+  "0": {
+   "targeted_highord": {
+    "subset": [
+     489,
+     330,
+     278,
+     246,
+     437,
+     1247,
+     431,
+     505,
+     443,
+     340
+    ],
+    "ge3_share": 0.3181633075590525,
+    "def_b": {
+     "khat": 6,
+     "nn_rank": 7,
+     "n_ctx": 7,
+     "support": 68,
+     "rel_errs": [
+      0.8093557130111962,
+      0.7091051767151979,
+      0.5964429888481955,
+      0.46449956844690693,
+      0.296113231621835,
+      0.1855492077868399,
+      0.001597495019823524
+     ],
+     "signalling_L1": 4.112516091291182,
+     "note": "families=context(supervised); no-signalling 위반=signalling"
+    },
+    "def_a": {
+     "khat_mean": 15.0,
+     "khat_min": 14,
+     "khat_max": 17,
+     "per_partition": [
+      {
+       "A": [
+        0,
+        3,
+        4,
+        5,
+        8
+       ],
+       "khat": 15,
+       "nn_rank": 16
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        6,
+        9
+       ],
+       "khat": 14,
+       "nn_rank": 15
+      },
+      {
+       "A": [
+        1,
+        3,
+        4,
+        6,
+        8
+       ],
+       "khat": 17,
+       "nn_rank": 18
+      },
+      {
+       "A": [
+        0,
+        1,
+        4,
+        7,
+        8
+       ],
+       "khat": 15,
+       "nn_rank": 16
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        7,
+        9
+       ],
+       "khat": 14,
+       "nn_rank": 15
+      }
+     ],
+     "note": "feature block=context; 단일 결합분포→전역절편 존재=자명 non-contextual(§한계)"
+    },
+    "qcbm_gap_M2": 0.39099189904083986
+   },
+   "highvar_loword": {
+    "subset": [
+     437,
+     255,
+     496,
+     344,
+     321,
+     431,
+     397,
+     505,
+     481,
+     271
+    ],
+    "ge3_share": 0.15243991846265081,
+    "def_b": {
+     "khat": 6,
+     "nn_rank": 7,
+     "n_ctx": 7,
+     "support": 68,
+     "rel_errs": [
+      0.8682064786482069,
+      0.743355871507785,
+      0.6082245623445829,
+      0.4904699491298373,
+      0.37704095064313103,
+      0.20232547581040172,
+      0.0003856538830010632
+     ],
+     "signalling_L1": 4.201508898842117,
+     "note": "families=context(supervised); no-signalling 위반=signalling"
+    },
+    "def_a": {
+     "khat_mean": 16.2,
+     "khat_min": 13,
+     "khat_max": 21,
+     "per_partition": [
+      {
+       "A": [
+        0,
+        3,
+        4,
+        5,
+        8
+       ],
+       "khat": 14,
+       "nn_rank": 15
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        6,
+        9
+       ],
+       "khat": 21,
+       "nn_rank": 22
+      },
+      {
+       "A": [
+        1,
+        3,
+        4,
+        6,
+        8
+       ],
+       "khat": 19,
+       "nn_rank": 20
+      },
+      {
+       "A": [
+        0,
+        1,
+        4,
+        7,
+        8
+       ],
+       "khat": 14,
+       "nn_rank": 15
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        7,
+        9
+       ],
+       "khat": 13,
+       "nn_rank": 14
+      }
+     ],
+     "note": "feature block=context; 단일 결합분포→전역절편 존재=자명 non-contextual(§한계)"
+    },
+    "qcbm_gap_M2": 0.7309169103491348
+   },
+   "random": {
+    "subset": [
+     141,
+     361,
+     407,
+     422,
+     471,
+     708,
+     746,
+     831,
+     847,
+     1070
+    ],
+    "ge3_share": 0.012859250194856692,
+    "def_b": {
+     "khat": 3,
+     "nn_rank": 4,
+     "n_ctx": 7,
+     "support": 13,
+     "rel_errs": [
+      0.4278724221705534,
+      0.23988951792020866,
+      0.12636624084872136,
+      0.035570411165508256
+     ],
+     "signalling_L1": 0.6415221047389051,
+     "note": "families=context(supervised); no-signalling 위반=signalling"
+    },
+    "def_a": {
+     "khat_mean": 2.8,
+     "khat_min": 2,
+     "khat_max": 4,
+     "per_partition": [
+      {
+       "A": [
+        0,
+        3,
+        4,
+        5,
+        8
+       ],
+       "khat": 3,
+       "nn_rank": 4
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        6,
+        9
+       ],
+       "khat": 2,
+       "nn_rank": 3
+      },
+      {
+       "A": [
+        1,
+        3,
+        4,
+        6,
+        8
+       ],
+       "khat": 4,
+       "nn_rank": 5
+      },
+      {
+       "A": [
+        0,
+        1,
+        4,
+        7,
+        8
+       ],
+       "khat": 2,
+       "nn_rank": 3
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        7,
+        9
+       ],
+       "khat": 3,
+       "nn_rank": 4
+      }
+     ],
+     "note": "feature block=context; 단일 결합분포→전역절편 존재=자명 non-contextual(§한계)"
+    },
+    "qcbm_gap_M2": null
+   }
+  },
+  "1": {
+   "targeted_highord": {
+    "subset": [
+     359,
+     212,
+     207,
+     310,
+     313,
+     297,
+     251,
+     296,
+     1082,
+     205
+    ],
+    "ge3_share": 0.5843732746876291,
+    "def_b": {
+     "khat": 6,
+     "nn_rank": 7,
+     "n_ctx": 7,
+     "support": 75,
+     "rel_errs": [
+      0.836500084481279,
+      0.7142645062909386,
+      0.5843854486687597,
+      0.47965185747167083,
+      0.34630108315034575,
+      0.19920434942811555,
+      0.0001637154174042739
+     ],
+     "signalling_L1": 4.070100511753104,
+     "note": "families=context(supervised); no-signalling 위반=signalling"
+    },
+    "def_a": {
+     "khat_mean": 21.6,
+     "khat_min": 20,
+     "khat_max": 23,
+     "per_partition": [
+      {
+       "A": [
+        0,
+        3,
+        4,
+        5,
+        8
+       ],
+       "khat": 23,
+       "nn_rank": 24
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        6,
+        9
+       ],
+       "khat": 22,
+       "nn_rank": 23
+      },
+      {
+       "A": [
+        1,
+        3,
+        4,
+        6,
+        8
+       ],
+       "khat": 21,
+       "nn_rank": 22
+      },
+      {
+       "A": [
+        0,
+        1,
+        4,
+        7,
+        8
+       ],
+       "khat": 22,
+       "nn_rank": 23
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        7,
+        9
+       ],
+       "khat": 20,
+       "nn_rank": 21
+      }
+     ],
+     "note": "feature block=context; 단일 결합분포→전역절편 존재=자명 non-contextual(§한계)"
+    },
+    "qcbm_gap_M2": -0.17827497370502066
+   },
+   "highvar_loword": {
+    "subset": [
+     303,
+     141,
+     359,
+     225,
+     297,
+     203,
+     266,
+     367,
+     345,
+     157
+    ],
+    "ge3_share": 0.15230598779243393,
+    "def_b": {
+     "khat": 6,
+     "nn_rank": 7,
+     "n_ctx": 7,
+     "support": 59,
+     "rel_errs": [
+      0.8743510076821941,
+      0.7523737699721152,
+      0.6279628776399565,
+      0.49078699447057406,
+      0.35826257707397374,
+      0.2509488506587476,
+      0.0009995319951910573
+     ],
+     "signalling_L1": 4.588207154026735,
+     "note": "families=context(supervised); no-signalling 위반=signalling"
+    },
+    "def_a": {
+     "khat_mean": 16.4,
+     "khat_min": 13,
+     "khat_max": 21,
+     "per_partition": [
+      {
+       "A": [
+        0,
+        3,
+        4,
+        5,
+        8
+       ],
+       "khat": 15,
+       "nn_rank": 16
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        6,
+        9
+       ],
+       "khat": 21,
+       "nn_rank": 22
+      },
+      {
+       "A": [
+        1,
+        3,
+        4,
+        6,
+        8
+       ],
+       "khat": 20,
+       "nn_rank": 21
+      },
+      {
+       "A": [
+        0,
+        1,
+        4,
+        7,
+        8
+       ],
+       "khat": 13,
+       "nn_rank": 14
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        7,
+        9
+       ],
+       "khat": 13,
+       "nn_rank": 14
+      }
+     ],
+     "note": "feature block=context; 단일 결합분포→전역절편 존재=자명 non-contextual(§한계)"
+    },
+    "qcbm_gap_M2": 0.7617993949080222
+   },
+   "random": {
+    "subset": [
+     156,
+     280,
+     396,
+     440,
+     471,
+     553,
+     630,
+     780,
+     1020,
+     1127
+    ],
+    "ge3_share": 0.04198470571468419,
+    "def_b": {
+     "khat": 1,
+     "nn_rank": 2,
+     "n_ctx": 7,
+     "support": 13,
+     "rel_errs": [
+      0.0975298531618399,
+      0.03968936657583313
+     ],
+     "signalling_L1": 0.23880893134403722,
+     "note": "families=context(supervised); no-signalling 위반=signalling"
+    },
+    "def_a": {
+     "khat_mean": 3.0,
+     "khat_min": 2,
+     "khat_max": 4,
+     "per_partition": [
+      {
+       "A": [
+        0,
+        3,
+        4,
+        5,
+        8
+       ],
+       "khat": 2,
+       "nn_rank": 3
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        6,
+        9
+       ],
+       "khat": 3,
+       "nn_rank": 4
+      },
+      {
+       "A": [
+        1,
+        3,
+        4,
+        6,
+        8
+       ],
+       "khat": 3,
+       "nn_rank": 4
+      },
+      {
+       "A": [
+        0,
+        1,
+        4,
+        7,
+        8
+       ],
+       "khat": 4,
+       "nn_rank": 5
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        7,
+        9
+       ],
+       "khat": 3,
+       "nn_rank": 4
+      }
+     ],
+     "note": "feature block=context; 단일 결합분포→전역절편 존재=자명 non-contextual(§한계)"
+    },
+    "qcbm_gap_M2": null
+   }
+  },
+  "2": {
+   "targeted_highord": {
+    "subset": [
+     413,
+     311,
+     305,
+     415,
+     236,
+     244,
+     291,
+     309,
+     327,
+     330
+    ],
+    "ge3_share": 0.5876416683064397,
+    "def_b": {
+     "khat": 6,
+     "nn_rank": 7,
+     "n_ctx": 7,
+     "support": 68,
+     "rel_errs": [
+      0.7895235521888727,
+      0.6938623020692493,
+      0.5910164055518609,
+      0.4773648665678832,
+      0.3607489098402017,
+      0.1857326808733797,
+      1.2795443670863593e-05
+     ],
+     "signalling_L1": 4.281486728935469,
+     "note": "families=context(supervised); no-signalling 위반=signalling"
+    },
+    "def_a": {
+     "khat_mean": 23.8,
+     "khat_min": 20,
+     "khat_max": 26,
+     "per_partition": [
+      {
+       "A": [
+        0,
+        3,
+        4,
+        5,
+        8
+       ],
+       "khat": 20,
+       "nn_rank": 21
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        6,
+        9
+       ],
+       "khat": 26,
+       "nn_rank": 27
+      },
+      {
+       "A": [
+        1,
+        3,
+        4,
+        6,
+        8
+       ],
+       "khat": 23,
+       "nn_rank": 24
+      },
+      {
+       "A": [
+        0,
+        1,
+        4,
+        7,
+        8
+       ],
+       "khat": 26,
+       "nn_rank": 27
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        7,
+        9
+       ],
+       "khat": 24,
+       "nn_rank": 25
+      }
+     ],
+     "note": "feature block=context; 단일 결합분포→전역절편 존재=자명 non-contextual(§한계)"
+    },
+    "qcbm_gap_M2": -0.1403995434062857
+   },
+   "highvar_loword": {
+    "subset": [
+     421,
+     244,
+     464,
+     330,
+     415,
+     307,
+     380,
+     473,
+     449,
+     260
+    ],
+    "ge3_share": 0.15243991744258947,
+    "def_b": {
+     "khat": 6,
+     "nn_rank": 7,
+     "n_ctx": 7,
+     "support": 60,
+     "rel_errs": [
+      0.8677243062009907,
+      0.729731611462493,
+      0.5935158856834152,
+      0.43722574803555153,
+      0.3393994514358428,
+      0.21800587163302834,
+      0.2179626851447529
+     ],
+     "signalling_L1": 4.452291898725015,
+     "note": "families=context(supervised); no-signalling 위반=signalling"
+    },
+    "def_a": {
+     "khat_mean": 16.4,
+     "khat_min": 13,
+     "khat_max": 21,
+     "per_partition": [
+      {
+       "A": [
+        0,
+        3,
+        4,
+        5,
+        8
+       ],
+       "khat": 15,
+       "nn_rank": 16
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        6,
+        9
+       ],
+       "khat": 21,
+       "nn_rank": 22
+      },
+      {
+       "A": [
+        1,
+        3,
+        4,
+        6,
+        8
+       ],
+       "khat": 20,
+       "nn_rank": 21
+      },
+      {
+       "A": [
+        0,
+        1,
+        4,
+        7,
+        8
+       ],
+       "khat": 13,
+       "nn_rank": 14
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        7,
+        9
+       ],
+       "khat": 13,
+       "nn_rank": 14
+      }
+     ],
+     "note": "feature block=context; 단일 결합분포→전역절편 존재=자명 non-contextual(§한계)"
+    },
+    "qcbm_gap_M2": 0.82573199022579
+   },
+   "random": {
+    "subset": [
+     216,
+     235,
+     240,
+     525,
+     610,
+     780,
+     940,
+     1090,
+     1104,
+     1119
+    ],
+    "ge3_share": 0.059144429482679846,
+    "def_b": {
+     "khat": 2,
+     "nn_rank": 3,
+     "n_ctx": 7,
+     "support": 14,
+     "rel_errs": [
+      0.26513367833988716,
+      0.06761176693281455,
+      0.04972112558268167
+     ],
+     "signalling_L1": 0.590628006325027,
+     "note": "families=context(supervised); no-signalling 위반=signalling"
+    },
+    "def_a": {
+     "khat_mean": 1.8,
+     "khat_min": 1,
+     "khat_max": 3,
+     "per_partition": [
+      {
+       "A": [
+        0,
+        3,
+        4,
+        5,
+        8
+       ],
+       "khat": 1,
+       "nn_rank": 2
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        6,
+        9
+       ],
+       "khat": 2,
+       "nn_rank": 3
+      },
+      {
+       "A": [
+        1,
+        3,
+        4,
+        6,
+        8
+       ],
+       "khat": 1,
+       "nn_rank": 2
+      },
+      {
+       "A": [
+        0,
+        1,
+        4,
+        7,
+        8
+       ],
+       "khat": 3,
+       "nn_rank": 4
+      },
+      {
+       "A": [
+        2,
+        4,
+        5,
+        7,
+        9
+       ],
+       "khat": 2,
+       "nn_rank": 3
+      }
+     ],
+     "note": "feature block=context; 단일 결합분포→전역절편 존재=자명 non-contextual(§한계)"
+    },
+    "qcbm_gap_M2": null
+   }
+  }
+ }
+}

@@ -1,0 +1,34 @@
+=== self-check (AUC 검증) ===
+  AUC 무작위=0.502 (≈0.5) | 완전분리=1.000 (=1.0) | 역분리=0.000 (=0.0)
+
+=== split 0 | unseen 가족=[0] | test unseen=925 known=478 ===
+  [표적 k10] M1=0.866 M2=0.889 M3=0.817 M4=0.820 M_full=0.815 | 고차(M4)−M2=-0.069 Mfull−M2=-0.073 | trainge3=0.34
+  [highvar k10] M2=0.696 M_full=0.723 | 고차(M3)−M2=+0.026
+  [표적 k12] M1=0.818 M2=0.767 M_full=0.770 | 고차(M_full)−M2=+0.002 Mfull−M2=+0.002 | trainge3=0.40
+  [highvar k12] M2=0.816 M_full=0.784 | 고차(M_full)−M2=-0.033
+  [MI] 표적 평균=0.2769 | highvar 평균=0.2202 | 전체 평균=0.0552 (nats)
+
+=== split 1 | unseen 가족=[1] | test unseen=667 known=529 ===
+  [표적 k10] M1=0.528 M2=0.605 M3=0.765 M4=0.757 M_full=0.759 | 고차(M4)−M2=+0.152 Mfull−M2=+0.154 | trainge3=0.62
+  [highvar k10] M2=0.821 M_full=0.832 | 고차(M_full)−M2=+0.011
+  [표적 k12] M1=0.482 M2=0.650 M_full=0.766 | 고차(M_full)−M2=+0.116 Mfull−M2=+0.116 | trainge3=0.59
+  [highvar k12] M2=0.837 M_full=0.861 | 고차(M_full)−M2=+0.023
+  [MI] 표적 평균=0.2883 | highvar 평균=0.3326 | 전체 평균=0.0643 (nats)
+
+=== split 2 | unseen 가족=[2] | test unseen=625 known=538 ===
+  [표적 k10] M1=0.226 M2=0.880 M3=0.810 M4=0.786 M_full=0.792 | 고차(M4)−M2=-0.094 Mfull−M2=-0.089 | trainge3=0.59
+  [highvar k10] M2=0.728 M_full=0.835 | 고차(M4)−M2=+0.111
+  [표적 k12] M1=0.213 M2=0.768 M_full=0.811 | 고차(M_full)−M2=+0.043 Mfull−M2=+0.043 | trainge3=0.55
+  [highvar k12] M2=0.825 M_full=0.866 | 고차(M_full)−M2=+0.041
+  [MI] 표적 평균=0.2775 | highvar 평균=0.2927 | 전체 평균=0.0592 (nats)
+
+[저장] results2/drift_auc/drift_auc.json
+/home/elicer/IOTJ/qcbm/tools/diagnose_drift_auc.py:330: UserWarning: Glyph 44256 (\N{HANGUL SYLLABLE GO}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/diagnose_drift_auc.py:330: UserWarning: Glyph 52264 (\N{HANGUL SYLLABLE CA}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/diagnose_drift_auc.py:331: UserWarning: Glyph 44256 (\N{HANGUL SYLLABLE GO}) missing from font(s) DejaVu Sans.
+  plt.savefig(OUT_PNG, dpi=125); plt.close()
+/home/elicer/IOTJ/qcbm/tools/diagnose_drift_auc.py:331: UserWarning: Glyph 52264 (\N{HANGUL SYLLABLE CA}) missing from font(s) DejaVu Sans.
+  plt.savefig(OUT_PNG, dpi=125); plt.close()
+[저장] results2/drift_auc/drift_auc.png

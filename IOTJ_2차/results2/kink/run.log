@@ -1,0 +1,21 @@
+=== Gate A: 성분분해 · 국소지수 · 이륙점 · 적합족 ===
+  이륙점 CF(KLq>1e-4) = 0.4400  (Tsirelson=0.4142 예측)
+  경계 국소지수 α(창2) 중앙값 = 2.202  전체범위 [2.01, 3.68]
+  적합족 best(전체) = quad_to_linear ; best(경계 CF≤0.414) = quadratic
+=== Gate B: 방향 스윕 (H3 붕괴 판정) ===
+  방향간 NCfloor(CF) 최대 상대편차 = 1.787 → 붕괴=False
+=== Gate C: KCBS 5-cycle 일반성 ===
+  KCBS 경계 국소지수 α(창2) 중앙값 = 2.262  (CHSH=2.202)
+=== Gate D: 양자 용량 불변 {6,9,14} ===
+  이륙점: q6=0.500 q9=0.500 q14=0.500 | CF<0.414 최대 KLq: {'q6': 0.0, 'q9': 0.0, 'q14': 0.0}
+
+[저장] results2/kink/kink.json
+/home/elicer/IOTJ/IOTJ_2차/tools/kink_origin_v1.py:529: UserWarning: Glyph 44592 (\N{HANGUL SYLLABLE GI}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/IOTJ_2차/tools/kink_origin_v1.py:529: UserWarning: Glyph 54616 (\N{HANGUL SYLLABLE HA}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/IOTJ_2차/tools/kink_origin_v1.py:530: UserWarning: Glyph 44592 (\N{HANGUL SYLLABLE GI}) missing from font(s) DejaVu Sans.
+  plt.savefig(OUT_PNG, dpi=130); plt.close()
+/home/elicer/IOTJ/IOTJ_2차/tools/kink_origin_v1.py:530: UserWarning: Glyph 54616 (\N{HANGUL SYLLABLE HA}) missing from font(s) DejaVu Sans.
+  plt.savefig(OUT_PNG, dpi=130); plt.close()
+[저장] results2/kink/kink.png

@@ -1,0 +1,308 @@
+{
+ "note": "feat_marg=각 feature 내부 joint 유지·feature끼리 독립. within(A)=KL(feat_marg||bit_marg)=feature 내부, cross(B)=KL(joint||feat_marg)=순수 feature 간. AUC 분해 contamination/pure_cross. 차수×{within/cross} maxent로 ≥3차 중 feature간 비중. 학습 없음. 단정 금지.",
+ "dissociation_recheck": "확인불가: analyze_tv_auc_dissociation 는 QCBM 16 restart fit-vs-AUC 상관 측정 → feature_marginal(단일 분포)로 재정의하려면 새 해리 정의 필요(금지). goal1-3만 수행.",
+ "params": {
+  "kmax": 4,
+  "max_iter": 20000,
+  "eps": 1e-12
+ },
+ "self_check": {
+  "i_one_feature_eq_joint_KL": 0.0,
+  "ii_singlebit_eq_bitmarg_KL": 5.034806224435727e-17,
+  "iii_independent_features_crossB_KL": 0.00014307923360036686,
+  "iv_monotonic": true
+ },
+ "datasets": {
+  "UNSW": {
+   "bits": 10,
+   "nfeatures": 4,
+   "auc": {
+    "bit_marg": 0.7027380301707428,
+    "feat_marg": 0.7460086664236465,
+    "joint": 0.8705019882949697
+   },
+   "contamination": 0.04327063625290373,
+   "pure_cross": 0.12449332187132323,
+   "KL_total": 2.2841299748734594,
+   "within_A": 0.08365271662418944,
+   "cross_B": 2.20047725824927,
+   "B_over_total": 0.9633765514465421,
+   "pythagoras_residual": 4.440892098500626e-16,
+   "order_contrib": {
+    "within2": 0.06195249506221856,
+    "cross2": 1.6051771084597617,
+    "within3": 0.010042299192200788,
+    "cross3": 0.429819972388909,
+    "within4": 0.00024776385102842635,
+    "cross4": 0.12278954906242488
+   },
+   "resid_top": 0.05410078685691601,
+   "ge3_within": 0.010290063043229214,
+   "ge3_cross": 0.6067103083082499,
+   "ge3_total": 0.6170003713514791,
+   "ge3_cross_share": 0.9833224362236771,
+   "order2_residual_bitlevel": 0.6170003713514791,
+   "monotonic": true,
+   "negative_contrib": {
+    "within2": false,
+    "cross2": false,
+    "within3": false,
+    "cross3": false,
+    "within4": false,
+    "cross4": false
+   },
+   "per_fit": [
+    {
+     "step": "order1",
+     "nparams": 10,
+     "KL": 2.2841299748734594,
+     "converged": true,
+     "iters": 11,
+     "max_violation": 3.5338056508793514e-09
+    },
+    {
+     "step": "within2",
+     "nparams": 19,
+     "KL": 2.222177479811241,
+     "converged": true,
+     "iters": 56,
+     "max_violation": 9.300980652326984e-09
+    },
+    {
+     "step": "cross2",
+     "nparams": 55,
+     "KL": 0.6170003713514791,
+     "converged": true,
+     "iters": 2807,
+     "max_violation": 3.80744807210176e-08
+    },
+    {
+     "step": "within3",
+     "nparams": 59,
+     "KL": 0.6069580721592783,
+     "converged": true,
+     "iters": 3299,
+     "max_violation": 3.80555376933156e-08
+    },
+    {
+     "step": "cross3",
+     "nparams": 175,
+     "KL": 0.17713809977036932,
+     "converged": true,
+     "iters": 15939,
+     "max_violation": 4.305366080314954e-08
+    },
+    {
+     "step": "within4",
+     "nparams": 176,
+     "KL": 0.1768903359193409,
+     "converged": false,
+     "iters": 20000,
+     "max_violation": 2.2065342349525396e-06
+    },
+    {
+     "step": "cross4",
+     "nparams": 385,
+     "KL": 0.05410078685691601,
+     "converged": false,
+     "iters": 20000,
+     "max_violation": 6.224250479521659e-07
+    }
+   ]
+  },
+  "Bot": {
+   "bits": 12,
+   "nfeatures": 6,
+   "auc": {
+    "bit_marg": 0.28699099161541597,
+    "feat_marg": 0.20365983281914674,
+    "joint": 0.8749069493762777
+   },
+   "contamination": -0.08333115879626923,
+   "pure_cross": 0.671247116557131,
+   "KL_total": 2.9191226793329172,
+   "within_A": 0.28953614846520603,
+   "cross_B": 2.6295865308677113,
+   "B_over_total": 0.9008139841072486,
+   "pythagoras_residual": 0.0,
+   "order_contrib": {
+    "within2": 0.13360610221427383,
+    "cross2": 2.23618629609729,
+    "within3": 0.08479971547497639,
+    "cross3": 0.43825976455911053,
+    "within4": 2.062065631441845e-08,
+    "cross4": 0.025748911325848424
+   },
+   "resid_top": 0.0005218690407617632,
+   "ge3_within": 0.08479973609563271,
+   "ge3_cross": 0.46453054492572077,
+   "ge3_total": 0.5493302810213535,
+   "ge3_cross_share": 0.8456306906330248,
+   "order2_residual_bitlevel": 0.5493302810213534,
+   "monotonic": true,
+   "negative_contrib": {
+    "within2": false,
+    "cross2": false,
+    "within3": false,
+    "cross3": false,
+    "within4": false,
+    "cross4": false
+   },
+   "per_fit": [
+    {
+     "step": "order1",
+     "nparams": 12,
+     "KL": 2.9191226793329172,
+     "converged": true,
+     "iters": 17,
+     "max_violation": 6.563322996200327e-09
+    },
+    {
+     "step": "within2",
+     "nparams": 21,
+     "KL": 2.7855165771186434,
+     "converged": true,
+     "iters": 71,
+     "max_violation": 2.0642581366470125e-08
+    },
+    {
+     "step": "cross2",
+     "nparams": 78,
+     "KL": 0.5493302810213534,
+     "converged": true,
+     "iters": 3943,
+     "max_violation": 2.0953386065114543e-07
+    },
+    {
+     "step": "within3",
+     "nparams": 82,
+     "KL": 0.464530565546377,
+     "converged": true,
+     "iters": 5666,
+     "max_violation": 1.5231322014752635e-07
+    },
+    {
+     "step": "cross3",
+     "nparams": 298,
+     "KL": 0.0262708009872665,
+     "converged": false,
+     "iters": 20000,
+     "max_violation": 2.6668186071110433e-06
+    },
+    {
+     "step": "within4",
+     "nparams": 299,
+     "KL": 0.026270780366610187,
+     "converged": true,
+     "iters": 19755,
+     "max_violation": 3.2649113952676334e-07
+    },
+    {
+     "step": "cross4",
+     "nparams": 793,
+     "KL": 0.0005218690407617632,
+     "converged": false,
+     "iters": 20000,
+     "max_violation": 3.6393472083173783e-06
+    }
+   ]
+  },
+  "HOIC": {
+   "bits": 12,
+   "nfeatures": 6,
+   "auc": {
+    "bit_marg": 0.8740609250581858,
+    "feat_marg": 0.8774154529834779,
+    "joint": 0.9258479792817742
+   },
+   "contamination": 0.0033545279252921167,
+   "pure_cross": 0.04843252629829631,
+   "KL_total": 1.460761313811542,
+   "within_A": 0.01913126833751951,
+   "cross_B": 1.4416300453824222,
+   "B_over_total": 0.98690322077383,
+   "pythagoras_residual": -9.160028291432809e-11,
+   "order_contrib": {
+    "within2": 0.010191770157667923,
+    "cross2": 1.433227571467634,
+    "within3": 0.005201653832415288,
+    "cross3": 0.00845308362166024,
+    "within4": 0.0035166583957459666,
+    "cross4": 0.00012887815287794706
+   },
+   "resid_top": 4.1698183672600444e-05,
+   "ge3_within": 0.008718312228161254,
+   "ge3_cross": 0.008623659958210789,
+   "ge3_total": 0.017341972186372043,
+   "ge3_cross_share": 0.4972710061770008,
+   "order2_residual_bitlevel": 0.017341972186372043,
+   "monotonic": true,
+   "negative_contrib": {
+    "within2": false,
+    "cross2": false,
+    "within3": false,
+    "cross3": false,
+    "within4": false,
+    "cross4": false
+   },
+   "per_fit": [
+    {
+     "step": "order1",
+     "nparams": 12,
+     "KL": 1.460761313811674,
+     "converged": true,
+     "iters": 57,
+     "max_violation": 1.0199811661948388e-08
+    },
+    {
+     "step": "within2",
+     "nparams": 21,
+     "KL": 1.450569543654006,
+     "converged": true,
+     "iters": 227,
+     "max_violation": 1.6516988117498688e-08
+    },
+    {
+     "step": "cross2",
+     "nparams": 78,
+     "KL": 0.017341972186372043,
+     "converged": false,
+     "iters": 20000,
+     "max_violation": 9.874274847776476e-07
+    },
+    {
+     "step": "within3",
+     "nparams": 82,
+     "KL": 0.012140318353956755,
+     "converged": false,
+     "iters": 20000,
+     "max_violation": 1.4437764387434382e-06
+    },
+    {
+     "step": "cross3",
+     "nparams": 298,
+     "KL": 0.003687234732296514,
+     "converged": true,
+     "iters": 14770,
+     "max_violation": 1.0559405198943021e-07
+    },
+    {
+     "step": "within4",
+     "nparams": 299,
+     "KL": 0.0001705763365505475,
+     "converged": true,
+     "iters": 14386,
+     "max_violation": 8.648676198472205e-08
+    },
+    {
+     "step": "cross4",
+     "nparams": 793,
+     "KL": 4.1698183672600444e-05,
+     "converged": false,
+     "iters": 20000,
+     "max_violation": 1.735730854476869e-06
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,154 @@
+{
+  "data": "data/cic_0221_ddos.csv",
+  "nq": 8,
+  "nstates": 256,
+  "spec": [
+    [
+      "proto",
+      2
+    ],
+    [
+      "syn",
+      1
+    ],
+    [
+      "psh",
+      1
+    ],
+    [
+      "size",
+      4
+    ]
+  ],
+  "split": {
+    "seed": 7,
+    "benign_train_frac": 0.7
+  },
+  "subsample_seed": 12345,
+  "n_benign_train": 252583,
+  "n_benign_test": 108250,
+  "n_attack": {
+    "ddos attack-hoic": 686012,
+    "ddos attack-loic-udp": 1730
+  },
+  "benign_train_occupied_states": 24,
+  "marginal_p_bit_lsb_to_msb": [
+    0.5067799495611344,
+    0.4526749622896236,
+    0.5077895186928653,
+    0.5316589002426925,
+    0.9942672309696219,
+    7.522279805054181e-05,
+    0.005364573229393902,
+    0.00017024106927227882
+  ],
+  "bit_feature_map": {
+    "7": "proto[hi]",
+    "6": "proto[lo]",
+    "5": "syn",
+    "4": "psh",
+    "3": "size[b3]",
+    "2": "size[b2]",
+    "1": "size[b1]",
+    "0": "size[b0]"
+  },
+  "bit_separation": {
+    "7": {
+      "feature": "proto[hi]",
+      "ddos attack-hoic": 0.018453726957716705,
+      "ddos attack-loic-udp": 0.018453726957716705
+    },
+    "6": {
+      "feature": "proto[lo]",
+      "ddos attack-hoic": 0.10386054962609205,
+      "ddos attack-loic-udp": 19.256589049050817
+    },
+    "5": {
+      "feature": "syn",
+      "ddos attack-hoic": 0.012266085961834022,
+      "ddos attack-loic-udp": 0.012266085961834022
+    },
+    "4": {
+      "feature": "psh",
+      "ddos attack-hoic": 2.4681946669258275,
+      "ddos attack-loic-udp": 18.62448748197436
+    },
+    "3": {
+      "feature": "size[b3]",
+      "ddos attack-hoic": 0.9578761753057555,
+      "ddos attack-loic-udp": 1.5067819365118502
+    },
+    "2": {
+      "feature": "size[b2]",
+      "ddos attack-hoic": 0.9188033464303308,
+      "ddos attack-loic-udp": 1.4364199690119746
+    },
+    "1": {
+      "feature": "size[b1]",
+      "ddos attack-hoic": 0.8211898677743183,
+      "ddos attack-loic-udp": 1.2861320943224654
+    },
+    "0": {
+      "feature": "size[b0]",
+      "ddos attack-hoic": 0.9052655959501121,
+      "ddos attack-loic-udp": 1.4335219490801334
+    }
+  },
+  "eval": "s(x)=-log p(x), attack=positive, raw Mann-Whitney U (no direction selection)",
+  "results_full": {
+    "ddos attack-hoic": {
+      "tag": "ddos attack-hoic",
+      "n_attack": 686012,
+      "emp_joint_auc": 0.8807216956082037,
+      "marginal_auc": 0.8775156603082065,
+      "joint_gain": 0.0032060352999971897,
+      "emp_joint_auc_flipped": 0.11927830439179632,
+      "marginal_auc_flipped": 0.12248433969179351,
+      "youden_j_emp": 0.761162983447027,
+      "youden_j_marg": 0.7557680642784358,
+      "logp_gap_emp": 4.7684620613085436,
+      "logp_gap_marg": 3.8770301864586787
+    },
+    "ddos attack-loic-udp": {
+      "tag": "ddos attack-loic-udp",
+      "n_attack": 1730,
+      "emp_joint_auc": 0.9966928406466513,
+      "marginal_auc": 0.9967944572748267,
+      "joint_gain": -0.00010161662817542716,
+      "emp_joint_auc_flipped": 0.0033071593533486876,
+      "marginal_auc_flipped": 0.0032055427251732604,
+      "youden_j_emp": 0.9944665127020785,
+      "youden_j_marg": 0.9945681293302541,
+      "logp_gap_emp": 2.646630959637949,
+      "logp_gap_marg": 10.332267921198495
+    }
+  },
+  "results_subsample": {
+    "ddos attack-hoic": {
+      "tag": "ddos attack-hoic(sub)",
+      "n_attack": 108250,
+      "emp_joint_auc": 0.880476406658524,
+      "marginal_auc": 0.8767906322397581,
+      "joint_gain": 0.0036857744187659414,
+      "emp_joint_auc_flipped": 0.119523593341476,
+      "marginal_auc_flipped": 0.12320936776024194,
+      "youden_j_emp": 0.7602494226327945,
+      "youden_j_marg": 0.7548545034642032,
+      "logp_gap_emp": 4.762880809951049,
+      "logp_gap_marg": 3.8721974084095296
+    },
+    "ddos attack-loic-udp": {
+      "tag": "ddos attack-loic-udp(sub)",
+      "n_attack": 1730,
+      "emp_joint_auc": 0.9966928406466513,
+      "marginal_auc": 0.9967944572748267,
+      "joint_gain": -0.00010161662817542716,
+      "emp_joint_auc_flipped": 0.0033071593533486876,
+      "marginal_auc_flipped": 0.0032055427251732604,
+      "youden_j_emp": 0.9944665127020785,
+      "youden_j_marg": 0.9945681293302541,
+      "logp_gap_emp": 2.646630959637949,
+      "logp_gap_marg": 10.332267921198495
+    }
+  }
+}

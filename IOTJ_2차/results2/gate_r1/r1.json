@@ -1,0 +1,198 @@
+{
+ "note": "Gate R1 — 실측 양자데이터를 gap≈c·CF² 곡선의 앵커로. KCBS(실측 상관, CF·CI·NCfloor·gap)=켜진 앵커; NIST(Eberhard, Zenodo=PDF)=재구성 불가→작은-CF 앵커+예측. gap_vs_cf_v0·kink·gate_e 무수정 재사용. ★모델클래스 분리이지 supremacy 아님. 실측노이즈·유한표본(CI 병기)·시뮬훈련·(4-cycle/KCBS) 한정. 단정 금지.",
+ "params": {
+  "seed": 20260705,
+  "n_cycle": 4,
+  "cf_tsirelson": 0.41421356237309515,
+  "kcbs_E": [
+   0.6164,
+   0.625,
+   0.6678,
+   -0.6166
+  ],
+  "kcbs_SD": [
+   0.0079,
+   0.0078,
+   0.0074,
+   0.0079
+  ],
+  "kcbs_C": 2.5258000000000003,
+  "bootstrap": 1500
+ },
+ "self_check": {
+  "cyclic3_frustrated_cf": 1.0,
+  "cyclic3_consistent_cf": 0.0
+ },
+ "kcbs_anchor": {
+  "cf": 0.2628999999999999,
+  "cf_ci": [
+   0.24836218788874428,
+   0.27802446238145984
+  ],
+  "cf_from_C": 0.26290000000000013,
+  "nc_floor": 0.012325114801824206,
+  "nc_ci": [
+   0.010823324696724335,
+   0.013991439668487466
+  ],
+  "gap": 0.012325114801824206,
+  "quantum_realizable": true
+ },
+ "reference_sweep": [
+  {
+   "lam": 0.0,
+   "cf": 0.0,
+   "ncfloor": 7.886176609181118e-13
+  },
+  {
+   "lam": 0.05,
+   "cf": 1.1102230246251565e-16,
+   "ncfloor": 8.712223841540118e-13
+  },
+  {
+   "lam": 0.1,
+   "cf": 0.0,
+   "ncfloor": 1.2453261576296818e-12
+  },
+  {
+   "lam": 0.15,
+   "cf": 0.0,
+   "ncfloor": 4.059113893116506e-13
+  },
+  {
+   "lam": 0.2,
+   "cf": 0.0,
+   "ncfloor": 9.976395592210208e-14
+  },
+  {
+   "lam": 0.25,
+   "cf": 0.0,
+   "ncfloor": 1.0313333081077264e-13
+  },
+  {
+   "lam": 0.3,
+   "cf": 2.220446049250313e-16,
+   "ncfloor": 2.2536188927117993e-13
+  },
+  {
+   "lam": 0.35,
+   "cf": 0.0,
+   "ncfloor": 1.6807127114612356e-13
+  },
+  {
+   "lam": 0.4,
+   "cf": 0.0,
+   "ncfloor": 3.2604292103683204e-13
+  },
+  {
+   "lam": 0.45,
+   "cf": 1.1102230246251565e-16,
+   "ncfloor": 5.500164856574577e-13
+  },
+  {
+   "lam": 0.5,
+   "cf": 0.0,
+   "ncfloor": 7.556343072396613e-11
+  },
+  {
+   "lam": 0.55,
+   "cf": 0.09999999999999987,
+   "ncfloor": 0.0017059966669902469
+  },
+  {
+   "lam": 0.6,
+   "cf": 0.20000000000000007,
+   "ncfloor": 0.007002106647682675
+  },
+  {
+   "lam": 0.65,
+   "cf": 0.29999999999999993,
+   "ncfloor": 0.016212783150509946
+  },
+  {
+   "lam": 0.7,
+   "cf": 0.3999999999999999,
+   "ncfloor": 0.029764827946504036
+  },
+  {
+   "lam": 0.75,
+   "cf": 0.5,
+   "ncfloor": 0.04823844728356504
+  },
+  {
+   "lam": 0.8,
+   "cf": 0.6000000000000001,
+   "ncfloor": 0.07246032793382765
+  },
+  {
+   "lam": 0.85,
+   "cf": 0.7,
+   "ncfloor": 0.10369353084069263
+  },
+  {
+   "lam": 0.9,
+   "cf": 0.8,
+   "ncfloor": 0.14409744354009116
+  },
+  {
+   "lam": 0.95,
+   "cf": 0.8999999999999999,
+   "ncfloor": 0.19824053053128077
+  },
+  {
+   "lam": 1.0,
+   "cf": 1.0,
+   "ncfloor": 0.287682072451968
+  }
+ ],
+ "c_fit_boundary": null,
+ "law_prediction": {
+  "nc_pred_ref_curve": 0.012795622167961021,
+  "nc_pred_cCF2_kcbs18": 0.008639551249999993,
+  "nc_pred_cCF2_fit": null
+ },
+ "nist": {
+  "inequality": "Eberhard/CH (not CHSH)",
+  "zenodo": "15655461/15655509 = analysis PDF only (no trials)",
+  "reconstructable": false,
+  "cf_regime": "≪1 (efficiency-limited, near local boundary)"
+ },
+ "security_anchor": {
+  "cf": 4.5e-05,
+  "predicted_gap": 2.5312500000000004e-10
+ },
+ "verdicts": {
+  "P1_kcbs_on_curve": {
+   "cf": 0.2628999999999999,
+   "cf_ci": [
+    0.24836218788874428,
+    0.27802446238145984
+   ],
+   "nc_real": 0.012325114801824206,
+   "nc_ci": [
+    0.010823324696724335,
+    0.013991439668487466
+   ],
+   "nc_pred_ref_curve": 0.012795622167961021,
+   "rel_dev": 0.03677096431582043,
+   "on_curve": true,
+   "gap_real": 0.012325114801824206,
+   "reading": "실측 KCBS 가 CF²-법칙 곡선 위(≤20%%): 법칙이 실데이터서 성립(앵커 확보)"
+  },
+  "P2_nist_small_cf": {
+   "status": "데이터 재구성 불가(Zenodo=PDF, Eberhard box=contingency 필요)",
+   "nist_regime": "Eberhard/CH·저효율 → CF≪1 (국소경계 근방)",
+   "predicted_gap_at_smallcf": "c·CF²→0 (2차 소멸)",
+   "security_anchor_cf": 4.5e-05,
+   "security_pred_gap": 2.5312500000000004e-10,
+   "reading": "작은 CF→gap 2차 소멸(≈0): NIST(작은 CF)·보안데이터(CF≈4.5e-5) 모두 gap≈0 예측. '작은 CF→무시가능 gap' 실측/법칙 확인(P2)."
+  },
+  "cross_check_C": {
+   "C": 2.5258000000000003,
+   "cf_lp": 0.2628999999999999,
+   "cf_from_C": 0.26290000000000013,
+   "agree": true
+  }
+ },
+ "limits": "실측노이즈·유한표본(CI). NIST 시행 재구성 불가(Zenodo=PDF·Eberhard box=contingency 필요). KL_q≈0 은 '실측 양자데이터=양자실현'에서 추론(cyclic 양자 재적합 미수행). 4-cycle/KCBS·(2,2,2) 한정. NCfloor 수치최소화. 관측/앵커이지 quantum supremacy 아님."
+}

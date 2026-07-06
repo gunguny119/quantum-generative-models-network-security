@@ -1,0 +1,63 @@
+{
+  "encoding": "11bit: proto2+syn1+size4+FwdIAT2+FlowIAT2 (psh 제거)",
+  "nq": 11,
+  "nstates": 2048,
+  "occupied_train_states": 90,
+  "layers": 6,
+  "lr": 0.1,
+  "decision": {
+    "smoke_wall_sec": 76.01082563400269,
+    "sec_per_epoch": 1.5202165126800538,
+    "est_300_sec": 456.0649538040161,
+    "chosen_restarts": 16,
+    "chosen_epochs": 300,
+    "est_final_sec": 456.0649538040161
+  },
+  "chosen_restarts": 16,
+  "chosen_epochs": 300,
+  "full_wall_sec": 893.68492603302,
+  "train": {
+    "best_mmd2": 6.656723080472604e-05,
+    "best_tv": 0.06217785042632459,
+    "best_kl": 0.05057323733999735,
+    "median_mmd2": 0.0003121664780902089,
+    "conv_ep": 220,
+    "gnorm0": 0.010657127819859077,
+    "gnormf": 1.0005985153095436e-05,
+    "nparams": 198
+  },
+  "auc": {
+    "marginal": 0.5136187819969457,
+    "emp_joint": 0.7773159817200459,
+    "qcbm": 0.8022966550157911,
+    "qcbm_youden_j": 0.6719142425063324,
+    "qcbm_logp_gap": 1.0223980175476255,
+    "qcbm_beats_marginal": true,
+    "qcbm_over_emp_joint_frac": 1.0321370895275663
+  },
+  "compare_b1_b2": {
+    "b1": {
+      "qcbm": 0.8811,
+      "marg": 0.8726,
+      "emp": 0.8856,
+      "over_emp": 0.995
+    },
+    "b2": {
+      "qcbm": 0.9185,
+      "marg": 0.8741,
+      "emp": 0.9258,
+      "over_emp": 0.992
+    }
+  },
+  "baseline_verify": {
+    "emp_joint": 0.7773159817200459,
+    "marginal": 0.5136187819969457,
+    "expected": {
+      "emp": 0.7773,
+      "marg": 0.5136,
+      "occ": 90
+    }
+  },
+  "eval": "s=-log p(x)+1e-12, attack=positive, raw Mann-Whitney U (no direction selection)",
+  "note": "판정은 웹 AI. QCBM 학습 1회(tmux). 기존 소스 무수정."
+}

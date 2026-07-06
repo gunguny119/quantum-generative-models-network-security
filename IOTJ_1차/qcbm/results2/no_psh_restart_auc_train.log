@@ -1,0 +1,338 @@
+[11:47:27] ================================================================================
+[11:47:27] psh 제거 11비트 재실행 — 16 restart AUC (결정론 재현, p_final 저장)
+[11:47:27] ================================================================================
+[11:47:27] CSV 로드: data/cic_0221_ddos.csv
+[11:47:30] benign=360833 (train=252583/test=108250)  attack=686012
+[11:47:30] Fwd IAT edges=[5.739, 5.9067, 7.8581] | Flow IAT edges=[5.3351, 5.5026, 7.4548]
+[11:47:30] 11bit(psh 제거) 점유=90/2048 (4.4%) | train=252583 test=108250 atk=686012
+[11:47:31] [r 이상탐지] AUC=0.5136 | mean p(x): benign=3.919e-03 vs attack=3.894e-03 (배율 1.01x)
+[11:47:31] [r 이상탐지] mean log p(x): benign=-5.573 vs attack=-5.550 (격차 -0.023) | Youden J=0.378
+[11:47:31] [r 이상탐지] AUC=0.7773 | mean p(x): benign=1.629e-02 vs attack=1.109e-02 (배율 1.47x)
+[11:47:31] [r 이상탐지] mean log p(x): benign=-4.150 vs attack=-8.204 (격차 4.054) | Youden J=0.642
+[11:47:31] 기준선: marginal=0.5136 emp_joint=0.7773 (기대 0.5136/0.7773)
+[11:47:31] [재학습] RESTARTS=16 EPOCHS=300 L=6 (결정론 재현)
+[11:47:31] ----------------------------------------------------------------------
+[11:47:31] [qcbm_iat_no_psh] 학습 시작: 11큐비트, 2048상태, params=198, 재시작=16 (16코어 병렬)
+[11:47:34]   [qcbm_iat_no_psh seed  7] ep    0/300  MMD^2=6.77504e-02  |grad|=1.075e-02  (2.7s)
+[11:47:35]   [qcbm_iat_no_psh seed  8] ep    0/300  MMD^2=6.79018e-02  |grad|=1.113e-02  (3.1s)
+[11:47:35]   [qcbm_iat_no_psh seed  5] ep    0/300  MMD^2=7.17277e-02  |grad|=1.000e-02  (3.1s)
+[11:47:35]   [qcbm_iat_no_psh seed  0] ep    0/300  MMD^2=7.11844e-02  |grad|=1.125e-02  (3.2s)
+[11:47:35]   [qcbm_iat_no_psh seed 14] ep    0/300  MMD^2=7.20246e-02  |grad|=1.045e-02  (3.2s)
+[11:47:35]   [qcbm_iat_no_psh seed  3] ep    0/300  MMD^2=7.03572e-02  |grad|=1.018e-02  (3.3s)
+[11:47:35]   [qcbm_iat_no_psh seed 13] ep    0/300  MMD^2=7.20713e-02  |grad|=1.035e-02  (3.4s)
+[11:47:35]   [qcbm_iat_no_psh seed  1] ep    0/300  MMD^2=6.94842e-02  |grad|=1.208e-02  (3.3s)
+[11:47:35]   [qcbm_iat_no_psh seed 12] ep    0/300  MMD^2=6.84186e-02  |grad|=9.785e-03  (3.4s)
+[11:47:35]   [qcbm_iat_no_psh seed  2] ep    0/300  MMD^2=6.88746e-02  |grad|=9.650e-03  (3.4s)
+[11:47:35]   [qcbm_iat_no_psh seed  6] ep    0/300  MMD^2=6.84216e-02  |grad|=1.057e-02  (3.4s)
+[11:47:35]   [qcbm_iat_no_psh seed  4] ep    0/300  MMD^2=6.89194e-02  |grad|=9.890e-03  (3.4s)
+[11:47:35]   [qcbm_iat_no_psh seed  9] ep    0/300  MMD^2=7.13652e-02  |grad|=1.173e-02  (3.4s)
+[11:47:35]   [qcbm_iat_no_psh seed 15] ep    0/300  MMD^2=6.63527e-02  |grad|=1.075e-02  (3.6s)
+[11:47:35]   [qcbm_iat_no_psh seed 10] ep    0/300  MMD^2=7.18025e-02  |grad|=1.116e-02  (4.0s)
+[11:47:36]   [qcbm_iat_no_psh seed 11] ep    0/300  MMD^2=6.73855e-02  |grad|=1.168e-02  (4.0s)
+[11:48:26]   [qcbm_iat_no_psh seed  7] ep   25/300  MMD^2=4.48644e-02  |grad|=4.481e-03  (54.7s)
+[11:48:44]   [qcbm_iat_no_psh seed  8] ep   25/300  MMD^2=4.40442e-02  |grad|=4.233e-03  (72.2s)
+[11:48:46]   [qcbm_iat_no_psh seed  5] ep   25/300  MMD^2=4.61757e-02  |grad|=4.340e-03  (74.1s)
+[11:48:50]   [qcbm_iat_no_psh seed  9] ep   25/300  MMD^2=4.67446e-02  |grad|=3.954e-03  (78.4s)
+[11:48:50]   [qcbm_iat_no_psh seed 15] ep   25/300  MMD^2=4.47728e-02  |grad|=3.838e-03  (78.7s)
+[11:48:50]   [qcbm_iat_no_psh seed  0] ep   25/300  MMD^2=4.33865e-02  |grad|=5.405e-03  (79.0s)
+[11:48:51]   [qcbm_iat_no_psh seed  4] ep   25/300  MMD^2=3.77725e-02  |grad|=7.149e-03  (79.1s)
+[11:48:51]   [qcbm_iat_no_psh seed 14] ep   25/300  MMD^2=4.05783e-02  |grad|=5.497e-03  (79.1s)
+[11:48:51]   [qcbm_iat_no_psh seed  6] ep   25/300  MMD^2=4.45661e-02  |grad|=4.779e-03  (79.2s)
+[11:48:51]   [qcbm_iat_no_psh seed  2] ep   25/300  MMD^2=4.25915e-02  |grad|=5.752e-03  (79.3s)
+[11:48:51]   [qcbm_iat_no_psh seed 12] ep   25/300  MMD^2=4.54553e-02  |grad|=3.819e-03  (79.6s)
+[11:48:51]   [qcbm_iat_no_psh seed  3] ep   25/300  MMD^2=4.46687e-02  |grad|=3.808e-03  (79.7s)
+[11:48:51]   [qcbm_iat_no_psh seed  1] ep   25/300  MMD^2=4.10440e-02  |grad|=7.724e-03  (79.7s)
+[11:49:10]   [qcbm_iat_no_psh seed 13] ep   25/300  MMD^2=3.80024e-02  |grad|=6.780e-03  (98.1s)
+[11:49:10]   [qcbm_iat_no_psh seed 10] ep   25/300  MMD^2=3.80937e-02  |grad|=6.784e-03  (98.3s)
+[11:49:11]   [qcbm_iat_no_psh seed 11] ep   25/300  MMD^2=4.57850e-02  |grad|=3.797e-03  (99.7s)
+[11:49:38]   [qcbm_iat_no_psh seed  8] ep   50/300  MMD^2=1.13304e-02  |grad|=3.545e-03  (126.4s)
+[11:49:42]   [qcbm_iat_no_psh seed  7] ep   50/300  MMD^2=4.12599e-02  |grad|=1.631e-03  (130.3s)
+[11:50:01]   [qcbm_iat_no_psh seed  5] ep   50/300  MMD^2=4.27829e-02  |grad|=1.669e-03  (149.1s)
+[11:50:05]   [qcbm_iat_no_psh seed  9] ep   50/300  MMD^2=4.31473e-02  |grad|=1.717e-03  (154.0s)
+[11:50:06]   [qcbm_iat_no_psh seed 15] ep   50/300  MMD^2=2.79758e-02  |grad|=9.749e-03  (154.0s)
+[11:50:06]   [qcbm_iat_no_psh seed  4] ep   50/300  MMD^2=1.58002e-03  |grad|=4.062e-03  (154.2s)
+[11:50:06]   [qcbm_iat_no_psh seed  0] ep   50/300  MMD^2=4.39163e-03  |grad|=8.068e-03  (154.3s)
+[11:50:06]   [qcbm_iat_no_psh seed 14] ep   50/300  MMD^2=4.68060e-03  |grad|=5.015e-03  (154.3s)
+[11:50:06]   [qcbm_iat_no_psh seed  2] ep   50/300  MMD^2=4.55152e-03  |grad|=6.043e-03  (154.4s)
+[11:50:06]   [qcbm_iat_no_psh seed  6] ep   50/300  MMD^2=5.45553e-03  |grad|=6.297e-03  (154.7s)
+[11:50:07]   [qcbm_iat_no_psh seed 12] ep   50/300  MMD^2=7.94543e-03  |grad|=1.054e-02  (155.1s)
+[11:50:07]   [qcbm_iat_no_psh seed  1] ep   50/300  MMD^2=7.49153e-03  |grad|=3.779e-03  (155.9s)
+[11:50:07]   [qcbm_iat_no_psh seed  3] ep   50/300  MMD^2=2.03138e-02  |grad|=2.627e-02  (156.0s)
+[11:50:28]   [qcbm_iat_no_psh seed 13] ep   50/300  MMD^2=2.90275e-03  |grad|=7.620e-03  (176.7s)
+[11:50:29]   [qcbm_iat_no_psh seed 10] ep   50/300  MMD^2=8.91419e-03  |grad|=6.088e-03  (177.2s)
+[11:50:30]   [qcbm_iat_no_psh seed 11] ep   50/300  MMD^2=4.11778e-02  |grad|=1.661e-03  (178.4s)
+[11:50:54]   [qcbm_iat_no_psh seed  8] ep   75/300  MMD^2=1.41594e-03  |grad|=4.626e-03  (202.9s)
+[11:50:57]   [qcbm_iat_no_psh seed  7] ep   75/300  MMD^2=3.99557e-02  |grad|=6.966e-04  (205.6s)
+[11:51:16]   [qcbm_iat_no_psh seed  5] ep   75/300  MMD^2=4.18352e-02  |grad|=7.164e-04  (224.1s)
+[11:51:21]   [qcbm_iat_no_psh seed  9] ep   75/300  MMD^2=2.95847e-02  |grad|=7.092e-03  (229.1s)
+[11:51:21]   [qcbm_iat_no_psh seed  4] ep   75/300  MMD^2=5.59946e-04  |grad|=8.743e-04  (229.2s)
+[11:51:21]   [qcbm_iat_no_psh seed 14] ep   75/300  MMD^2=6.75232e-04  |grad|=6.604e-04  (229.7s)
+[11:51:21]   [qcbm_iat_no_psh seed  2] ep   75/300  MMD^2=6.82327e-04  |grad|=5.344e-04  (229.8s)
+[11:51:21]   [qcbm_iat_no_psh seed  6] ep   75/300  MMD^2=7.28488e-04  |grad|=1.218e-03  (229.8s)
+[11:51:21]   [qcbm_iat_no_psh seed  0] ep   75/300  MMD^2=5.05861e-04  |grad|=1.369e-03  (229.9s)
+[11:51:21]   [qcbm_iat_no_psh seed 15] ep   75/300  MMD^2=1.47286e-03  |grad|=3.131e-03  (230.0s)
+[11:51:22]   [qcbm_iat_no_psh seed 12] ep   75/300  MMD^2=7.73453e-04  |grad|=1.451e-03  (230.8s)
+[11:51:23]   [qcbm_iat_no_psh seed  3] ep   75/300  MMD^2=6.31110e-03  |grad|=3.504e-03  (231.2s)
+[11:51:23]   [qcbm_iat_no_psh seed  1] ep   75/300  MMD^2=4.26291e-03  |grad|=1.402e-03  (231.3s)
+[11:51:44]   [qcbm_iat_no_psh seed 13] ep   75/300  MMD^2=6.81284e-04  |grad|=1.177e-03  (252.4s)
+[11:51:44]   [qcbm_iat_no_psh seed 10] ep   75/300  MMD^2=1.05884e-03  |grad|=2.731e-03  (252.6s)
+[11:51:45]   [qcbm_iat_no_psh seed 11] ep   75/300  MMD^2=3.85330e-02  |grad|=1.585e-03  (253.8s)
+[11:52:10]   [qcbm_iat_no_psh seed  8] ep  100/300  MMD^2=4.82326e-04  |grad|=6.608e-04  (278.8s)
+[11:52:13]   [qcbm_iat_no_psh seed  7] ep  100/300  MMD^2=3.03178e-02  |grad|=5.799e-03  (281.0s)
+[11:52:30]   [qcbm_iat_no_psh seed  5] ep  100/300  MMD^2=4.11982e-02  |grad|=3.402e-04  (299.1s)
+[11:52:33]   [qcbm_iat_no_psh seed  9] ep  100/300  MMD^2=3.88822e-03  |grad|=4.952e-03  (301.6s)
+[11:52:36]   [qcbm_iat_no_psh seed  4] ep  100/300  MMD^2=3.72161e-04  |grad|=2.122e-04  (304.4s)
+[11:52:37]   [qcbm_iat_no_psh seed  0] ep  100/300  MMD^2=3.54136e-04  |grad|=2.867e-04  (305.1s)
+[11:52:37]   [qcbm_iat_no_psh seed  2] ep  100/300  MMD^2=4.29708e-04  |grad|=3.570e-04  (305.1s)
+[11:52:37]   [qcbm_iat_no_psh seed 14] ep  100/300  MMD^2=4.56829e-04  |grad|=4.833e-04  (305.2s)
+[11:52:37]   [qcbm_iat_no_psh seed  6] ep  100/300  MMD^2=4.12695e-04  |grad|=2.712e-04  (305.3s)
+[11:52:38]   [qcbm_iat_no_psh seed 12] ep  100/300  MMD^2=4.49954e-04  |grad|=4.098e-04  (306.8s)
+[11:52:38]   [qcbm_iat_no_psh seed  3] ep  100/300  MMD^2=7.69513e-04  |grad|=1.314e-03  (306.9s)
+[11:52:39]   [qcbm_iat_no_psh seed  1] ep  100/300  MMD^2=4.00579e-03  |grad|=5.159e-04  (307.0s)
+[11:52:41]   [qcbm_iat_no_psh seed 15] ep  100/300  MMD^2=5.70287e-04  |grad|=6.356e-04  (309.7s)
+[11:53:03]   [qcbm_iat_no_psh seed 13] ep  100/300  MMD^2=4.67611e-04  |grad|=4.831e-04  (331.7s)
+[11:53:12]   [qcbm_iat_no_psh seed 10] ep  100/300  MMD^2=2.99857e-04  |grad|=5.140e-04  (340.6s)
+[11:53:14]   [qcbm_iat_no_psh seed 11] ep  100/300  MMD^2=7.25324e-03  |grad|=4.572e-03  (342.6s)
+[11:53:22]   [qcbm_iat_no_psh seed  9] ep  125/300  MMD^2=5.92375e-04  |grad|=5.927e-04  (351.0s)
+[11:53:26]   [qcbm_iat_no_psh seed  8] ep  125/300  MMD^2=3.36633e-04  |grad|=1.503e-04  (355.0s)
+[11:53:28]   [qcbm_iat_no_psh seed  7] ep  125/300  MMD^2=2.21674e-03  |grad|=5.395e-03  (356.6s)
+[11:53:48]   [qcbm_iat_no_psh seed  5] ep  125/300  MMD^2=4.07494e-02  |grad|=2.153e-04  (376.3s)
+[11:53:55]   [qcbm_iat_no_psh seed  4] ep  125/300  MMD^2=3.51852e-04  |grad|=7.009e-05  (383.6s)
+[11:53:55]   [qcbm_iat_no_psh seed  2] ep  125/300  MMD^2=4.10434e-04  |grad|=1.152e-04  (383.8s)
+[11:53:56]   [qcbm_iat_no_psh seed  6] ep  125/300  MMD^2=3.90582e-04  |grad|=7.650e-05  (384.8s)
+[11:53:56]   [qcbm_iat_no_psh seed 14] ep  125/300  MMD^2=4.20386e-04  |grad|=1.184e-04  (384.8s)
+[11:53:58]   [qcbm_iat_no_psh seed  3] ep  125/300  MMD^2=5.83209e-04  |grad|=3.399e-04  (386.1s)
+[11:54:01]   [qcbm_iat_no_psh seed 12] ep  125/300  MMD^2=3.86316e-04  |grad|=1.300e-04  (389.7s)
+[11:54:09]   [qcbm_iat_no_psh seed  0] ep  125/300  MMD^2=3.38363e-04  |grad|=1.263e-04  (397.6s)
+[11:54:21]   [qcbm_iat_no_psh seed  1] ep  125/300  MMD^2=3.96580e-03  |grad|=1.109e-04  (409.5s)
+[11:54:37]   [qcbm_iat_no_psh seed  7] ep  150/300  MMD^2=4.57046e-04  |grad|=9.774e-04  (425.9s)
+[11:54:44]   [qcbm_iat_no_psh seed  9] ep  150/300  MMD^2=4.73467e-04  |grad|=2.289e-04  (432.1s)
+[11:54:48]   [qcbm_iat_no_psh seed 15] ep  125/300  MMD^2=3.94767e-04  |grad|=2.060e-04  (436.1s)
+[11:54:56]   [qcbm_iat_no_psh seed 13] ep  125/300  MMD^2=3.85460e-04  |grad|=1.283e-04  (444.2s)
+[11:55:06]   [qcbm_iat_no_psh seed 11] ep  125/300  MMD^2=6.87939e-04  |grad|=1.901e-03  (454.3s)
+[11:55:07]   [qcbm_iat_no_psh seed 10] ep  125/300  MMD^2=2.46939e-04  |grad|=1.161e-04  (455.2s)
+[11:55:10]   [qcbm_iat_no_psh seed  8] ep  150/300  MMD^2=3.11200e-04  |grad|=5.443e-05  (458.2s)
+[11:55:10]   [qcbm_iat_no_psh seed  5] ep  150/300  MMD^2=4.03507e-02  |grad|=2.493e-04  (458.8s)
+[11:55:11]   [qcbm_iat_no_psh seed  4] ep  150/300  MMD^2=3.39741e-04  |grad|=5.943e-05  (459.4s)
+[11:55:14]   [qcbm_iat_no_psh seed  6] ep  150/300  MMD^2=3.86231e-04  |grad|=2.982e-05  (462.7s)
+[11:55:17]   [qcbm_iat_no_psh seed  2] ep  150/300  MMD^2=4.01232e-04  |grad|=4.706e-05  (465.8s)
+[11:55:19]   [qcbm_iat_no_psh seed 14] ep  150/300  MMD^2=3.97218e-04  |grad|=6.699e-05  (467.5s)
+[11:55:19]   [qcbm_iat_no_psh seed  3] ep  150/300  MMD^2=5.44869e-04  |grad|=1.163e-04  (467.8s)
+[11:55:43]   [qcbm_iat_no_psh seed  0] ep  150/300  MMD^2=3.33658e-04  |grad|=3.988e-05  (491.7s)
+[11:55:48]   [qcbm_iat_no_psh seed 12] ep  150/300  MMD^2=3.65176e-04  |grad|=4.914e-05  (496.7s)
+[11:55:55]   [qcbm_iat_no_psh seed  1] ep  150/300  MMD^2=3.95848e-03  |grad|=4.468e-05  (503.7s)
+[11:55:57]   [qcbm_iat_no_psh seed  7] ep  175/300  MMD^2=2.89845e-04  |grad|=2.163e-04  (505.0s)
+[11:56:03]   [qcbm_iat_no_psh seed  9] ep  175/300  MMD^2=3.90398e-04  |grad|=1.349e-04  (511.9s)
+[11:56:10]   [qcbm_iat_no_psh seed 15] ep  150/300  MMD^2=2.23101e-04  |grad|=1.794e-04  (518.1s)
+[11:56:16]   [qcbm_iat_no_psh seed 13] ep  150/300  MMD^2=3.73775e-04  |grad|=5.750e-05  (525.0s)
+[11:56:27]   [qcbm_iat_no_psh seed 11] ep  150/300  MMD^2=2.91654e-04  |grad|=4.438e-04  (535.5s)
+[11:56:32]   [qcbm_iat_no_psh seed  4] ep  175/300  MMD^2=2.63574e-04  |grad|=1.260e-04  (541.0s)
+[11:56:33]   [qcbm_iat_no_psh seed  5] ep  175/300  MMD^2=4.01667e-02  |grad|=4.641e-03  (541.4s)
+[11:56:36]   [qcbm_iat_no_psh seed  6] ep  175/300  MMD^2=3.84582e-04  |grad|=1.446e-05  (545.0s)
+[11:56:38]   [qcbm_iat_no_psh seed 10] ep  150/300  MMD^2=2.42284e-04  |grad|=4.293e-05  (546.5s)
+[11:56:39]   [qcbm_iat_no_psh seed  8] ep  175/300  MMD^2=3.06028e-04  |grad|=2.760e-05  (547.5s)
+[11:56:40]   [qcbm_iat_no_psh seed  2] ep  175/300  MMD^2=3.87058e-04  |grad|=7.637e-05  (548.2s)
+[11:56:42]   [qcbm_iat_no_psh seed 14] ep  175/300  MMD^2=3.76641e-04  |grad|=4.516e-05  (550.3s)
+[11:56:42]   [qcbm_iat_no_psh seed  3] ep  175/300  MMD^2=5.12695e-04  |grad|=6.697e-05  (550.4s)
+[11:57:06]   [qcbm_iat_no_psh seed  0] ep  175/300  MMD^2=3.30988e-04  |grad|=1.672e-05  (574.7s)
+[11:57:18]   [qcbm_iat_no_psh seed 12] ep  175/300  MMD^2=3.62169e-04  |grad|=1.782e-05  (586.3s)
+[11:57:19]   [qcbm_iat_no_psh seed  7] ep  200/300  MMD^2=2.72542e-04  |grad|=7.875e-05  (587.6s)
+[11:57:24]   [qcbm_iat_no_psh seed  1] ep  175/300  MMD^2=3.95299e-03  |grad|=3.442e-05  (592.2s)
+[11:57:25]   [qcbm_iat_no_psh seed  9] ep  200/300  MMD^2=3.76679e-04  |grad|=2.778e-05  (593.5s)
+[11:57:32]   [qcbm_iat_no_psh seed 15] ep  175/300  MMD^2=1.12780e-04  |grad|=1.271e-04  (600.4s)
+[11:57:37]   [qcbm_iat_no_psh seed 13] ep  175/300  MMD^2=3.70796e-04  |grad|=1.672e-05  (605.1s)
+[11:57:47]   [qcbm_iat_no_psh seed 11] ep  175/300  MMD^2=2.54326e-04  |grad|=8.894e-05  (615.8s)
+[11:57:52]   [qcbm_iat_no_psh seed  4] ep  200/300  MMD^2=2.14819e-04  |grad|=3.980e-05  (620.6s)
+[11:57:54]   [qcbm_iat_no_psh seed  5] ep  200/300  MMD^2=3.99022e-02  |grad|=4.968e-04  (622.3s)
+[11:57:57]   [qcbm_iat_no_psh seed  6] ep  200/300  MMD^2=3.83589e-04  |grad|=9.942e-06  (625.5s)
+[11:57:59]   [qcbm_iat_no_psh seed  2] ep  200/300  MMD^2=3.34418e-04  |grad|=9.649e-05  (627.9s)
+[11:58:02]   [qcbm_iat_no_psh seed 14] ep  200/300  MMD^2=3.62763e-04  |grad|=3.969e-05  (630.3s)
+[11:58:02]   [qcbm_iat_no_psh seed  3] ep  200/300  MMD^2=4.87158e-04  |grad|=2.600e-05  (630.5s)
+[11:58:06]   [qcbm_iat_no_psh seed 10] ep  175/300  MMD^2=2.41366e-04  |grad|=1.297e-05  (634.4s)
+[11:58:06]   [qcbm_iat_no_psh seed  8] ep  200/300  MMD^2=3.00089e-04  |grad|=2.575e-05  (634.8s)
+[11:58:27]   [qcbm_iat_no_psh seed  0] ep  200/300  MMD^2=3.29115e-04  |grad|=1.313e-05  (655.1s)
+[11:58:38]   [qcbm_iat_no_psh seed  7] ep  225/300  MMD^2=2.65012e-04  |grad|=2.887e-05  (666.5s)
+[11:58:44]   [qcbm_iat_no_psh seed 12] ep  200/300  MMD^2=3.60300e-04  |grad|=1.369e-05  (672.5s)
+[11:58:45]   [qcbm_iat_no_psh seed  9] ep  225/300  MMD^2=3.75584e-04  |grad|=1.128e-05  (673.3s)
+[11:58:51]   [qcbm_iat_no_psh seed  1] ep  200/300  MMD^2=3.93865e-03  |grad|=5.237e-05  (679.4s)
+[11:58:52]   [qcbm_iat_no_psh seed 15] ep  200/300  MMD^2=7.95661e-05  |grad|=4.818e-05  (680.5s)
+[11:58:56]   [qcbm_iat_no_psh seed 13] ep  200/300  MMD^2=3.69165e-04  |grad|=1.057e-05  (684.6s)
+[11:59:08]   [qcbm_iat_no_psh seed 11] ep  200/300  MMD^2=2.51295e-04  |grad|=4.433e-05  (696.8s)
+[11:59:12]   [qcbm_iat_no_psh seed  4] ep  225/300  MMD^2=2.08412e-04  |grad|=1.784e-05  (700.1s)
+[11:59:14]   [qcbm_iat_no_psh seed  5] ep  225/300  MMD^2=3.96052e-02  |grad|=3.205e-04  (702.8s)
+[11:59:17]   [qcbm_iat_no_psh seed  6] ep  225/300  MMD^2=3.82812e-04  |grad|=1.029e-05  (705.6s)
+[11:59:18]   [qcbm_iat_no_psh seed  2] ep  225/300  MMD^2=3.02744e-04  |grad|=3.469e-05  (706.1s)
+[11:59:22]   [qcbm_iat_no_psh seed 14] ep  225/300  MMD^2=3.50294e-04  |grad|=3.922e-05  (710.3s)
+[11:59:22]   [qcbm_iat_no_psh seed  3] ep  225/300  MMD^2=4.83047e-04  |grad|=8.526e-06  (710.4s)
+[11:59:32]   [qcbm_iat_no_psh seed 10] ep  200/300  MMD^2=2.40959e-04  |grad|=6.795e-06  (720.9s)
+[11:59:32]   [qcbm_iat_no_psh seed  8] ep  225/300  MMD^2=2.96260e-04  |grad|=1.151e-05  (721.0s)
+[11:59:47]   [qcbm_iat_no_psh seed  0] ep  225/300  MMD^2=3.27504e-04  |grad|=1.148e-05  (735.7s)
+[12:00:00]   [qcbm_iat_no_psh seed  7] ep  250/300  MMD^2=2.62095e-04  |grad|=1.442e-05  (748.1s)
+[12:00:06]   [qcbm_iat_no_psh seed  9] ep  250/300  MMD^2=3.75070e-04  |grad|=6.254e-06  (754.6s)
+[12:00:09]   [qcbm_iat_no_psh seed 12] ep  225/300  MMD^2=3.58687e-04  |grad|=1.248e-05  (757.8s)
+[12:00:12]   [qcbm_iat_no_psh seed 15] ep  225/300  MMD^2=7.23684e-05  |grad|=2.285e-05  (760.9s)
+[12:00:16]   [qcbm_iat_no_psh seed  1] ep  225/300  MMD^2=3.91542e-03  |grad|=5.122e-05  (764.6s)
+[12:00:18]   [qcbm_iat_no_psh seed 13] ep  225/300  MMD^2=3.68005e-04  |grad|=8.569e-06  (766.3s)
+[12:00:29]   [qcbm_iat_no_psh seed 11] ep  225/300  MMD^2=2.50168e-04  |grad|=1.635e-05  (777.6s)
+[12:00:32]   [qcbm_iat_no_psh seed  4] ep  250/300  MMD^2=2.05020e-04  |grad|=1.449e-05  (780.1s)
+[12:00:34]   [qcbm_iat_no_psh seed  5] ep  250/300  MMD^2=3.91471e-02  |grad|=8.442e-04  (782.8s)
+[12:00:37]   [qcbm_iat_no_psh seed  2] ep  250/300  MMD^2=2.95807e-04  |grad|=1.743e-05  (785.7s)
+[12:00:38]   [qcbm_iat_no_psh seed  6] ep  250/300  MMD^2=3.81741e-04  |grad|=1.042e-05  (786.1s)
+[12:00:41]   [qcbm_iat_no_psh seed  3] ep  250/300  MMD^2=4.82636e-04  |grad|=2.978e-06  (789.9s)
+[12:00:42]   [qcbm_iat_no_psh seed 14] ep  250/300  MMD^2=3.37924e-04  |grad|=3.723e-05  (790.1s)
+[12:00:58]   [qcbm_iat_no_psh seed  8] ep  250/300  MMD^2=2.94943e-04  |grad|=7.813e-06  (806.2s)
+[12:00:59]   [qcbm_iat_no_psh seed 10] ep  225/300  MMD^2=2.40381e-04  |grad|=8.071e-06  (807.5s)
+[12:01:06]   [qcbm_iat_no_psh seed  0] ep  250/300  MMD^2=3.41178e-04  |grad|=1.391e-03  (814.7s)
+[12:01:20]   [qcbm_iat_no_psh seed  7] ep  275/300  MMD^2=2.60807e-04  |grad|=9.357e-06  (828.5s)
+[12:01:26]   [qcbm_iat_no_psh seed  9] ep  275/300  MMD^2=3.74592e-04  |grad|=5.094e-06  (834.4s)
+[12:01:32]   [qcbm_iat_no_psh seed 15] ep  250/300  MMD^2=6.93699e-05  |grad|=1.354e-05  (840.1s)
+[12:01:36]   [qcbm_iat_no_psh seed 12] ep  250/300  MMD^2=3.57241e-04  |grad|=1.151e-05  (844.5s)
+[12:01:37]   [qcbm_iat_no_psh seed 13] ep  250/300  MMD^2=3.66628e-04  |grad|=8.572e-06  (846.0s)
+[12:01:42]   [qcbm_iat_no_psh seed  1] ep  250/300  MMD^2=3.87660e-03  |grad|=1.002e-04  (850.9s)
+[12:01:50]   [qcbm_iat_no_psh seed 11] ep  250/300  MMD^2=2.48390e-04  |grad|=1.529e-05  (857.9s)
+[12:01:51]   [qcbm_iat_no_psh seed  4] ep  275/300  MMD^2=2.01834e-04  |grad|=1.401e-05  (859.5s)
+[12:01:54]   [qcbm_iat_no_psh seed  5] ep  275/300  MMD^2=2.61266e-02  |grad|=6.506e-03  (862.2s)
+[12:01:57]   [qcbm_iat_no_psh seed  6] ep  275/300  MMD^2=3.80645e-04  |grad|=7.660e-06  (865.4s)
+[12:01:57]   [qcbm_iat_no_psh seed  2] ep  275/300  MMD^2=2.93167e-04  |grad|=1.224e-05  (865.5s)
+[12:02:00]   [qcbm_iat_no_psh seed 14] ep  275/300  MMD^2=3.27513e-04  |grad|=2.871e-05  (868.9s)
+[12:02:01]   [qcbm_iat_no_psh seed  3] ep  275/300  MMD^2=4.82542e-04  |grad|=2.339e-06  (869.3s)
+[12:02:23]   [qcbm_iat_no_psh seed  8] ep  275/300  MMD^2=2.93856e-04  |grad|=1.008e-05  (891.3s)
+[12:02:26]   [qcbm_iat_no_psh seed 10] ep  250/300  MMD^2=2.38540e-04  |grad|=1.435e-05  (894.2s)
+[12:02:27]   [qcbm_iat_no_psh seed  0] ep  275/300  MMD^2=3.26318e-04  |grad|=5.835e-05  (895.1s)
+[12:02:37]   [qcbm_iat_no_psh seed  7] ep  299/300  MMD^2=2.60171e-04  |grad|=6.900e-06  (905.9s)
+[12:02:37]   [qcbm_iat_no_psh seed  7] 완료 MMD^2=2.6017e-04 TV=0.1111 |grad|_fin=6.900e-06 (905.9s)
+[12:02:42]   [qcbm_iat_no_psh seed  9] ep  299/300  MMD^2=3.74048e-04  |grad|=5.319e-06  (910.4s)
+[12:02:42]   [qcbm_iat_no_psh seed  9] 완료 MMD^2=3.7405e-04 TV=0.1086 |grad|_fin=5.319e-06 (910.5s)
+[12:02:51]   [qcbm_iat_no_psh seed 15] ep  275/300  MMD^2=6.76473e-05  |grad|=9.786e-06  (919.9s)
+[12:02:57]   [qcbm_iat_no_psh seed  2] ep  299/300  MMD^2=2.91479e-04  |grad|=1.052e-05  (925.3s)
+[12:02:57]   [qcbm_iat_no_psh seed  2] 완료 MMD^2=2.9148e-04 TV=0.1138 |grad|_fin=1.052e-05 (925.4s)
+[12:02:57]   [qcbm_iat_no_psh seed 13] ep  275/300  MMD^2=3.64359e-04  |grad|=9.499e-06  (925.5s)
+[12:03:02]   [qcbm_iat_no_psh seed 12] ep  275/300  MMD^2=3.55981e-04  |grad|=1.051e-05  (930.2s)
+[12:03:07]   [qcbm_iat_no_psh seed  1] ep  275/300  MMD^2=9.68930e-04  |grad|=2.975e-03  (936.0s)
+[12:03:08]   [qcbm_iat_no_psh seed  4] ep  299/300  MMD^2=1.96858e-04  |grad|=1.517e-05  (936.6s)
+[12:03:08]   [qcbm_iat_no_psh seed  4] 완료 MMD^2=1.9686e-04 TV=0.1001 |grad|_fin=1.517e-05 (936.6s)
+[12:03:09]   [qcbm_iat_no_psh seed  5] ep  299/300  MMD^2=2.04673e-03  |grad|=3.726e-03  (937.8s)
+[12:03:09]   [qcbm_iat_no_psh seed  5] 완료 MMD^2=2.0467e-03 TV=0.2671 |grad|_fin=3.726e-03 (937.8s)
+[12:03:09]   [qcbm_iat_no_psh seed 11] ep  275/300  MMD^2=2.45887e-04  |grad|=1.497e-05  (937.9s)
+[12:03:11]   [qcbm_iat_no_psh seed  6] ep  299/300  MMD^2=3.79759e-04  |grad|=6.448e-06  (939.8s)
+[12:03:11]   [qcbm_iat_no_psh seed  6] 완료 MMD^2=3.7976e-04 TV=0.1114 |grad|_fin=6.448e-06 (939.8s)
+[12:03:13]   [qcbm_iat_no_psh seed 14] ep  299/300  MMD^2=3.20799e-04  |grad|=2.373e-05  (941.5s)
+[12:03:13]   [qcbm_iat_no_psh seed 14] 완료 MMD^2=3.2080e-04 TV=0.1047 |grad|_fin=2.373e-05 (941.5s)
+[12:03:14]   [qcbm_iat_no_psh seed  0] ep  299/300  MMD^2=3.24805e-04  |grad|=1.826e-04  (942.5s)
+[12:03:14]   [qcbm_iat_no_psh seed  0] 완료 MMD^2=3.2480e-04 TV=0.1009 |grad|_fin=1.826e-04 (942.5s)
+[12:03:15]   [qcbm_iat_no_psh seed  3] ep  299/300  MMD^2=4.82464e-04  |grad|=2.270e-06  (943.3s)
+[12:03:15]   [qcbm_iat_no_psh seed  3] 완료 MMD^2=4.8246e-04 TV=0.1095 |grad|_fin=2.270e-06 (943.3s)
+[12:03:34]   [qcbm_iat_no_psh seed 15] ep  299/300  MMD^2=6.65672e-05  |grad|=8.132e-06  (962.3s)
+[12:03:34]   [qcbm_iat_no_psh seed 15] 완료 MMD^2=6.6567e-05 TV=0.0622 |grad|_fin=8.132e-06 (962.3s)
+[12:03:36]   [qcbm_iat_no_psh seed 13] ep  299/300  MMD^2=3.62848e-04  |grad|=7.293e-06  (964.6s)
+[12:03:36]   [qcbm_iat_no_psh seed 13] 완료 MMD^2=3.6285e-04 TV=0.1074 |grad|_fin=7.293e-06 (964.7s)
+[12:03:44]   [qcbm_iat_no_psh seed  8] ep  299/300  MMD^2=2.91219e-04  |grad|=1.687e-05  (972.6s)
+[12:03:44]   [qcbm_iat_no_psh seed  8] 완료 MMD^2=2.9122e-04 TV=0.1086 |grad|_fin=1.687e-05 (972.6s)
+[12:03:49]   [qcbm_iat_no_psh seed 11] ep  299/300  MMD^2=2.43332e-04  |grad|=1.444e-05  (977.1s)
+[12:03:49]   [qcbm_iat_no_psh seed 11] 완료 MMD^2=2.4333e-04 TV=0.1023 |grad|_fin=1.444e-05 (977.2s)
+[12:03:52]   [qcbm_iat_no_psh seed 10] ep  275/300  MMD^2=2.34397e-04  |grad|=1.293e-05  (980.2s)
+[12:04:07]   [qcbm_iat_no_psh seed  1] ep  299/300  MMD^2=3.03534e-04  |grad|=6.412e-04  (995.3s)
+[12:04:07]   [qcbm_iat_no_psh seed  1] 완료 MMD^2=3.0353e-04 TV=0.1199 |grad|_fin=6.412e-04 (995.3s)
+[12:04:15]   [qcbm_iat_no_psh seed 12] ep  299/300  MMD^2=3.54952e-04  |grad|=9.490e-06  (1004.0s)
+[12:04:15]   [qcbm_iat_no_psh seed 12] 완료 MMD^2=3.5495e-04 TV=0.1122 |grad|_fin=9.490e-06 (1004.0s)
+[12:04:41]   [qcbm_iat_no_psh seed 10] ep  299/300  MMD^2=2.32578e-04  |grad|=8.807e-06  (1029.3s)
+[12:04:41]   [qcbm_iat_no_psh seed 10] 완료 MMD^2=2.3258e-04 TV=0.1056 |grad|_fin=8.807e-06 (1029.3s)
+[12:04:41] [qcbm_iat_no_psh] 완료: best MMD^2=6.6567e-05 TV=0.0622 KL=0.0506 | 중앙값MMD^2=3.1217e-04 | 수렴~220 ep | wall=1029.6s
+[12:04:41] [qcbm_iat_no_psh] gradient-norm(중앙값): 초기=1.066e-02 -> 최종=1.001e-05 (바렌플래토 진단)
+[12:04:41] 재학습 완료: 16 restart, best MMD^2=6.6567e-05 TV=0.0622
+[12:04:41] [r 이상탐지] AUC=0.8023 | mean p(x): benign=1.570e-02 vs attack=1.082e-02 (배율 1.45x)
+[12:04:41] [r 이상탐지] mean log p(x): benign=-4.198 vs attack=-5.221 (격차 1.022) | Youden J=0.672
+[12:04:42] [r 이상탐지] AUC=0.3440 | mean p(x): benign=1.509e-02 vs attack=1.397e-02 (배율 1.08x)
+[12:04:42] [r 이상탐지] mean log p(x): benign=-4.256 vs attack=-4.967 (격차 0.711) | Youden J=0.181
+[12:04:42] [r 이상탐지] AUC=0.8152 | mean p(x): benign=1.477e-02 vs attack=1.086e-02 (배율 1.36x)
+[12:04:42] [r 이상탐지] mean log p(x): benign=-4.242 vs attack=-5.092 (격차 0.850) | Youden J=0.685
+[12:04:42] [r 이상탐지] AUC=0.5817 | mean p(x): benign=1.490e-02 vs attack=1.234e-02 (배율 1.21x)
+[12:04:42] [r 이상탐지] mean log p(x): benign=-4.237 vs attack=-5.001 (격차 0.764) | Youden J=0.388
+[12:04:43] [r 이상탐지] AUC=0.7666 | mean p(x): benign=1.469e-02 vs attack=1.104e-02 (배율 1.33x)
+[12:04:43] [r 이상탐지] mean log p(x): benign=-4.270 vs attack=-4.981 (격차 0.711) | Youden J=0.619
+[12:04:43] [r 이상탐지] AUC=0.6324 | mean p(x): benign=1.481e-02 vs attack=1.200e-02 (배율 1.23x)
+[12:04:43] [r 이상탐지] mean log p(x): benign=-4.236 vs attack=-5.542 (격차 1.305) | Youden J=0.385
+[12:04:43] [r 이상탐지] AUC=0.7287 | mean p(x): benign=1.465e-02 vs attack=1.160e-02 (배율 1.26x)
+[12:04:43] [r 이상탐지] mean log p(x): benign=-4.256 vs attack=-4.976 (격차 0.719) | Youden J=0.504
+[12:04:44] [r 이상탐지] AUC=0.7619 | mean p(x): benign=1.445e-02 vs attack=1.110e-02 (배율 1.30x)
+[12:04:44] [r 이상탐지] mean log p(x): benign=-4.288 vs attack=-4.902 (격차 0.614) | Youden J=0.580
+[12:04:44] [r 이상탐지] AUC=0.6843 | mean p(x): benign=1.483e-02 vs attack=1.175e-02 (배율 1.26x)
+[12:04:44] [r 이상탐지] mean log p(x): benign=-4.274 vs attack=-5.018 (격차 0.744) | Youden J=0.502
+[12:04:44] [r 이상탐지] AUC=0.5755 | mean p(x): benign=1.492e-02 vs attack=1.244e-02 (배율 1.20x)
+[12:04:44] [r 이상탐지] mean log p(x): benign=-4.236 vs attack=-4.939 (격차 0.703) | Youden J=0.382
+[12:04:45] [r 이상탐지] AUC=0.3784 | mean p(x): benign=1.474e-02 vs attack=1.286e-02 (배율 1.15x)
+[12:04:45] [r 이상탐지] mean log p(x): benign=-4.246 vs attack=-5.042 (격차 0.796) | Youden J=0.180
+[12:04:45] [r 이상탐지] AUC=0.8179 | mean p(x): benign=1.489e-02 vs attack=1.101e-02 (배율 1.35x)
+[12:04:45] [r 이상탐지] mean log p(x): benign=-4.237 vs attack=-5.492 (격차 1.254) | Youden J=0.667
+[12:04:45] [r 이상탐지] AUC=0.5658 | mean p(x): benign=1.475e-02 vs attack=1.230e-02 (배율 1.20x)
+[12:04:45] [r 이상탐지] mean log p(x): benign=-4.249 vs attack=-5.023 (격차 0.773) | Youden J=0.366
+[12:04:46] [r 이상탐지] AUC=0.7851 | mean p(x): benign=1.465e-02 vs attack=1.138e-02 (배율 1.29x)
+[12:04:46] [r 이상탐지] mean log p(x): benign=-4.247 vs attack=-5.040 (격차 0.793) | Youden J=0.648
+[12:04:46] [r 이상탐지] AUC=0.7652 | mean p(x): benign=1.474e-02 vs attack=1.160e-02 (배율 1.27x)
+[12:04:46] [r 이상탐지] mean log p(x): benign=-4.242 vs attack=-5.449 (격차 1.207) | Youden J=0.620
+[12:04:46] [r 이상탐지] AUC=0.7012 | mean p(x): benign=1.243e-02 vs attack=8.583e-03 (배율 1.45x)
+[12:04:46] [r 이상탐지] mean log p(x): benign=-4.506 vs attack=-5.371 (격차 0.865) | Youden J=0.562
+[12:04:46] ================================================================================
+[12:04:46] [결정론 검증] best(최소MMD², seed15) AUC=0.8023 (기대 0.8023) -> 일치
+[12:04:46] [16 restart AUC] min=0.3440 median=0.7149 max=0.8179 std=0.1426
+[12:04:46]   emp_joint(0.7773) 초과: 4/16 | marginal(0.5136) 초과: 14/16
+[12:04:46]   seed13  AUC=0.8179 TV=0.1074 MMD2=3.63e-04 >emp
+[12:04:46]   seed10  AUC=0.8152 TV=0.1056 MMD2=2.33e-04 >emp
+[12:04:46]   seed15  AUC=0.8023 TV=0.0622 MMD2=6.66e-05 >emp
+[12:04:46]   seed6   AUC=0.7851 TV=0.1114 MMD2=3.80e-04 >emp
+[12:04:46]   seed7   AUC=0.7666 TV=0.1111 MMD2=2.60e-04 >marg
+[12:04:46]   seed3   AUC=0.7652 TV=0.1095 MMD2=4.82e-04 >marg
+[12:04:46]   seed1   AUC=0.7619 TV=0.1199 MMD2=3.04e-04 >marg
+[12:04:46]   seed2   AUC=0.7287 TV=0.1138 MMD2=2.91e-04 >marg
+[12:04:46]   seed5   AUC=0.7012 TV=0.2671 MMD2=2.05e-03 >marg
+[12:04:46]   seed14  AUC=0.6843 TV=0.1047 MMD2=3.21e-04 >marg
+[12:04:46]   seed8   AUC=0.6324 TV=0.1086 MMD2=2.91e-04 >marg
+[12:04:46]   seed11  AUC=0.5817 TV=0.1023 MMD2=2.43e-04 >marg
+[12:04:46]   seed0   AUC=0.5755 TV=0.1009 MMD2=3.25e-04 >marg
+[12:04:46]   seed9   AUC=0.5658 TV=0.1086 MMD2=3.74e-04 >marg
+[12:04:46]   seed12  AUC=0.3784 TV=0.1122 MMD2=3.55e-04 
+[12:04:46]   seed4   AUC=0.3440 TV=0.1001 MMD2=1.97e-04 
+[12:04:46] 저장: results2/qcbm_iat_no_psh_restarts.npz (16 p_final + q_train + states)
+[12:04:46] 저장: results2/no_psh_restart_auc.json
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:154: UserWarning: Glyph 45236 (\N{HANGUL SYLLABLE NAE}) missing from font(s) DejaVu Sans.
+  plt.legend(fontsize=8); plt.grid(alpha=.3, axis="y"); plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:154: UserWarning: Glyph 47548 (\N{HANGUL SYLLABLE RIM}) missing from font(s) DejaVu Sans.
+  plt.legend(fontsize=8); plt.grid(alpha=.3, axis="y"); plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:154: UserWarning: Glyph 52264 (\N{HANGUL SYLLABLE CA}) missing from font(s) DejaVu Sans.
+  plt.legend(fontsize=8); plt.grid(alpha=.3, axis="y"); plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:154: UserWarning: Glyph 49692 (\N{HANGUL SYLLABLE SUN}) missing from font(s) DejaVu Sans.
+  plt.legend(fontsize=8); plt.grid(alpha=.3, axis="y"); plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:154: UserWarning: Glyph 52488 (\N{HANGUL SYLLABLE CO}) missing from font(s) DejaVu Sans.
+  plt.legend(fontsize=8); plt.grid(alpha=.3, axis="y"); plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:154: UserWarning: Glyph 44284 (\N{HANGUL SYLLABLE GWA}) missing from font(s) DejaVu Sans.
+  plt.legend(fontsize=8); plt.grid(alpha=.3, axis="y"); plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:154: UserWarning: Glyph 49345 (\N{HANGUL SYLLABLE SANG}) missing from font(s) DejaVu Sans.
+  plt.legend(fontsize=8); plt.grid(alpha=.3, axis="y"); plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:154: UserWarning: Glyph 54620 (\N{HANGUL SYLLABLE HAN}) missing from font(s) DejaVu Sans.
+  plt.legend(fontsize=8); plt.grid(alpha=.3, axis="y"); plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:154: UserWarning: Glyph 51060 (\N{HANGUL SYLLABLE I}) missing from font(s) DejaVu Sans.
+  plt.legend(fontsize=8); plt.grid(alpha=.3, axis="y"); plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:154: UserWarning: Glyph 51204 (\N{HANGUL SYLLABLE JEON}) missing from font(s) DejaVu Sans.
+  plt.legend(fontsize=8); plt.grid(alpha=.3, axis="y"); plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:156: UserWarning: Glyph 52488 (\N{HANGUL SYLLABLE CO}) missing from font(s) DejaVu Sans.
+  plt.savefig(fp, dpi=130); plt.close()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:156: UserWarning: Glyph 44284 (\N{HANGUL SYLLABLE GWA}) missing from font(s) DejaVu Sans.
+  plt.savefig(fp, dpi=130); plt.close()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:156: UserWarning: Glyph 45236 (\N{HANGUL SYLLABLE NAE}) missing from font(s) DejaVu Sans.
+  plt.savefig(fp, dpi=130); plt.close()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:156: UserWarning: Glyph 47548 (\N{HANGUL SYLLABLE RIM}) missing from font(s) DejaVu Sans.
+  plt.savefig(fp, dpi=130); plt.close()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:156: UserWarning: Glyph 52264 (\N{HANGUL SYLLABLE CA}) missing from font(s) DejaVu Sans.
+  plt.savefig(fp, dpi=130); plt.close()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:156: UserWarning: Glyph 49692 (\N{HANGUL SYLLABLE SUN}) missing from font(s) DejaVu Sans.
+  plt.savefig(fp, dpi=130); plt.close()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:156: UserWarning: Glyph 49345 (\N{HANGUL SYLLABLE SANG}) missing from font(s) DejaVu Sans.
+  plt.savefig(fp, dpi=130); plt.close()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:156: UserWarning: Glyph 54620 (\N{HANGUL SYLLABLE HAN}) missing from font(s) DejaVu Sans.
+  plt.savefig(fp, dpi=130); plt.close()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:156: UserWarning: Glyph 51060 (\N{HANGUL SYLLABLE I}) missing from font(s) DejaVu Sans.
+  plt.savefig(fp, dpi=130); plt.close()
+/home/elicer/IOTJ/qcbm/tools/rerun_no_psh_restart_auc.py:156: UserWarning: Glyph 51204 (\N{HANGUL SYLLABLE JEON}) missing from font(s) DejaVu Sans.
+  plt.savefig(fp, dpi=130); plt.close()
+[12:04:47] 그림 저장: results2/no_psh_restart_auc.png
+[12:04:47] DONE

@@ -1,0 +1,109 @@
+# qcbm_share zip manifest — 생성 2026-06-26 10:13
+# zip: ~/qcbm_share_20260626.zip (2.9MB, 94 files, 압축전 3.6MB)
+# 기존 파일 무수정. 새 파일(이 manifest, snapshot.md, data_headers.txt, zip)만 생성.
+
+================ ZIP에 포함된 파일 (94) ================
+176	.gitignore
+4627	analyze_csv.py
+6297	analyze_iscx.py
+5862	analyze_pcap.py
+0	figs/
+74529	figs/cic_feature_hists.png
+47569	figs/cic_joint2d.png
+152110	figs/cic_joint2d_continuous.png
+85503	figs/iscx_autocorr.png
+145026	figs/iscx_fft.png
+157265	figs/iscx_histograms.png
+37157	figs/iscx_joint2d.png
+142395	figs/ustc_fft.png
+202021	figs/ustc_histograms.png
+0	qcbm/
+15868	qcbm/experiment.py
+1170	qcbm/run_experiment.sh
+26028	qcbm/run.log
+0	qcbm/results/
+100599	qcbm/results/loss_curve.png
+32283	qcbm/results/dist_compare.png
+44340	qcbm/results/marginals.png
+854	qcbm/results/summary.json
+560	qcbm/results/best_weights.npy
+640	qcbm/results/target_q.npy
+640	qcbm/results/best_p.npy
+19041	qcbm/experiment2.py
+836	qcbm/run_experiment2.sh
+41029	qcbm/run2.log
+0	qcbm/results2/
+163763	qcbm/results2/train_6q.png
+32470	qcbm/results2/dist_6q.png
+65903	qcbm/results2/anomaly_6q.png
+188526	qcbm/results2/train_8q.png
+38428	qcbm/results2/dist_8q.png
+68801	qcbm/results2/anomaly_8q.png
+1365	qcbm/results2/summary2.json
+648	qcbm/results2/depth_test.json
+188914	qcbm/results2/train_8q_L3.png
+38460	qcbm/results2/dist_8q_L3.png
+69327	qcbm/results2/anomaly_8q_L3.png
+188078	qcbm/results2/train_8q_L6.png
+38253	qcbm/results2/dist_8q_L6.png
+68650	qcbm/results2/anomaly_8q_L6.png
+140543	qcbm/results2/anomaly_L3_vs_L6.png
+1270	qcbm/results2/anomaly_redo.json
+2404	qcbm/results2/classical_baseline.json
+72017	qcbm/results2/classical_baseline.png
+52042	qcbm/results2/csv_columns_report.json
+13699	qcbm/results2/csv_columns_report.csv
+4215	qcbm/results2/ddos_baseline.json
+80823	qcbm/results2/ddos_baseline.png
+3907	qcbm/results2/iat_joint.json
+107542	qcbm/results2/iat_joint.png
+205	qcbm/results2/qcbm_iat_b1_smoke.json
+25011	qcbm/results2/qcbm_iat_b1_train.log
+207638	qcbm/results2/train_qcbm_iat_b1.png
+37640	qcbm/results2/dist_qcbm_iat_b1.png
+65716	qcbm/results2/anomaly_qcbm_iat_b1.png
+1377	qcbm/results2/qcbm_iat_b1.json
+204	qcbm/results2/qcbm_iat_b2_smoke.json
+25292	qcbm/results2/qcbm_iat_b2_train.log
+2118	qcbm/results2/qcbm_iat_b2.json
+62814	qcbm/results2/compare_b1_b2_qcbm.png
+1679	qcbm/depth_test.py
+34756	qcbm/depth.log
+8884	qcbm/anomaly_redo.py
+882	qcbm/run_anomaly_redo.sh
+26000	qcbm/anomaly_redo.log
+0	qcbm/docs/
+0	qcbm/docs/agent_logs/
+0	qcbm/tools/
+9238	qcbm/tools/diagnose_classical_baseline.py
+6323	qcbm/tools/inspect_csv_columns.py
+1507	qcbm/tools/check_attack_labels.py
+9892	qcbm/tools/diagnose_ddos_baseline.py
+10545	qcbm/tools/diagnose_iat_joint.py
+11892	qcbm/tools/train_qcbm_iat_b1.py
+11640	qcbm/tools/train_qcbm_iat_b2.py
+5117	qcbm/tools/rescue_b2_from_log.py
+0	.claude/
+0	docs/
+0	docs/agent_logs/
+15019	docs/agent_logs/2026-06-26_0622_collect_8qubit_experiment_files.md
+11290	docs/agent_logs/2026-06-26_0710_classical_baseline_auc.md
+9793	docs/agent_logs/2026-06-26_0725_inspect_csv_columns.md
+5433	docs/agent_logs/2026-06-26_0749_check_attack_labels.md
+7208	docs/agent_logs/2026-06-26_0753_acquire_ddos_data.md
+9186	docs/agent_logs/2026-06-26_0758_ddos_baseline.md
+8694	docs/agent_logs/2026-06-26_0806_iat_joint.md
+10166	docs/agent_logs/2026-06-26_0818_train_qcbm_iat_b1.md
+4773	docs/agent_logs/2026-06-26_0847_train_qcbm_iat_b2.md
+9754	docs/agent_logs/2026-06-26_1001_rescue_b2_results.md
+2313	docs/agent_logs/data_headers.txt
+
+================ ZIP에서 제외한 대용량/원시 데이터 (경로 / 크기 / 사유) ================
+qcbm/data/cic_0221_ddos.csv	314M	DDoS 원시 트래픽(02-21-2018). DATA_URL로 재다운로드 가능. 헤더는 data_headers.txt에 포함.
+qcbm/data/cic_thursday.csv	103M	Infiltration 원시 트래픽(03-01-2018). 재다운로드 가능. 헤더 포함.
+qcbm/data/dl.log	0	0바이트 다운로드 로그(data/ 일괄 제외에 포함).
+ISCX-VPN-Dataset/		QCBM과 무관한 ISCX 원시 pcap/zip.
+samples/	17M	원시 pcap 샘플(facebook_audio1a.pcap 8.2M 등). QCBM 학습에 미사용.
+
+================ 비밀정보 ================
+스캔 결과 .env/key/token/credential/.pem 없음 (제외 대상 없음).

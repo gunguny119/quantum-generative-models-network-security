@@ -1,0 +1,53 @@
+=== (A) gradient 진단 (L=6, R=50, θ₀ 분산) ===
+  n= 6 P=108 | Var(KL grad)=7.382e-01 mean|KL|=6.180e-01 | Var(Z0 grad)=6.242e-03 mean|Z0|=6.448e-02 (47s)
+  n= 8 P=144 | Var(KL grad)=1.473e+00 mean|KL|=7.554e-01 | Var(Z0 grad)=1.282e-03 mean|Z0|=2.557e-02 (75s)
+  n=10 P=180 | Var(KL grad)=6.058e-01 mean|KL|=5.556e-01 | Var(Z0 grad)=6.360e-04 mean|Z0|=1.938e-02 (113s)
+  n=12 P=216 | Var(KL grad)=3.772e+00 mean|KL|=1.110e+00 | Var(Z0 grad)=2.968e-34 mean|Z0|=1.420e-17 (167s)
+  [깊이] n=8 Var(Z0): L=3 1.535e-03 vs L=6 1.282e-03
+
+=== (B) near-identity 완화 (L=6, epochs=500, seeds=3) ===
+  n= 8 | uniform best=0.0051(spread 0.0015) | near-identity best=0.0090(spread 0.0062) (2582s)
+  n=10 | uniform best=0.6431(spread 0.8177) | near-identity best=0.3911(spread 0.3658) (4109s)
+
+[저장] barren_plateau.json | self-check: randMean작음=True, Var(Z0)감소=True, baseline_n10=0.6430959501824731
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:217: UserWarning: Glyph 51649 (\N{HANGUL SYLLABLE JIG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:217: UserWarning: Glyph 49440 (\N{HANGUL SYLLABLE SEON}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:217: UserWarning: Glyph 54616 (\N{HANGUL SYLLABLE HA}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:217: UserWarning: Glyph 46973 (\N{HANGUL SYLLABLE RAG}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:217: UserWarning: Glyph 51648 (\N{HANGUL SYLLABLE JI}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:217: UserWarning: Glyph 49688 (\N{HANGUL SYLLABLE SU}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:217: UserWarning: Glyph 44048 (\N{HANGUL SYLLABLE GAM}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:217: UserWarning: Glyph 49548 (\N{HANGUL SYLLABLE SO}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:217: UserWarning: Glyph 50756 (\N{HANGUL SYLLABLE WAN}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:217: UserWarning: Glyph 54868 (\N{HANGUL SYLLABLE HWA}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:218: UserWarning: Glyph 51649 (\N{HANGUL SYLLABLE JIG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "barren_plateau%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:218: UserWarning: Glyph 49440 (\N{HANGUL SYLLABLE SEON}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "barren_plateau%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:218: UserWarning: Glyph 54616 (\N{HANGUL SYLLABLE HA}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "barren_plateau%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:218: UserWarning: Glyph 46973 (\N{HANGUL SYLLABLE RAG}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "barren_plateau%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:218: UserWarning: Glyph 51648 (\N{HANGUL SYLLABLE JI}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "barren_plateau%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:218: UserWarning: Glyph 49688 (\N{HANGUL SYLLABLE SU}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "barren_plateau%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:218: UserWarning: Glyph 44048 (\N{HANGUL SYLLABLE GAM}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "barren_plateau%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:218: UserWarning: Glyph 49548 (\N{HANGUL SYLLABLE SO}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "barren_plateau%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:218: UserWarning: Glyph 50756 (\N{HANGUL SYLLABLE WAN}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "barren_plateau%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+/home/elicer/IOTJ/qcbm/tools/exp_barren_plateau.py:218: UserWarning: Glyph 54868 (\N{HANGUL SYLLABLE HWA}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(OUTDIR, "barren_plateau%s.png" % ("" if tag == "run" else "_" + tag)), dpi=120); plt.close()
+[저장] barren_plateau png

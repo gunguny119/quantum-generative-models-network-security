@@ -1,0 +1,199 @@
+{
+ "note": "차수별 모멘트-보존 로그선형 maxent(L-BFGS)로 p1..p_kmax 적합, 연속 KL 차이로 차수별 순수 기여 분해. c2=KL1-KL2, c3=KL2-KL3, c4=KL3-KL4, ≥5차잔여=KL_kmax. 이론상 모두 ≥0(단조); 음수=미수렴 신호. ≥3차합=c3+c4+잔여 는 직전 maxent_kl 의 KL2 와 일치해야. 학습 없음. 단정 금지.",
+ "params": {
+  "kmax": 4,
+  "max_iter": 20000,
+  "tol": 1e-08,
+  "eps": 1e-12,
+  "units": "nats"
+ },
+ "self_check": {
+  "parity3": {
+   "c2": 0.0,
+   "c3": 0.1308120359411369,
+   "c4": 4.5102810375403295e-17,
+   "resid5": 6.938893827375099e-18,
+   "monotonic": true
+  },
+  "parity4": {
+   "c2": 0.0,
+   "c3": 0.0,
+   "c4": 0.13081203594113683,
+   "resid5": 1.179611962899081e-16,
+   "monotonic": true
+  },
+  "ising2": {
+   "c3": 4.1049134855783905e-17,
+   "c4": -1.736647601479182e-16,
+   "monotonic": true
+  },
+  "all_monotonic": true
+ },
+ "datasets": {
+  "UNSW": {
+   "bits": 10,
+   "nstates": 1024,
+   "occ": 174,
+   "H": 4.027629782696666,
+   "KL_1": 2.2841299748734594,
+   "KL_2": 0.6170003552281438,
+   "KL_3": 0.17713810407548825,
+   "KL_4": 0.05410093356982785,
+   "c2": 1.6671296196453156,
+   "c3": 0.43986225115265554,
+   "c4": 0.1230371705056604,
+   "resid5": 0.05410093356982785,
+   "ge3_sum": 0.6170003552281438,
+   "prior_KL2": 0.6170003552281438,
+   "ge3_sum_vs_priorKL2": 0.0,
+   "ratio_of_ge3": {
+    "c3": 0.7129043726239198,
+    "c4": 0.19941183090594142,
+    "resid5": 0.08768379647013871
+   },
+   "per_k": {
+    "1": {
+     "converged": true,
+     "iters": 11,
+     "max_violation": 3.5338056508793514e-09,
+     "nparams": 10
+    },
+    "2": {
+     "converged": true,
+     "iters": 4130,
+     "max_violation": 1.9473689799598404e-08,
+     "nparams": 55
+    },
+    "3": {
+     "converged": true,
+     "iters": 17012,
+     "max_violation": 1.348409785772997e-07,
+     "nparams": 175
+    },
+    "4": {
+     "converged": false,
+     "iters": 20000,
+     "max_violation": 9.222896361349431e-07,
+     "nparams": 385
+    }
+   },
+   "monotonic_ok": true,
+   "negative_contrib": {
+    "c2": false,
+    "c3": false,
+    "c4": false,
+    "resid5": false
+   }
+  },
+  "Bot": {
+   "bits": 12,
+   "nstates": 4096,
+   "occ": 361,
+   "H": 3.952707357778831,
+   "KL_1": 2.9191226793329172,
+   "KL_2": 0.5493303111130805,
+   "KL_3": 0.02627086997369782,
+   "KL_4": 0.0005217158022717456,
+   "c2": 2.3697923682198367,
+   "c3": 0.5230594411393827,
+   "c4": 0.025749154171426075,
+   "resid5": 0.0005217158022717456,
+   "ge3_sum": 0.5493303111130806,
+   "prior_KL2": 0.5493303111130805,
+   "ge3_sum_vs_priorKL2": 1.1102230246251565e-16,
+   "ratio_of_ge3": {
+    "c3": 0.9521765512620877,
+    "c4": 0.04687371814464752,
+    "resid5": 0.000949730593264768
+   },
+   "per_k": {
+    "1": {
+     "converged": true,
+     "iters": 17,
+     "max_violation": 6.563322996200327e-09,
+     "nparams": 12
+    },
+    "2": {
+     "converged": true,
+     "iters": 4127,
+     "max_violation": 4.0060702438671214e-07,
+     "nparams": 78
+    },
+    "3": {
+     "converged": false,
+     "iters": 20000,
+     "max_violation": 1.4985795400435098e-06,
+     "nparams": 298
+    },
+    "4": {
+     "converged": false,
+     "iters": 20000,
+     "max_violation": 5.5847365380973235e-06,
+     "nparams": 793
+    }
+   },
+   "monotonic_ok": true,
+   "negative_contrib": {
+    "c2": false,
+    "c3": false,
+    "c4": false,
+    "resid5": false
+   }
+  },
+  "HOIC": {
+   "bits": 12,
+   "nstates": 4096,
+   "occ": 94,
+   "H": 4.148840221964185,
+   "KL_1": 1.460761313811674,
+   "KL_2": 0.01734187483448816,
+   "KL_3": 0.003687259976989052,
+   "KL_4": 4.1680961356022106e-05,
+   "c2": 1.4434194389771857,
+   "c3": 0.013654614857499107,
+   "c4": 0.00364557901563303,
+   "resid5": 4.1680961356022106e-05,
+   "ge3_sum": 0.01734187483448816,
+   "prior_KL2": 0.01734187483448816,
+   "ge3_sum_vs_priorKL2": 0.0,
+   "ratio_of_ge3": {
+    "c3": 0.7873782383865371,
+    "c4": 0.21021827515344468,
+    "resid5": 0.0024034864600181683
+   },
+   "per_k": {
+    "1": {
+     "converged": true,
+     "iters": 57,
+     "max_violation": 1.0199811661948388e-08,
+     "nparams": 12
+    },
+    "2": {
+     "converged": false,
+     "iters": 20000,
+     "max_violation": 1.387063719650479e-07,
+     "nparams": 78
+    },
+    "3": {
+     "converged": false,
+     "iters": 20000,
+     "max_violation": 6.247846767101772e-07,
+     "nparams": 298
+    },
+    "4": {
+     "converged": true,
+     "iters": 18306,
+     "max_violation": 1.7491253503920667e-07,
+     "nparams": 793
+    }
+   },
+   "monotonic_ok": true,
+   "negative_contrib": {
+    "c2": false,
+    "c3": false,
+    "c4": false,
+    "resid5": false
+   }
+  }
+ }
+}

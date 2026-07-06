@@ -1,0 +1,50 @@
+{
+  "encoding": "B1: proto2+syn1+psh1+size4 + FwdIAT2 = 10bit (1024)",
+  "data": "data/cic_0221_ddos.csv",
+  "attack": "ddos attack-hoic",
+  "nq": 10,
+  "nstates": 1024,
+  "occupied_train_states": 79,
+  "split": {
+    "seed": 7,
+    "benign_train_frac": 0.7
+  },
+  "fwd_iat_log1p_inner_edges": [
+    5.738988730390821,
+    5.906723318652891,
+    7.8580608894435695
+  ],
+  "layers": 6,
+  "lr": 0.1,
+  "decision": {
+    "smoke_wall_sec": 73.08877515792847,
+    "sec_per_epoch": 1.4617755031585693,
+    "est_300_sec": 438.5326509475708,
+    "chosen_restarts": 16,
+    "chosen_epochs": 300,
+    "est_final_sec": 438.5326509475708
+  },
+  "chosen_restarts": 16,
+  "chosen_epochs": 300,
+  "full_wall_sec": 878.9228014945984,
+  "train": {
+    "best_mmd2": 3.676268442109887e-05,
+    "best_tv": 0.03693928626145733,
+    "best_kl": 0.038331123794609095,
+    "median_mmd2": 0.00024873800040511873,
+    "conv_ep": 268,
+    "gnorm0": 0.019428969845069994,
+    "gnormf": 3.78498851140113e-05,
+    "nparams": 180
+  },
+  "auc": {
+    "marginal": 0.872610307741235,
+    "emp_joint": 0.8856451808982018,
+    "qcbm": 0.881062345713517,
+    "qcbm_youden_j": 0.7593398120588495,
+    "qcbm_logp_gap": 5.973685357247213,
+    "qcbm_beats_marginal": true,
+    "qcbm_over_emp_joint_frac": 0.9948254275148464
+  },
+  "eval": "s(x)=-log p(x), attack=positive, raw Mann-Whitney U (no direction selection)"
+}

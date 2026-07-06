@@ -1,0 +1,10 @@
+{
+  "epochs": 300,
+  "sec_per_epoch": 1.2263009929656983,
+  "smoke_wall": 61.31504964828491,
+  "est_full_sec": 846.1476851463317,
+  "waves": 2,
+  "nworkers": 8,
+  "restarts": 16,
+  "source": "smoke"
+}
