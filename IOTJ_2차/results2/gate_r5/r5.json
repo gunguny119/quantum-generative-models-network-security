@@ -1,0 +1,1092 @@
+{
+ "note": "Gate R5 IoT contextuality 감사. Fine 정리로 def-a CF=0(검증). def-b 유한표본 요동+null 보정. N-BaIoT 9기기 benign(공격 .rar 미추출). R3 무수정 재사용. supremacy 아님. 단정 금지.",
+ "epistemic_role": "Proposition(Fine 따름정리): 동시기록 고전로그의 def-a CF=수학적 0. 감사=검증/정량화(발견 아님). def-a CF>0=버그 신호.",
+ "params": {
+  "seed": 20260705,
+  "k": 8,
+  "boot": 500,
+  "null": 500,
+  "rows": 50000,
+  "c_gate_e": 0.125
+ },
+ "data_source": {
+  "dataset": "N-BaIoT (UCI 442) benign, 9 devices",
+  "zip_md5": "56bf8e22debda482596f6d2be1260afd",
+  "url": "https://archive.ics.uci.edu/static/public/442/detection+of+iot+botnet+attacks+n+baiot.zip",
+  "attacks": "mirai/gafgyt .rar (unrar 부재로 미추출=RED)",
+  "devices": {
+   "Danmini_Doorbell": {
+    "rows": 49548,
+    "n_features": 112
+   },
+   "Ecobee_Thermostat": {
+    "rows": 13113,
+    "n_features": 115
+   },
+   "Ennio_Doorbell": {
+    "rows": 39100,
+    "n_features": 115
+   },
+   "Philips_B120N10_Baby_Monitor": {
+    "rows": 50000,
+    "n_features": 115
+   },
+   "Provision_PT_737E_Security_Camera": {
+    "rows": 50000,
+    "n_features": 115
+   },
+   "Provision_PT_838_Security_Camera": {
+    "rows": 50000,
+    "n_features": 115
+   },
+   "Samsung_SNH_1011_N_Webcam": {
+    "rows": 50000,
+    "n_features": 115
+   },
+   "SimpleHome_XCS7_1002_WHT_Security_Camera": {
+    "rows": 46585,
+    "n_features": 115
+   },
+   "SimpleHome_XCS7_1003_WHT_Security_Camera": {
+    "rows": 19528,
+    "n_features": 111
+   }
+  }
+ },
+ "accessibility_audit": [
+  {
+   "dataset": "N-BaIoT benign (UCI 442)",
+   "url": "archive.ics.uci.edu/static/public/442/…zip",
+   "fmt": "CSV(수치115)",
+   "size": "1.7GB zip",
+   "account": "불요",
+   "verdict": "GREEN",
+   "note": "9기기 benign 직접 사용(본 감사)"
+  },
+  {
+   "dataset": "N-BaIoT attacks (mirai/gafgyt)",
+   "url": "동 zip 내 *.rar",
+   "fmt": "RAR→CSV",
+   "size": "186MB/기기",
+   "account": "불요",
+   "verdict": "RED",
+   "note": "unrar/rarfile/7z 부재로 추출 불가"
+  },
+  {
+   "dataset": "IoT-23 (Stratosphere)",
+   "url": "mcfp.felk.cvut.cz …small.tar.gz / HF parquet mirror",
+   "fmt": "conn.log / parquet",
+   "size": "9.4GB / 28KB(parquet)",
+   "account": "불요",
+   "verdict": "YELLOW",
+   "note": "full=9.4GB 과대; HF parquet=pyarrow 부재로 미판독(무설치)"
+  },
+  {
+   "dataset": "CIC-IoT2023 (UNB)",
+   "url": "unb.ca/cic/datasets/iotdataset-2023.html / Kaggle",
+   "fmt": "CSV",
+   "size": "~13GB",
+   "account": "Kaggle 로그인/대용량",
+   "verdict": "YELLOW",
+   "note": "직접 대용량 or Kaggle 계정"
+  },
+  {
+   "dataset": "Edge-IIoTset",
+   "url": "IEEE DataPort / Kaggle",
+   "fmt": "CSV",
+   "size": "~12GB",
+   "account": "계정 필요",
+   "verdict": "YELLOW",
+   "note": "Kaggle/DataPort 로그인"
+  },
+  {
+   "dataset": "MQTT-IoT-IDS2020",
+   "url": "IEEE DataPort",
+   "fmt": "CSV/pcap",
+   "size": "-",
+   "account": "DataPort 계정",
+   "verdict": "YELLOW",
+   "note": "계정 필요(미검증)"
+  },
+  {
+   "dataset": "WUSTL-IIoT-2021",
+   "url": "cse.wustl.edu/~jain/iiot2 / IEEE DataPort",
+   "fmt": "CSV",
+   "size": "106MB / 390MB",
+   "account": "직접링크 미해결/DataPort",
+   "verdict": "YELLOW",
+   "note": "직접 파일 URL 미해결"
+  },
+  {
+   "dataset": "TON_IoT / Bot-IoT",
+   "url": "AARNET CloudStor",
+   "fmt": "CSV",
+   "size": "-",
+   "account": "-",
+   "verdict": "RED",
+   "note": "CloudStor 폐쇄(기확인)"
+  }
+ ],
+ "self_check": {
+  "cyclic3_frustrated": 1.0,
+  "cyclic3_consistent": 0.0
+ },
+ "cells": [
+  {
+   "device": "Danmini_Doorbell",
+   "definition": "a",
+   "method": "highvar",
+   "k": 8,
+   "N": 49548,
+   "cf": 3.3306690738754696e-16,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Danmini_Doorbell",
+   "definition": "a",
+   "method": "targeted",
+   "k": 8,
+   "N": 49548,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32,
+   "null": null
+  },
+  {
+   "device": "Danmini_Doorbell",
+   "definition": "a",
+   "method": "random1",
+   "k": 8,
+   "N": 49548,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 3.469446951953614e-17,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33,
+   "null": null
+  },
+  {
+   "device": "Danmini_Doorbell",
+   "definition": "a",
+   "method": "random2",
+   "k": 8,
+   "N": 49548,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    8.881784197001252e-16
+   ],
+   "no_sig_L1": 2.7755575615628914e-17,
+   "cf_upper": 8.881784197001252e-16,
+   "gap_upper": 9.860761315262648e-32,
+   "null": null
+  },
+  {
+   "device": "Danmini_Doorbell",
+   "definition": "a",
+   "method": "random3",
+   "k": 8,
+   "N": 49548,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33,
+   "null": null
+  },
+  {
+   "device": "Ecobee_Thermostat",
+   "definition": "a",
+   "method": "highvar",
+   "k": 8,
+   "N": 13113,
+   "cf": 1.1102230246251565e-16,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 2.7755575615628914e-17,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32,
+   "null": null
+  },
+  {
+   "device": "Ecobee_Thermostat",
+   "definition": "a",
+   "method": "targeted",
+   "k": 8,
+   "N": 13113,
+   "cf": 2.220446049250313e-16,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 1.3877787807814457e-17,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Ecobee_Thermostat",
+   "definition": "a",
+   "method": "random1",
+   "k": 8,
+   "N": 13113,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    7.244205235679121e-16
+   ],
+   "no_sig_L1": 3.469446951953614e-17,
+   "cf_upper": 7.244205235679121e-16,
+   "gap_upper": 6.559813687080099e-32,
+   "null": null
+  },
+  {
+   "device": "Ecobee_Thermostat",
+   "definition": "a",
+   "method": "random2",
+   "k": 8,
+   "N": 13113,
+   "cf": 1.1102230246251565e-16,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 2.7755575615628914e-17,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32,
+   "null": null
+  },
+  {
+   "device": "Ecobee_Thermostat",
+   "definition": "a",
+   "method": "random3",
+   "k": 8,
+   "N": 13113,
+   "cf": 2.220446049250313e-16,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 2.0816681711721685e-17,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Ennio_Doorbell",
+   "definition": "a",
+   "method": "highvar",
+   "k": 8,
+   "N": 39100,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Ennio_Doorbell",
+   "definition": "a",
+   "method": "targeted",
+   "k": 8,
+   "N": 39100,
+   "cf": 1.1102230246251565e-16,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33,
+   "null": null
+  },
+  {
+   "device": "Ennio_Doorbell",
+   "definition": "a",
+   "method": "random1",
+   "k": 8,
+   "N": 39100,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 6.938893903907228e-18,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Ennio_Doorbell",
+   "definition": "a",
+   "method": "random2",
+   "k": 8,
+   "N": 39100,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 2.168404344971009e-17,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Ennio_Doorbell",
+   "definition": "a",
+   "method": "random3",
+   "k": 8,
+   "N": 39100,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 2.0816681711721685e-17,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Philips_B120N10_Baby_Monitor",
+   "definition": "a",
+   "method": "highvar",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    1.6930901125533385e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 1.6930901125533385e-16,
+   "gap_upper": 3.5831926615323456e-33,
+   "null": null
+  },
+  {
+   "device": "Philips_B120N10_Baby_Monitor",
+   "definition": "a",
+   "method": "targeted",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33,
+   "null": null
+  },
+  {
+   "device": "Philips_B120N10_Baby_Monitor",
+   "definition": "a",
+   "method": "random1",
+   "k": 8,
+   "N": 50000,
+   "cf": 2.220446049250313e-16,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 2.0816681711721685e-17,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33,
+   "null": null
+  },
+  {
+   "device": "Philips_B120N10_Baby_Monitor",
+   "definition": "a",
+   "method": "random2",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 2.0816681711721685e-17,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33,
+   "null": null
+  },
+  {
+   "device": "Philips_B120N10_Baby_Monitor",
+   "definition": "a",
+   "method": "random3",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Provision_PT_737E_Security_Camera",
+   "definition": "a",
+   "method": "highvar",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Provision_PT_737E_Security_Camera",
+   "definition": "a",
+   "method": "targeted",
+   "k": 8,
+   "N": 50000,
+   "cf": 1.1102230246251565e-16,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33,
+   "null": null
+  },
+  {
+   "device": "Provision_PT_737E_Security_Camera",
+   "definition": "a",
+   "method": "random1",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 2.0816681711721685e-17,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32,
+   "null": null
+  },
+  {
+   "device": "Provision_PT_737E_Security_Camera",
+   "definition": "a",
+   "method": "random2",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    5.023759186428808e-16
+   ],
+   "no_sig_L1": 6.938893903907228e-18,
+   "cf_upper": 5.023759186428808e-16,
+   "gap_upper": 3.15476954540348e-32,
+   "null": null
+  },
+  {
+   "device": "Provision_PT_737E_Security_Camera",
+   "definition": "a",
+   "method": "random3",
+   "k": 8,
+   "N": 50000,
+   "cf": 2.220446049250313e-16,
+   "cf_ci": [
+    0.0,
+    2.803313137178495e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 2.803313137178495e-16,
+   "gap_upper": 9.823205681346919e-33,
+   "null": null
+  },
+  {
+   "device": "Provision_PT_838_Security_Camera",
+   "definition": "a",
+   "method": "highvar",
+   "k": 8,
+   "N": 50000,
+   "cf": 2.220446049250313e-16,
+   "cf_ci": [
+    0.0,
+    6.661338147750939e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 6.661338147750939e-16,
+   "gap_upper": 5.546678239835239e-32,
+   "null": null
+  },
+  {
+   "device": "Provision_PT_838_Security_Camera",
+   "definition": "a",
+   "method": "targeted",
+   "k": 8,
+   "N": 50000,
+   "cf": 4.440892098500626e-16,
+   "cf_ci": [
+    0.0,
+    6.661338147750939e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 6.661338147750939e-16,
+   "gap_upper": 5.546678239835239e-32,
+   "null": null
+  },
+  {
+   "device": "Provision_PT_838_Security_Camera",
+   "definition": "a",
+   "method": "random1",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Provision_PT_838_Security_Camera",
+   "definition": "a",
+   "method": "random2",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 4.163336342344337e-17,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32,
+   "null": null
+  },
+  {
+   "device": "Provision_PT_838_Security_Camera",
+   "definition": "a",
+   "method": "random3",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 1.3877787807814457e-17,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33,
+   "null": null
+  },
+  {
+   "device": "Samsung_SNH_1011_N_Webcam",
+   "definition": "a",
+   "method": "highvar",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    6.661338147750939e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 6.661338147750939e-16,
+   "gap_upper": 5.546678239835239e-32,
+   "null": null
+  },
+  {
+   "device": "Samsung_SNH_1011_N_Webcam",
+   "definition": "a",
+   "method": "targeted",
+   "k": 8,
+   "N": 50000,
+   "cf": 2.220446049250313e-16,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Samsung_SNH_1011_N_Webcam",
+   "definition": "a",
+   "method": "random1",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 3.469446951953614e-18,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32,
+   "null": null
+  },
+  {
+   "device": "Samsung_SNH_1011_N_Webcam",
+   "definition": "a",
+   "method": "random2",
+   "k": 8,
+   "N": 50000,
+   "cf": 2.220446049250313e-16,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 7.806255641895632e-18,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Samsung_SNH_1011_N_Webcam",
+   "definition": "a",
+   "method": "random3",
+   "k": 8,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 3.469446951953614e-18,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "SimpleHome_XCS7_1002_WHT_Security_Camera",
+   "definition": "a",
+   "method": "highvar",
+   "k": 8,
+   "N": 46585,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 8.326672684688674e-17,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32,
+   "null": null
+  },
+  {
+   "device": "SimpleHome_XCS7_1002_WHT_Security_Camera",
+   "definition": "a",
+   "method": "targeted",
+   "k": 8,
+   "N": 46585,
+   "cf": 1.1102230246251565e-16,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 4.163336342344337e-17,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33,
+   "null": null
+  },
+  {
+   "device": "SimpleHome_XCS7_1002_WHT_Security_Camera",
+   "definition": "a",
+   "method": "random1",
+   "k": 8,
+   "N": 46585,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 3.122502256758253e-17,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33,
+   "null": null
+  },
+  {
+   "device": "SimpleHome_XCS7_1002_WHT_Security_Camera",
+   "definition": "a",
+   "method": "random2",
+   "k": 8,
+   "N": 46585,
+   "cf": 3.3306690738754696e-16,
+   "cf_ci": [
+    0.0,
+    6.661338147750939e-16
+   ],
+   "no_sig_L1": 8.326672684688674e-17,
+   "cf_upper": 6.661338147750939e-16,
+   "gap_upper": 5.546678239835239e-32,
+   "null": null
+  },
+  {
+   "device": "SimpleHome_XCS7_1002_WHT_Security_Camera",
+   "definition": "a",
+   "method": "random3",
+   "k": 8,
+   "N": 46585,
+   "cf": 2.220446049250313e-16,
+   "cf_ci": [
+    0.0,
+    9.992007221626409e-16
+   ],
+   "no_sig_L1": 4.163336342344337e-17,
+   "cf_upper": 9.992007221626409e-16,
+   "gap_upper": 1.2480026039629288e-31,
+   "null": null
+  },
+  {
+   "device": "SimpleHome_XCS7_1003_WHT_Security_Camera",
+   "definition": "a",
+   "method": "highvar",
+   "k": 8,
+   "N": 19528,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    4.440892098500626e-16
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 4.440892098500626e-16,
+   "gap_upper": 2.465190328815662e-32,
+   "null": null
+  },
+  {
+   "device": "SimpleHome_XCS7_1003_WHT_Security_Camera",
+   "definition": "a",
+   "method": "targeted",
+   "k": 8,
+   "N": 19528,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 6.938893903907228e-18,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "SimpleHome_XCS7_1003_WHT_Security_Camera",
+   "definition": "a",
+   "method": "random1",
+   "k": 8,
+   "N": 19528,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    2.220446049250313e-16
+   ],
+   "no_sig_L1": 5.640561802355837e-17,
+   "cf_upper": 2.220446049250313e-16,
+   "gap_upper": 6.162975822039155e-33,
+   "null": null
+  },
+  {
+   "device": "SimpleHome_XCS7_1003_WHT_Security_Camera",
+   "definition": "a",
+   "method": "random2",
+   "k": 8,
+   "N": 19528,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 1.3877787807814457e-17,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "SimpleHome_XCS7_1003_WHT_Security_Camera",
+   "definition": "a",
+   "method": "random3",
+   "k": 8,
+   "N": 19528,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    3.3306690738754696e-16
+   ],
+   "no_sig_L1": 2.0816681711721685e-17,
+   "cf_upper": 3.3306690738754696e-16,
+   "gap_upper": 1.3866695599588098e-32,
+   "null": null
+  },
+  {
+   "device": "Danmini_Doorbell",
+   "definition": "b",
+   "method": "highvar",
+   "k": 3,
+   "N": 49548,
+   "cf": 2.0183264037409998e-05,
+   "cf_ci": [
+    0.0,
+    4.036652807504204e-05
+   ],
+   "no_sig_L1": 2.6911018716639184e-05,
+   "cf_upper": 4.036652807504204e-05,
+   "gap_upper": 2.0368207360414466e-10,
+   "null": {
+    "null_ci95": [
+     0.0,
+     4.036652807498931e-05
+    ],
+    "null_mean": 1.4733782747355706e-05,
+    "observed_within_null": true,
+    "n_null": 500
+   }
+  },
+  {
+   "device": "Ecobee_Thermostat",
+   "definition": "b",
+   "method": "highvar",
+   "k": 3,
+   "N": 13113,
+   "cf": 7.62718328121137e-05,
+   "cf_ci": [
+    0.0,
+    0.0001525436656243384
+   ],
+   "no_sig_L1": 0.00010169577708296629,
+   "cf_upper": 0.0001525436656243384,
+   "gap_upper": 2.9086962402637456e-09,
+   "null": {
+    "null_ci95": [
+     0.0,
+     0.0001525436656243384
+    ],
+    "null_mean": 5.674624361224811e-05,
+    "observed_within_null": true,
+    "n_null": 500
+   }
+  },
+  {
+   "device": "Ennio_Doorbell",
+   "definition": "b",
+   "method": "highvar",
+   "k": 3,
+   "N": 39100,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    2.55767558443587e-05
+   ],
+   "no_sig_L1": 1.1102230246251565e-16,
+   "cf_upper": 2.55767558443587e-05,
+   "gap_upper": 8.177130494024212e-11,
+   "null": {
+    "null_ci95": [
+     0.0,
+     5.115351168860638e-05
+    ],
+    "null_mean": 1.867103176633833e-05,
+    "observed_within_null": true,
+    "n_null": 500
+   }
+  },
+  {
+   "device": "Philips_B120N10_Baby_Monitor",
+   "definition": "b",
+   "method": "highvar",
+   "k": 3,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    4.0001600064121234e-05
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 4.0001600064121234e-05,
+   "gap_upper": 2.00016000961238e-10,
+   "null": {
+    "null_ci95": [
+     0.0,
+     4.0001600064121234e-05
+    ],
+    "null_mean": 1.4920596823885024e-05,
+    "observed_within_null": true,
+    "n_null": 500
+   }
+  },
+  {
+   "device": "Provision_PT_737E_Security_Camera",
+   "definition": "b",
+   "method": "highvar",
+   "k": 3,
+   "N": 50000,
+   "cf": 2.0000800032060617e-05,
+   "cf_ci": [
+    0.0,
+    4.0001600064121234e-05
+   ],
+   "no_sig_L1": 2.6667733375988305e-05,
+   "cf_upper": 4.0001600064121234e-05,
+   "gap_upper": 2.00016000961238e-10,
+   "null": {
+    "null_ci95": [
+     0.0,
+     4.0001600064121234e-05
+    ],
+    "null_mean": 1.5840633625353816e-05,
+    "observed_within_null": true,
+    "n_null": 500
+   }
+  },
+  {
+   "device": "Provision_PT_838_Security_Camera",
+   "definition": "b",
+   "method": "highvar",
+   "k": 3,
+   "N": 50000,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    4.0001600064121234e-05
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 4.0001600064121234e-05,
+   "gap_upper": 2.00016000961238e-10,
+   "null": {
+    "null_ci95": [
+     0.0,
+     4.0001600064121234e-05
+    ],
+    "null_mean": 1.4840593623755893e-05,
+    "observed_within_null": true,
+    "n_null": 500
+   }
+  },
+  {
+   "device": "Samsung_SNH_1011_N_Webcam",
+   "definition": "b",
+   "method": "highvar",
+   "k": 3,
+   "N": 50000,
+   "cf": 4.0001600064121234e-05,
+   "cf_ci": [
+    0.0,
+    4.0001600064121234e-05
+   ],
+   "no_sig_L1": 5.333546675197661e-05,
+   "cf_upper": 4.0001600064121234e-05,
+   "gap_upper": 2.00016000961238e-10,
+   "null": {
+    "null_ci95": [
+     0.0,
+     4.0001600064121234e-05
+    ],
+    "null_mean": 1.5240609624397993e-05,
+    "observed_within_null": true,
+    "n_null": 500
+   }
+  },
+  {
+   "device": "SimpleHome_XCS7_1002_WHT_Security_Camera",
+   "definition": "b",
+   "method": "highvar",
+   "k": 3,
+   "N": 46585,
+   "cf": 4.29341175965936e-05,
+   "cf_ci": [
+    0.0,
+    4.2934117596704624e-05
+   ],
+   "no_sig_L1": 5.724549012879147e-05,
+   "cf_upper": 4.2934117596704624e-05,
+   "gap_upper": 2.304173067259577e-10,
+   "null": {
+    "null_ci95": [
+     0.0,
+     4.29341175965936e-05
+    ],
+    "null_mean": 1.631496468669669e-05,
+    "observed_within_null": true,
+    "n_null": 500
+   }
+  },
+  {
+   "device": "SimpleHome_XCS7_1003_WHT_Security_Camera",
+   "definition": "b",
+   "method": "highvar",
+   "k": 3,
+   "N": 19528,
+   "cf": 0.0,
+   "cf_ci": [
+    0.0,
+    0.00010242753252071302
+   ],
+   "no_sig_L1": 0.0,
+   "cf_upper": 0.00010242753252071302,
+   "gap_upper": 1.3114249272852154e-09,
+   "null": {
+    "null_ci95": [
+     0.0,
+     0.00010242753252076575
+    ],
+    "null_mean": 3.697633923999688e-05,
+    "observed_within_null": true,
+    "n_null": 500
+   }
+  }
+ ],
+ "verdict": {
+  "def_a_verification": {
+   "max_abs_cf": 4.440892098500626e-16,
+   "passes": true,
+   "reading": "def-a 전 셀 CF≈0 (max|CF|=4.44e-16<1e-6) → Fine 정리·구현 검증 통과"
+  },
+  "def_b_finite_sample": {
+   "within_null": "9/9",
+   "all_within": true,
+   "reading": "def-b 전 셀 관측 CF 가 셔플 null 분위수 내 → '유한표본 요동' 확정"
+  },
+  "traffic_invariance": {
+   "status": "benign 9기기만(공격=.rar 미추출) → 공격 vs 정상 비교 불가",
+   "reading": "레버2(공격) unrar 부재로 스킵; benign 9기기 전부 CF≈0 = 기기 무관 확인(정상 트래픽 내)"
+  },
+  "gap_upper_max": 2.9086962402637456e-09,
+  "cf_upper_max": 0.0001525436656243384,
+  "no_sig_max": 0.00010169577708296629
+ },
+ "limits": "감사 범위=확보된 N-BaIoT 9기기 benign 한정. 공격(.rar)·외부셋(IoT-23 parquet 리더부재·CIC/Edge/MQTT 계정·WUSTL 링크 미해결) 미포함. 행샘플 ≤50000·중앙값 이진화. 정적결합=CF0 자명(검증목적). def 조작적(단 Proposition이 일반 커버). 관측/검증이지 supremacy 아님."
+}

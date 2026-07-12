@@ -1,0 +1,18 @@
+[self-check cyclic CF-LP] 좌절 3-cycle CF=1.000(기대1) 정합 CF=0.000(기대0) → 전 셀 공통 LP
+[data] N-BaIoT zip MD5=56bf8e22debda482596f6d2be1260afd | benign 9기기(공격=.rar unrar부재로 미추출)
+  [Danmini_Doorbell] rows=49548 feat=112
+  [Ecobee_Thermostat] rows=13113 feat=115
+  [Ennio_Doorbell] rows=39100 feat=115
+  [Philips_B120N10_Baby_Monit] rows=50000 feat=115
+  [Provision_PT_737E_Security] rows=50000 feat=115
+  [Provision_PT_838_Security_] rows=50000 feat=115
+  [Samsung_SNH_1011_N_Webcam] rows=50000 feat=115
+  [SimpleHome_XCS7_1002_WHT_S] rows=46585 feat=115
+  [SimpleHome_XCS7_1003_WHT_S] rows=19528 feat=111
+
+[run] 54 cells (def-a 45 + def-b 9), jobs=16
+[run] done (23s)
+
+[저장] results2/gate_r5/r5.json
+[판정] def-a: True | def-b null내 9/9 | gap상한 max=2.91e-09 | no-sig max=0.0001
+[저장] results2/gate_r5/r5_heatmap.png

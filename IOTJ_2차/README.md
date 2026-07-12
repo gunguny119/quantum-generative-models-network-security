@@ -19,6 +19,8 @@
 | 4 | **gate_r1_real_anchors** | 실측 데이터로 곡선 앵커(1차) | **KCBS 실측(CF=0.263, C=2.526; CF=(C−2)/2 교차확인 Δ=0)** NCfloor=0.0123 이 4-cycle 곡선예측과 **3.7%** → 첫 켜진 앵커(P1). NIST(Eberhard·Zenodo=PDF)=시행 재구성 불가→작은-CF 정성 앵커(P2, gap≈0). |
 | 5 | **gate_r2_anchor_strengthen** | 앵커 강화: KL_q 실측 + 둘째 앵커 | **(A)** KCBS 2큐빗 **KL_q 실측=0.00000** → R1 추론 확정, gap=0.0123 유지. **(B) Delft Hensen2015 실데이터**(4TU, MD5 검증, n=245, S=2.422, CF=0.2112) gap=0.0085 이 곡선과 **5.3%** → **둘째 앵커**(이온+다이아몬드 두 플랫폼). 단 Delft no-sig 잔차 0.089·CF CI 넓음. |
 | 6 | **gate_r3_iot_cf** | 실 IoT 데이터 CF 실측(꺼진 앵커 정박) | **N-BaIoT**(UCI, MD5 검증, 3기기 benign) CF≈0 실측: def-a 정확히 0.0·def-b ≤8e-5, 전 18셀 CI상단 ≤1.5e-4·no-sig ≤1e-4. **잔여 gap 상한 = c·CF²_up ≤ 2.9e-9** = IoT 꺼진 앵커. TON/BoT=CloudStor 폐지로 미확보(N-BaIoT 폴백). 곡선 원점 근방 실데이터. |
+| R4 | **gate_r4_diqkd_anchor** (조사) | DI-QKD 보안데이터 3번째 앵커? | DI-QKD 3종(Oxford 이온·Munich 원자·photonic, 모두 CHSH)의 **trial-level 원시데이터 공개 미확인**(학위논문·집계·코드만) → **GREEN 0건, 스킵**. 현 앵커 유지. Delft 자체가 DI-QKD 정초 CHSH Bell → Q1(보안연관) 인용으로 해소. |
+| R5 | **gate_r5_iot_audit** | IoT 지형 CF 감사(검증·정량화) | **Fine 정리**로 def-a CF=0 자명 → 검증 목적. **N-BaIoT 9기기 benign**: def-a 45셀 전부 **CF=0(4e-16)**, def-b 9셀 **null 내 9/9**(유한표본 요동), gap상한 ≤2.9e-9. 공격=`.rar` unrar부재로 스킵. 히트맵=논문 Fig 후보. 접근성표(즉시 GREEN=N-BaIoT뿐). |
 
 ---
 
