@@ -1,0 +1,314 @@
+{
+ "note": "STEP 2b: S-검정을 통과(S≈S_normal)하는 재설계 공격(quantum_behavior 이미지)로 탐지 상보성 검증. 스코어=deviance(KL)=CE−H(emp), 2N·KL~χ². ★키보안 아닌 장비무결성/변조모니터링. 발견: 모델템플릿은 S-보존 지문변조를, S-검정은 S-저하 공격을 잡는 상보관계(defense-in-depth). blind_shell 붕괴=같은-S 양자공격으로 양자>고전템플릿 우월 불가(원리적). supremacy 아님. (2,2,2)·시뮬. 단정 금지.",
+ "key_finding": "모델기반 장비지문 탐지(양자/고전 템플릿)와 CHSH S-검정은 **상보적**: 모델은 S-보존 변조(iso_S/marginal_matched) AUC≈1 로 잡고 S-검정은 blind; S-검정은 S-저하 공격(partial) 을 잡고 모델은 놓침. → 둘을 함께 쓰는 defense-in-depth 가 결론. 단 모델기반 우위는 양자 특유 아님(고전 NC-템플릿 동급): blind_shell 이 정상으로 붕괴 = 같은 S 에서 정상이 고전거리를 유일 최소화하므로 '고전엔 blind, 양자엔 visible' 인 물리(양자) 공격 부재. worst-case 존재증명 겸 불가능성.",
+ "params": {
+  "seed": 20260724,
+  "v_normal": 0.856,
+  "s_tol": 0.01,
+  "shell_tol": 0.001,
+  "n_train": 10000,
+  "n_evals": [
+   245,
+   1000
+  ],
+  "reps": 100,
+  "restarts": 3,
+  "train_seeds": 3,
+  "attack_restarts": 24,
+  "step1_passed": true,
+  "score": "deviance KL(emp‖model)=CE−H(emp)"
+ },
+ "self_check": {
+  "attacks_feasible": {
+   "iso_S": true,
+   "blind_shell": true,
+   "marginal_matched": true
+  },
+  "s_target": 2.421133618782739,
+  "normal_cf": 0.2105668093913693
+ },
+ "attack_info": {
+  "iso_S": {
+   "kl_to_normal": 0.3530572154568446,
+   "S": 2.419357701658596,
+   "cf": 0.20967885082929782,
+   "kl_to_c": 0.36077344359374364,
+   "s_dev": 0.001775917124143156,
+   "shell_dev": 0.3529894859086704,
+   "marg_dev": 1.1306002185218689,
+   "feasible": true
+  },
+  "blind_shell": {
+   "kl_to_normal": 0.00012744670500436698,
+   "S": 2.4210702199628513,
+   "cf": 0.21053510998142544,
+   "kl_to_c": 0.007908973359026492,
+   "s_dev": 6.339881988770557e-05,
+   "shell_dev": 0.00012501567395325174,
+   "marg_dev": 0.00023939084126467503,
+   "feasible": true
+  },
+  "marginal_matched": {
+   "kl_to_normal": 0.20717028506932908,
+   "S": 2.4201139960246585,
+   "cf": 0.21005699801232913,
+   "kl_to_c": 0.21491566845511964,
+   "s_dev": 0.0010196227580805406,
+   "shell_dev": 0.2071317107700464,
+   "marg_dev": 6.44707934815969e-08,
+   "feasible": true
+  },
+  "partial_05": {
+   "S": 2.34696768482866,
+   "cf": 0.1734838424143298,
+   "kl_to_normal": 0.0002681618124281745,
+   "p_atk": 0.05
+  },
+  "partial_10": {
+   "S": 2.272801750874581,
+   "cf": 0.13640087543729063,
+   "kl_to_normal": 0.001060749858827884,
+   "p_atk": 0.1
+  },
+  "partial_20": {
+   "S": 2.1244698829664235,
+   "cf": 0.062234941483211736,
+   "kl_to_normal": 0.004154318324743177,
+   "p_atk": 0.2
+  }
+ },
+ "classes": [
+  "iso_S",
+  "blind_shell",
+  "marginal_matched",
+  "partial_05",
+  "partial_10",
+  "partial_20"
+ ],
+ "cells": [
+  {
+   "n_eval": 245,
+   "reps": 100,
+   "auc_quantum_kl": {
+    "iso_S": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "blind_shell": {
+     "mean": 0.4955,
+     "std": 0.005488776427097986
+    },
+    "marginal_matched": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "partial_05": {
+     "mean": 0.45949999999999996,
+     "std": 0.005479051012721085
+    },
+    "partial_10": {
+     "mean": 0.48786666666666667,
+     "std": 0.007746540446476031
+    },
+    "partial_20": {
+     "mean": 0.5283333333333333,
+     "std": 0.008017203724214304
+    }
+   },
+   "auc_classical_kl": {
+    "iso_S": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "blind_shell": {
+     "mean": 0.48480000000000006,
+     "std": 0.004868949236402738
+    },
+    "marginal_matched": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "partial_05": {
+     "mean": 0.4157666666666667,
+     "std": 0.006635426805329763
+    },
+    "partial_10": {
+     "mean": 0.3411666666666666,
+     "std": 0.005646434469842196
+    },
+    "partial_20": {
+     "mean": 0.2995666666666667,
+     "std": 0.007823184915507384
+    }
+   },
+   "auc_stest": {
+    "iso_S": {
+     "mean": 0.5293,
+     "std": 0.0
+    },
+    "blind_shell": {
+     "mean": 0.5186,
+     "std": 0.0
+    },
+    "marginal_matched": {
+     "mean": 0.4983,
+     "std": 0.0
+    },
+    "partial_05": {
+     "mean": 0.5784,
+     "std": 0.0
+    },
+    "partial_10": {
+     "mean": 0.7508,
+     "std": 0.0
+    },
+    "partial_20": {
+     "mean": 0.8327,
+     "std": 0.0
+    }
+   }
+  },
+  {
+   "n_eval": 1000,
+   "reps": 100,
+   "auc_quantum_kl": {
+    "iso_S": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "blind_shell": {
+     "mean": 0.4906,
+     "std": 0.024407512504691392
+    },
+    "marginal_matched": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "partial_05": {
+     "mean": 0.4517,
+     "std": 0.013317657451669192
+    },
+    "partial_10": {
+     "mean": 0.5969666666666666,
+     "std": 0.029130663493225767
+    },
+    "partial_20": {
+     "mean": 0.7433666666666667,
+     "std": 0.030813020335926537
+    }
+   },
+   "auc_classical_kl": {
+    "iso_S": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "blind_shell": {
+     "mean": 0.47303333333333336,
+     "std": 0.01156556190689507
+    },
+    "marginal_matched": {
+     "mean": 1.0,
+     "std": 0.0
+    },
+    "partial_05": {
+     "mean": 0.2894333333333333,
+     "std": 0.0015107025591499592
+    },
+    "partial_10": {
+     "mean": 0.16476666666666664,
+     "std": 0.008081391519341754
+    },
+    "partial_20": {
+     "mean": 0.07823333333333334,
+     "std": 0.0009285592184789444
+    }
+   },
+   "auc_stest": {
+    "iso_S": {
+     "mean": 0.5669,
+     "std": 0.0
+    },
+    "blind_shell": {
+     "mean": 0.518,
+     "std": 0.0
+    },
+    "marginal_matched": {
+     "mean": 0.5851,
+     "std": 0.0
+    },
+    "partial_05": {
+     "mean": 0.7178,
+     "std": 0.0
+    },
+    "partial_10": {
+     "mean": 0.8942,
+     "std": 0.0
+    },
+    "partial_20": {
+     "mean": 0.9783,
+     "std": 0.0
+    }
+   }
+  }
+ ],
+ "verdicts": {
+  "P1prime_blind_shell_separation": {
+   "pass_": false,
+   "per_neval": [
+    {
+     "n_eval": 245,
+     "quantum": 0.4955,
+     "classical": 0.48480000000000006,
+     "s_test": 0.5186,
+     "separated": false
+    },
+    {
+     "n_eval": 1000,
+     "quantum": 0.4906,
+     "classical": 0.47303333333333336,
+     "s_test": 0.518,
+     "separated": false
+    }
+   ],
+   "attack_feasible": true,
+   "reading": "FAIL(원리적 불가능성): blind_shell 최적화가 정상으로 붕괴(KL→normal≈0.0001). 이유 — 같은 S 에서 등방(정상) 상자가 고전템플릿 거리 KL(‖c_model)=NCfloor 를 **유일하게 최소화**함. 비등방으로 벗어나면 KL(‖c)가 NCfloor 위로 증가(iso_S: 0.36) → 고전 탐지기가 잡음. 따라서 '고전 껍질(NCfloor)에 머물기'='정상에 고정'→양자 탐지기도 못 잡음. = 물리구현가능(양자) 같은-S 공격으로는 양자 템플릿이 고전 NC-템플릿보다 우월 불가. geometry 좌상단 공집합."
+  },
+  "complementarity": {
+   "reading": "★핵심 발견: 모델기반 지문탐지와 S-검정은 **서로 다른 공격 클래스를 잡는 상보관계**. (a) S-보존 지문변조(iso_S/marginal_matched): 모델템플릿(양자·고전 공히) AUC≈1.0, S-검정 AUC≈0.5(완전 blind). marginal_matched 는 marginal 까지 일치(QBER 모니터 우회)해도 잡힘. (b) S-저하 공격(partial=intercept 소량혼합): S-검정 AUC↑(0.58→0.98), 모델 KL 탐지기는 AUC≈0.5 이하 (intercept 는 CF↓ 로 데이터를 더 '고전적'으로 만들어 고전템플릿엔 덜 이상해 보임 → AUC<0.5). → 두 계층을 함께 쓰는 defense-in-depth. 단 (a)의 우위는 양자 특유 아님(고전 NC-템플릿 동급)."
+  },
+  "P3prime_partial_finite_stat": {
+   "pass_": false,
+   "rows": [
+    {
+     "p_atk": 0.05,
+     "quantum": 0.45949999999999996,
+     "s_test": 0.5784,
+     "quantum_gt_s": false
+    },
+    {
+     "p_atk": 0.1,
+     "quantum": 0.48786666666666667,
+     "s_test": 0.7508,
+     "quantum_gt_s": false
+    },
+    {
+     "p_atk": 0.2,
+     "quantum": 0.5283333333333333,
+     "s_test": 0.8327,
+     "quantum_gt_s": false
+    }
+   ],
+   "n_eval": 245,
+   "reading": "FAIL: partial 은 intercept(S=0.94) 소량혼합이라 **S-저하** 공격 → S-검정의 홈그라운드(AUC 0.58~0.83@N245). 모델 KL 탐지기는 여기서 열위(양자≈0.5, 고전<0.5). 유한통계 우위는 성립 안 함 — S-저하 공격엔 S-검정이 옳은 도구. (S-보존 공격 iso_S 에선 반대로 모델기반이 압도.)"
+  },
+  "P2_reference": "gate_s2 P2 Spearman(gap,ΔAUC_deviance)=1.000 유지(재계산 안 함).",
+  "shell_radius_relation": {
+   "ncfloor": 0.0077839576850732405,
+   "c_cf2": 0.007389730202876874,
+   "c": 0.16666666666666666,
+   "cf": 0.2105668093913693,
+   "note": "정상=고전껍질 반지름 NCfloor ≈ c·CF² (gap 법칙과 연결). 이 껍질의 유일 최소점이 정상."
+  }
+ },
+ "limits": "iso_S/marginal_matched 는 특정 정상 운용점에 대한 S-보존 변조의 존재증명(모든 공격 커버 아님). 탐지기는 고정 템플릿 대조(재적합 아님)=장비지문. S-검정 통과는 S 값만 매칭(고차 통계 이탈). 모델기반 우위는 양자 특유 아님(blind_shell 붕괴=불가능성). partial 은 S-저하라 S-검정 홈그라운드. 정상=양자실현. G 트랙 고정. 관측이지 supremacy 아님. 키보안 아닌 장비무결성 맥락."
+}

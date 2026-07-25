@@ -1,0 +1,117 @@
+{
+ "note": "STEP 1: DI-QKD 시뮬레이터(bipartite CHSH, G 트랙) + Delft 재현 STOP 게이트. 모든 공격을 16셀 behavior 로 환원해 build_box(gate_r2) 로 (a,b,xo,yo)→box. ★모델클래스 분리이지 supremacy 아님. (2,2,2)·시뮬·소규모 한정. 단정 금지.",
+ "params": {
+  "seed": 20260724,
+  "reps": 1000,
+  "restarts": 2,
+  "canon_state": 0.7853981633974483,
+  "canon_angles": [
+   0.0,
+   0.0,
+   1.5707963267948966,
+   0.0,
+   0.7853981633974483,
+   0.0,
+   -0.7853981633974483,
+   0.0
+  ],
+  "eve_seed": 777,
+  "eve_ndir": 40000,
+  "delft_per_ctx_N": [
+   53,
+   79,
+   62,
+   51
+  ]
+ },
+ "self_check": {
+  "blinding_cf": {
+   "value": 0.0,
+   "S": 2.0,
+   "pass_": true
+  },
+  "mimic_cf": {
+   "value": 0.0,
+   "pass_": true
+  },
+  "none_S": {
+   "value": 2.8245476098749567,
+   "target": 2.8284271247461903,
+   "pass_": true
+  },
+  "intercept_resend": {
+   "cf": 0.0,
+   "S": 0.9378149397011628,
+   "no_sig": 0.0,
+   "pass_": true
+  },
+  "all_pass": true
+ },
+ "delft_validation": {
+  "fit": {
+   "visibility": 0.8564830429133841,
+   "behavior_S": 2.4224998704613707,
+   "behavior_CF": 0.21124993523068525,
+   "note": "canon 각도 고정, visibility 1개 자유파라미터로 S 매칭"
+  },
+  "reps": 1000,
+  "restarts": 2,
+  "per_ctx_N": [
+   53,
+   79,
+   62,
+   51
+  ],
+  "sim": {
+   "cf": {
+    "median": 0.23592723297783097,
+    "band95": [
+     0.10727046321352186,
+     0.4214442968031377
+    ],
+    "mean": 0.24256254744399514
+   },
+   "gap": {
+    "median": 0.007833923891230485,
+    "band95": [
+     -2.902369880888875e-12,
+     0.03001765008556521
+    ],
+    "mean": 0.00975296560680661
+   },
+   "S": {
+    "median": 2.4187247446880473,
+    "band95": [
+     1.974380080236907,
+     2.8136427214321245
+    ]
+   },
+   "ncfloor": {
+    "median": 0.01685588121119378
+   },
+   "klq": {
+    "median": 0.007703415838427229
+   },
+   "no_sig": {
+    "median": 0.13769912882061536
+   }
+  },
+  "real": {
+   "cf": 0.21124993523068514,
+   "gap": 0.00846309086408372,
+   "S": 2.4224998704613707,
+   "ncfloor": 0.012920218563118282,
+   "klq": 0.004457127699034561,
+   "no_sig": 0.08947063189321118,
+   "source": "results2/gate_r2/r2.json (raw data gitignored; 검증된 요약통계)"
+  },
+  "pass_conditions": {
+   "cf_in_band": true,
+   "gap_in_band": true,
+   "S_median_within_0p05": true
+  },
+  "passed": true,
+  "fail_reasons": []
+ },
+ "limits": "이상적 등방(Werner) 시뮬은 Delft no-signalling 잔차(0.089)를 재현하지 않음 → sim KL_q≈0(box가 정확히 양자실현), real KL_q=0.0045. gap 은 유한표본 밴드로 비교. raw Delft 데이터는 gitignore 로 부재—검증된 r2.json 요약통계를 참조 타깃으로 사용(정직 기록). G 트랙(16 vertex NCfloor) 고정, K.cyclic_* 미사용. 관측이지 supremacy 아님."
+}

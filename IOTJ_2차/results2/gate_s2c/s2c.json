@@ -1,0 +1,104 @@
+{
+ "note": "STEP 2c: blind_shell 불가능성 정리 완결(강한 형태). 무신호(4-상관) 공간 전수 그리드로, S=S_normal 인 모든 무신호 상자(양자∪초양자, PR-box 포함) 중 정상이 고전거리 KL(‖c_model)=NCfloor 를 유일 최소화 확인. → 초양자에서도 blind_shell 공집합. 양자 템플릿 고유 탐지역=공집합. ★키보안 아닌 장비무결성. supremacy 아님.",
+ "params": {
+  "seed": 20260725,
+  "v_normal": 0.856,
+  "s_target": 2.421133618782739,
+  "ncfloor": 0.007783957684054327,
+  "s_tol": 0.01,
+  "shell_tol": 0.001,
+  "score": "deviance KL(emp‖model)"
+ },
+ "self_check": {
+  "normal_tlm_slack": -0.5411052503649039,
+  "normal_is_quantum": true,
+  "E_normal": [
+   0.60528,
+   0.60528,
+   0.60528,
+   -0.60528
+  ],
+  "nothing_to_detect_auc_near_half": true
+ },
+ "grid_verification": {
+  "ngrid": 61,
+  "n_feasible": 19600,
+  "shell_tol": 0.0015,
+  "min_klc": 0.007850498093402027,
+  "argmin_E": [
+   0.6,
+   0.6,
+   0.6,
+   -0.6211
+  ],
+  "min_klc_minus_ncfloor": 6.654040934769932e-05,
+  "n_onshell_far": 0,
+  "max_kln_on_shell": 0.0013997633958794226,
+  "shell_far_E": [
+   0.5667,
+   0.6667,
+   0.5667,
+   -0.6211
+  ],
+  "empty_over_NS": true
+ },
+ "blind_shell_quantum_only": {
+  "E": [
+   0.6084423569045435,
+   0.6208933556118216,
+   0.5969417890194253,
+   -0.5947927146888801
+  ],
+  "S": 2.4210702162246704,
+  "s_dev": 6.340255806858153e-05,
+  "kl_to_normal": 8.575399616906381e-05,
+  "kl_to_c": 0.007867294683008622,
+  "shell_dev": 8.333699895429498e-05,
+  "tlm_slack": -0.5409229093228731,
+  "is_quantum": true,
+  "cf": 0.2105351081123351,
+  "feasible": true
+ },
+ "blind_shell_unrestricted": {
+  "E": [
+   0.6069007626715021,
+   0.6203586424883701,
+   0.5912514130782337,
+   -0.6025594072606293
+  ],
+  "S": 2.4210702254987355,
+  "s_dev": 6.339328400351008e-05,
+  "kl_to_normal": 8.575303715236177e-05,
+  "kl_to_c": 0.007867294396552295,
+  "shell_dev": 8.333671249796757e-05,
+  "tlm_slack": -0.5409236469923631,
+  "is_quantum": true,
+  "cf": 0.21053511274936754,
+  "feasible": true
+ },
+ "detection_reference": [
+  {
+   "n_eval": 245,
+   "auc_quantum": 0.4920333333333333,
+   "auc_classical": 0.5400999999999999,
+   "auc_stest": 0.4309
+  },
+  {
+   "n_eval": 1000,
+   "auc_quantum": 0.49443333333333334,
+   "auc_classical": 0.5352333333333333,
+   "auc_stest": 0.4514
+  }
+ ],
+ "theorem": {
+  "quantum_empty": true,
+  "superquantum_empty": true,
+  "empty_over_full_NS_polytope": true,
+  "statement": "★강한 불가능성 정리(엄밀 검증): S=S_normal 인 **모든 무신호 상자**(양자∪초양자, PR-box 포함) 중 정상이 고전템플릿 거리 KL(‖c_model)=NCfloor 를 **유일 최소화**(스캔 min−NCfloor=6.7e-05, 껍질 위 먼 상자 0개). 동치로, 정상은 고전탐지기 blind 공 {KL(‖c_model)≤NCfloor} 안에서 CHSH-S 를 **유일 최대화**. 따라서 (고전 blind) ∧ (S≥S_normal, S-검정 blind) ∧ (≠정상) 은 **무신호 폴리토프 전체에서 동시 불가**. → 초양자(비물리 PR-box) 공격자에게조차 '고전엔 안 걸리고 양자엔 걸리는' 상자 부재. **양자 템플릿의 고유 탐지역 = 공집합.** 모델기반 우위(iso_S)는 전적으로 **비양자적**(고전 NC-템플릿과 동급). 이는 우위 정리가 아니라 **탐지가능성 경계 정리**."
+ },
+ "shell_radius_relation": {
+  "ncfloor": 0.007783957684054327,
+  "c_cf2": 0.007389730202876874
+ },
+ "limits": "균등 marginal·4-상관 무신호 상자 한정(비균등 marginal 은 별도). 그리드 검증(연속 최적화로 교차확인). 초양자 상자는 비물리(worst-case 가정 공격자). G 트랙. 관측이지 supremacy 아님. 키보안 아닌 장비무결성."
+}
