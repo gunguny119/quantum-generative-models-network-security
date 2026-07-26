@@ -33,6 +33,11 @@ if HERE not in sys.path:
 import gap_vs_cf_v0 as G
 import gate_r2_anchor_strengthen as R2
 import gate_s2_detection as D2
+import fastq
+
+# 성능 전용: G.quantum_behavior 를 수치동일(<1e-12 검증) 닫힌형으로 교체(~11x). 실패 시 예외→원본 유지.
+# gap_vs_cf_v0.py 자체는 무수정(R1). 워커는 fork 로 이 상태를 상속.
+FASTQ = fastq.install(G)
 
 import matplotlib
 matplotlib.use("Agg")
@@ -105,6 +110,8 @@ def sample_alloc(true_box, n, rng, alloc):
 # ===========================================================================
 def _cell_worker(arg):
     V, n, alloc, reps, restarts, seed = arg
+    if G.quantum_behavior is not fastq.quantum_behavior:      # spawn 대비(fork 면 이미 상속)
+        fastq.install(G, verbose=False)
     true_box = D2.S.quantum_e(D2.S.CANON_STATE, D2.S.CANON_ANGLES, V)
     cf_plugin, cf_quantum, nosig = [], [], []
     for r in range(reps):
@@ -268,7 +275,8 @@ def main():
               "탐지 아님·추정. R6(커버리지 우위 무관)·R7(동일데이터). 키레이트=Pironio2009 인용. "
               "★모델클래스 분리이지 supremacy 아님. (2,2,2)·양자실현영역(CF≤0.414) 한정. 단정 금지."),
         params=dict(seed=SEED, V_sweep=V_SWEEP, n_sweep=N_SWEEP, reps=args.reps, restarts=args.restarts,
-                    allocs=allocs, delft_ratio=DELFT_RATIO.tolist(), keyrate_source=KEYRATE_SOURCE),
+                    allocs=allocs, delft_ratio=DELFT_RATIO.tolist(), keyrate_source=KEYRATE_SOURCE,
+                    fastq=FASTQ),
         self_check=sc, truth={("V%.3f" % V): dict(cf=truth[V][0], S=truth[V][1]) for V in V_SWEEP},
         cells=cells, verdicts=verdicts,
         limits=("양자 제약 추정기는 참값이 양자집합 안(CF≤√2−1)일 때 정당 — 초양자 참값에선 편향(스윕을 CF≤0.414 제한). "
