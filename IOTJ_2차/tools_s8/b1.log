@@ -1,0 +1,72 @@
+총 48 작업
+[ 1/48] CANON_23    V=0.750 x*=A0 lv=1+AB   H^S=0.047358 H^full=0.049514 dH=+0.002157 (8s)
+/home/elicer/.local/lib/python3.10/site-packages/cvxpy/problems/problem.py:1539: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  warnings.warn(
+/home/elicer/.local/lib/python3.10/site-packages/cvxpy/problems/problem.py:1539: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  warnings.warn(
+/home/elicer/.local/lib/python3.10/site-packages/cvxpy/problems/problem.py:1539: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  warnings.warn(
+/home/elicer/.local/lib/python3.10/site-packages/cvxpy/problems/problem.py:1539: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  warnings.warn(
+/home/elicer/.local/lib/python3.10/site-packages/cvxpy/problems/problem.py:1539: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  warnings.warn(
+/home/elicer/.local/lib/python3.10/site-packages/cvxpy/problems/problem.py:1539: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  warnings.warn(
+[ 2/48] CANON_23    V=0.750 x*=A0 lv=2      H^S=0.047358 H^full=0.049540 dH=+0.002183 (44s)
+[ 3/48] CANON_23    V=0.750 x*=A2 lv=1+AB   H^S=0.000000 H^full=0.049514 dH=+0.049514 (6s)
+[ 4/48] CANON_23    V=0.750 x*=A2 lv=2      H^S=-0.000000 H^full=0.049691 dH=+0.049691 (6s)
+[ 5/48] CANON_23    V=0.800 x*=A0 lv=1+AB   H^S=0.113623 H^full=0.122200 dH=+0.008577 (1s)
+[ 6/48] CANON_23    V=0.800 x*=A0 lv=2      H^S=0.113623 H^full=0.122468 dH=+0.008845 (38s)
+[ 7/48] CANON_23    V=0.800 x*=A2 lv=1+AB   H^S=0.000000 H^full=0.122200 dH=+0.122200 (1s)
+[ 8/48] CANON_23    V=0.800 x*=A2 lv=2      H^S=-0.000000 H^full=0.123292 dH=+0.123292 (34s)
+[ 9/48] CANON_23    V=0.856 x*=A0 lv=1+AB   H^S=0.208299 H^full=0.226852 dH=+0.018553 (1s)
+[10/48] CANON_23    V=0.856 x*=A0 lv=2      H^S=0.208299 H^full=0.227694 dH=+0.019395 (30s)
+[11/48] CANON_23    V=0.856 x*=A2 lv=1+AB   H^S=0.000000 H^full=0.226852 dH=+0.226852 (1s)
+[12/48] CANON_23    V=0.856 x*=A2 lv=2      H^S=-0.000000 H^full=0.229506 dH=+0.229506 (43s)
+[13/48] CANON_23    V=0.920 x*=A0 lv=1+AB   H^S=0.363776 H^full=0.390430 dH=+0.026655 (1s)
+[14/48] CANON_23    V=0.920 x*=A0 lv=2      H^S=0.363776 H^full=0.391516 dH=+0.027741 (44s)
+[15/48] CANON_23    V=0.920 x*=A2 lv=1+AB   H^S=0.000000 H^full=0.390430 dH=+0.390430 (1s)
+[16/48] CANON_23    V=0.920 x*=A2 lv=2      H^S=-0.000000 H^full=0.393016 dH=+0.393016 (33s)
+[17/48] CANON_23    V=0.960 x*=A0 lv=1+AB   H^S=0.518722 H^full=0.533958 dH=+0.015236 (1s)
+[18/48] CANON_23    V=0.960 x*=A0 lv=2      H^S=0.518722 H^full=0.533958 dH=+0.015236 (1s)
+[19/48] CANON_23    V=0.960 x*=A2 lv=1+AB   H^S=0.000000 H^full=0.533958 dH=+0.533958 (1s)
+[20/48] CANON_23    V=0.960 x*=A2 lv=2      H^S=-0.000000 H^full=0.533958 dH=+0.533958 (1s)
+/home/elicer/.local/lib/python3.10/site-packages/cvxpy/problems/problem.py:1539: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  warnings.warn(
+[21/48] CANON_23    V=1.000 x*=A0 lv=1+AB   H^S=0.999164 H^full=0.999896 dH=+0.000732 (53s)
+/home/elicer/.local/lib/python3.10/site-packages/cvxpy/problems/problem.py:1539: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  warnings.warn(
+/home/elicer/.local/lib/python3.10/site-packages/cvxpy/problems/problem.py:1539: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  warnings.warn(
+/home/elicer/.local/lib/python3.10/site-packages/cvxpy/problems/problem.py:1539: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  warnings.warn(
+/home/elicer/.local/lib/python3.10/site-packages/cvxpy/problems/problem.py:1539: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  warnings.warn(
+[22/48] CANON_23    V=1.000 x*=A0 lv=2      H^S=0.999471 H^full=0.999928 dH=+0.000457 (83s)
+[23/48] CANON_23    V=1.000 x*=A2 lv=1+AB   H^S=-0.000000 H^full=0.999913 dH=+0.999913 (25s)
+[24/48] CANON_23    V=1.000 x*=A2 lv=2      H^S=0.000000 H^full=0.999945 dH=+0.999945 (34s)
+[25/48] generic_23  V=0.750 x*=A0 lv=1+AB   H^S=0.047358 H^full=0.049514 dH=+0.002157 (6s)
+[26/48] generic_23  V=0.750 x*=A0 lv=2      H^S=0.047358 H^full=0.049514 dH=+0.002157 (19s)
+[27/48] generic_23  V=0.750 x*=A2 lv=1+AB   H^S=0.000000 H^full=-0.000000 dH=-0.000000 (1s)
+[28/48] generic_23  V=0.750 x*=A2 lv=2      H^S=-0.000000 H^full=-0.000000 dH=+0.000000 (1s)
+[29/48] generic_23  V=0.800 x*=A0 lv=1+AB   H^S=0.113623 H^full=0.122200 dH=+0.008577 (2s)
+[30/48] generic_23  V=0.800 x*=A0 lv=2      H^S=0.113623 H^full=0.122200 dH=+0.008577 (41s)
+[31/48] generic_23  V=0.800 x*=A2 lv=1+AB   H^S=0.000000 H^full=0.000000 dH=+0.000000 (1s)
+[32/48] generic_23  V=0.800 x*=A2 lv=2      H^S=-0.000000 H^full=-0.000000 dH=+0.000000 (1s)
+[33/48] generic_23  V=0.856 x*=A0 lv=1+AB   H^S=0.208299 H^full=0.226852 dH=+0.018553 (1s)
+[34/48] generic_23  V=0.856 x*=A0 lv=2      H^S=0.208299 H^full=0.226852 dH=+0.018553 (8s)
+[35/48] generic_23  V=0.856 x*=A2 lv=1+AB   H^S=0.000000 H^full=0.061949 dH=+0.061949 (13s)
+[36/48] generic_23  V=0.856 x*=A2 lv=2      H^S=-0.000000 H^full=0.064224 dH=+0.064224 (13s)
+[37/48] generic_23  V=0.920 x*=A0 lv=1+AB   H^S=0.363776 H^full=0.390430 dH=+0.026655 (1s)
+[38/48] generic_23  V=0.920 x*=A0 lv=2      H^S=0.363776 H^full=0.390430 dH=+0.026655 (4s)
+[39/48] generic_23  V=0.920 x*=A2 lv=1+AB   H^S=0.000000 H^full=0.212445 dH=+0.212445 (1s)
+[40/48] generic_23  V=0.920 x*=A2 lv=2      H^S=-0.000000 H^full=0.223746 dH=+0.223746 (9s)
+[41/48] generic_23  V=0.960 x*=A0 lv=1+AB   H^S=0.518722 H^full=0.534108 dH=+0.015386 (25s)
+[42/48] generic_23  V=0.960 x*=A0 lv=2      H^S=0.518722 H^full=0.534140 dH=+0.015418 (34s)
+[43/48] generic_23  V=0.960 x*=A2 lv=1+AB   H^S=0.000000 H^full=0.391689 dH=+0.391689 (1s)
+[44/48] generic_23  V=0.960 x*=A2 lv=2      H^S=-0.000000 H^full=0.399375 dH=+0.399375 (6s)
+[45/48] generic_23  V=1.000 x*=A0 lv=1+AB   H^S=0.999164 H^full=0.999480 dH=+0.000316 (46s)
+[46/48] generic_23  V=1.000 x*=A0 lv=2      H^S=0.999471 H^full=0.997669 dH=-0.001802 (74s)
+[47/48] generic_23  V=1.000 x*=A2 lv=1+AB   H^S=-0.000000 H^full=0.990500 dH=+0.990500 (16s)
+[48/48] generic_23  V=1.000 x*=A2 lv=2      H^S=0.000000 H^full=0.985370 dH=+0.985370 (31s)
+[저장] /home/elicer/IOTJ/IOTJ_2차/tools_s8/../results2/gate_s8/s8_phaseB1.json

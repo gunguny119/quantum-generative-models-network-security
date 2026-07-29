@@ -1,0 +1,18 @@
+[fastq] G.quantum_behavior 교체 (max|diff|=2.22e-16 < 1e-12, 수치동일)
+=== Phase A 앵커 ===
+  (a) 항등성 max = 9.818e-13 (기준 1e-8) → True
+  classical_cf = 0.00e+00 → True
+  결정성 0.00e+00 → True
+
+=== Phase B: 60 셀 × 300 rep, 14 워커 ===
+셀 계산 완료 3478s
+
+=== 0-3 s3 재현: max|Δmse| = 0.000e+00, max|Δbias| = 0.000e+00 → True ===
+[저장] /home/elicer/IOTJ/IOTJ_2차/results2/gate_s3b/s3b.json
+/home/elicer/IOTJ/IOTJ_2차/tools_s3b/s3b_ns_control.py:283: UserWarning: Glyph 52280 (\N{HANGUL SYLLABLE CAM}) missing from font(s) DejaVu Sans.
+  fig.tight_layout(); fig.savefig(PNG, dpi=150)
+/home/elicer/IOTJ/IOTJ_2차/tools_s3b/s3b_ns_control.py:283: UserWarning: Glyph 49324 (\N{HANGUL SYLLABLE SA}) missing from font(s) DejaVu Sans.
+  fig.tight_layout(); fig.savefig(PNG, dpi=150)
+/home/elicer/IOTJ/IOTJ_2차/tools_s3b/s3b_ns_control.py:283: UserWarning: Glyph 50689 (\N{HANGUL SYLLABLE YEONG}) missing from font(s) DejaVu Sans.
+  fig.tight_layout(); fig.savefig(PNG, dpi=150)
+[저장] /home/elicer/IOTJ/IOTJ_2차/results2/gate_s3b/s3b_bias_vs_n.png
