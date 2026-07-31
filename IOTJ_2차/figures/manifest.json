@@ -1,0 +1,475 @@
+{
+ "_meta": {
+  "generated": "2026-07-29",
+  "git_head": "d7540ec",
+  "origin_main": "d7540ec",
+  "matplotlib": "3.10.9",
+  "scripts": "tools_fig/<fig name>.py  (+ tools_fig/_style.py, shared rcParams)",
+  "outputs": "figures/<fig name>.pdf (typeset) and .png (300 dpi review)",
+  "determinism": "PNG bit-identical across reruns; PDF identical except /CreationDate",
+  "figure_text_language": "English only — DejaVu Sans has no Hangul glyphs",
+  "greyscale_safety": "every series differs in colour AND marker AND linestyle",
+  "recitation": "V=1.000 행과 generic_23, plugin 유령비트는 전 그림에서 제외했다.",
+  "variants": {
+   "figures/": "레전드를 본 그림에서 제거하고 <name>_legend.{pdf,png} 로 분리 저장. 제목 없음.",
+   "figures2/": "같은 그림에 레전드를 **하단에 부착**해 한 파일로 저장. 제목 없음.",
+   "titles": "모든 패널 제목·전체 제목·인셋 제목을 제거했다. 패널 식별 (a)/(b) 는 각 레전드의 note 줄로 옮겼다.",
+   "scripts": "figures/ → tools_fig/, figures2/ → tools_fig2/ (동일 코드, _style2 가 legend_figure 를 하단 부착으로 재정의)"
+  },
+  "figure_list": [
+   "fig3_gap_vs_cf",
+   "fig4a_cf2_law",
+   "fig4b_linear_regime",
+   "fig5a_anchors",
+   "fig5b_iot_off_anchor",
+   "fig6_estimators",
+   "fig7_certification_loss"
+  ],
+  "superseded": "fig4_cf2_law 와 fig5_anchors 는 가독성 문제로 각각 둘로 분리했다. 원본 파일은 저장소에 남아 있으나 배포 번들에는 넣지 않았다."
+ },
+ "fig3_gap_vs_cf": {
+  "source_files": [
+   "results2/gap_cf/gap_cf.json"
+  ],
+  "filters": {
+   "sweep": "inf"
+  },
+  "rows_used": 16,
+  "rows_excluded": 16,
+  "exclusion_reasons": [
+   "sweeps['5000'] finite-sample rows not used"
+  ],
+  "fields": [
+   "lam",
+   "cf",
+   "kl_nc_floor",
+   "kl_quantum",
+   "gap_contextual",
+   "gap_matched",
+   "gap_seedwise",
+   "gap_ctx_seedwise",
+   "self_check_cf.cf_lp",
+   "self_check_maxdiff"
+  ],
+  "theoretical_points_added": [],
+  "curves_drawn_not_from_data": [
+   "max(0, 2*lambda-1) closed form, right panel"
+  ],
+  "error_bands": "shaded band = +/- 1 SD over the 5 stored seeds; available ONLY for gap_contextual and gap_matched (no seedwise arrays exist for kl_nc_floor / kl_quantum, so those two are drawn as bare lines)",
+  "axis_decision": "x axis is CF alone. 7 rows have CF=0 (lambda <= 0.50) and therefore overplot at x=0; the parameter-matched series spreads vertically there from 0 to 0.0654, which is the visual evidence that the matched gap is already positive at CF=0. A secondary lambda axis was NOT added because the CF=0 region is not representable on a CF axis.",
+  "annotated_values": {
+   "lambda=0.8": {
+    "kl_nc_floor": 0.07246,
+    "kl_quantum": 0.009539
+   },
+   "self_check_maxdiff": 2.220446049250313e-16
+  }
+ },
+ "fig6_estimators": {
+  "source_files": [
+   "results2/gate_s3b/s3b.json"
+  ],
+  "filters": {
+   "panel_a": {
+    "V": 0.7,
+    "alloc": "delft"
+   },
+   "panel_b": {
+    "V": 1.0,
+    "n": 245
+   }
+  },
+  "rows_used": {
+   "panel_a": 5,
+   "panel_b": 2
+  },
+  "rows_excluded": 55,
+  "exclusion_reasons": [
+   "V=1.00 confined to panel (b) per instruction",
+   "other V rows unused",
+   "uniform alloc unused in panel (a)"
+  ],
+  "fields": [
+   "cells[].plugin|ns|quantum .bias, .mse, .ci, .ci_contains_true",
+   "cells[].cf_true"
+  ],
+  "theoretical_points_added": [],
+  "errorbar_transformation": "s3b stores `ci` as the 2.5/97.5 percentiles of the CF estimate. Plotted as (ci - cf_true) so the interval lives on the bias axis. Marker is filled when ci_contains_true is false, open when true.",
+  "verified_values": {
+   "V0.70_delft_bias": {
+    "100": {
+     "plugin": 0.235453,
+     "ns": 0.066917,
+     "quantum": 0.060123
+    },
+    "245": {
+     "plugin": 0.147958,
+     "ns": 0.040266,
+     "quantum": 0.039391
+    },
+    "500": {
+     "plugin": 0.102716,
+     "ns": 0.026646,
+     "quantum": 0.02662
+    },
+    "1000": {
+     "plugin": 0.077036,
+     "ns": 0.018255,
+     "quantum": 0.018272
+    },
+    "5000": {
+     "plugin": 0.031763,
+     "ns": 0.006627,
+     "quantum": 0.006626
+    }
+   },
+   "V1.00_bias": {
+    "delft": {
+     "plugin": 0.008585,
+     "ns": 0.005538,
+     "quantum": -0.070128
+    },
+    "uniform": {
+     "plugin": 0.002185,
+     "ns": -0.00082,
+     "quantum": -0.068936
+    }
+   },
+   "ci_contains_true_V1.00": {
+    "plugin": true,
+    "ns": true,
+    "quantum": false
+   }
+  }
+ },
+ "fig7_certification_loss": {
+  "source_files": [
+   "results2/gate_s8/s8_phaseB1.json"
+  ],
+  "filters": {
+   "box": "CANON_23",
+   "x_star": 0,
+   "level": "2",
+   "V_max": 0.96,
+   "drop_status_optimal_inaccurate": true
+  },
+  "rows_used": 4,
+  "rows_excluded": 44,
+  "exclusion_reasons": [
+   "generic_23 (all rows)",
+   "x_star=2 (all rows)",
+   "level='1+AB' (all rows)",
+   "V=1.000: exceeds V_max AND status optimal_inaccurate/optimal_inaccurate",
+   "V=0.750: status optimal/optimal_inaccurate"
+  ],
+  "row_count_discrepancy": "the instruction predicted 5 rows, but its own exclusion rule (drop any row whose status contains optimal_inaccurate) removes V=0.750 as well, leaving 4. The instruction's relative-gap list 4.61/7.78/9.31/7.63/2.94 likewise includes 4.61% = V=0.750. The stricter rule was applied, so 4.61% is NOT plotted. NOTE: B-1's recheck_multisolver block independently reproduced V=0.750 h_full=0.049540 with CLARABEL at clean `optimal` status, but that value is not stored as a row for this cell, so it was not used (no new computation allowed).",
+  "fields": [
+   "V",
+   "CF",
+   "h_S",
+   "h_full",
+   "dH",
+   "status_S",
+   "status_full"
+  ],
+  "theoretical_points_added": [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.41421356237309515,
+    0.0
+   ]
+  ],
+  "maximum_bracket": {
+   "drawn": [
+    0.210567,
+    0.357645
+   ],
+   "instruction_said": [
+    0.301,
+    0.358
+   ],
+   "correction": "the discrete maximum sits AT CF=0.301076 (V=0.920). For a unimodal curve the continuous maximum is bracketed by that point's NEIGHBOURS, i.e. [0.210567, 0.357645]. The instruction's narrower [0.301, 0.358] would only hold if dH(0.920) < dH(0.960), which is false (0.027741 > 0.015236). No peak marker or peak label was drawn."
+  },
+  "plotted_rows": [
+   {
+    "V": 0.8,
+    "CF": 0.131371,
+    "h_S": 0.113623,
+    "h_full": 0.122468,
+    "dH": 0.008845,
+    "rel_pct": 7.78
+   },
+   {
+    "V": 0.856,
+    "CF": 0.210567,
+    "h_S": 0.208299,
+    "h_full": 0.227694,
+    "dH": 0.019395,
+    "rel_pct": 9.31
+   },
+   {
+    "V": 0.92,
+    "CF": 0.301076,
+    "h_S": 0.363776,
+    "h_full": 0.391516,
+    "dH": 0.027741,
+    "rel_pct": 7.63
+   },
+   {
+    "V": 0.96,
+    "CF": 0.357645,
+    "h_S": 0.518722,
+    "h_full": 0.533958,
+    "dH": 0.015236,
+    "rel_pct": 2.94
+   }
+  ],
+  "v1000_filter_check": "assertion in the script fails the build if any V=1.000 row survives; it passed."
+ },
+ "fig8_budget": {
+  "status": "HOLD — not drawn",
+  "source_files": [
+   "results2/gate_s6/s6.json",
+   "results2/gate_s7/s7.json"
+  ],
+  "hold_reasons": [
+   "s7.json stores only n_star=980 twice (true_template and fitted_template) with NO KL attached and NO third path.",
+   "s6.json e3_collapse stores 5 rows (V = 0.75/0.80/0.856/0.92/1.00), each with M, kappa, n_star, nM_star. These are five VISIBILITY POINTS, not three 'paths'.",
+   "The three products quoted in the instruction (9.06 / 9.87 / 10.31) do not form a stored triple: 9.06 and 9.87 are s6 nM_star at V=0.856 and V=0.80, while 10.31 is not in s6 or s7 at all — it is the constant A from s7_phase1.json phase1D (a different quantity, N* ~ A/KL).",
+   "The N* = 9.30/KL baseline is not stored anywhere and 9.30 is not derivable from the stored values (s6 nM_star values are 8.987, 9.867, 9.060, 11.119, 11.547).",
+   "s6.json's own e3_summary sets formula = '붕괴 미확립 — N*(V) 테이블로만 보고', i.e. gate_s6 concluded the collapse is NOT established. Drawing a 1/KL baseline would contradict the source.",
+   "The KL_max vs CF slope-1.87 inset needs results2/gate_s7/s7_phase2c.json, which is not among the declared sources for this figure."
+  ],
+  "stored_values_available_if_reframed": {
+   "e3_collapse": [
+    {
+     "V": 0.75,
+     "cf": 0.06066,
+     "M": 0.000854,
+     "kappa": 1.749916,
+     "n_star": 10520.189568,
+     "nM_star": 8.987024
+    },
+    {
+     "V": 0.8,
+     "cf": 0.131371,
+     "M": 0.004037,
+     "kappa": 1.746748,
+     "n_star": 2444.086005,
+     "nM_star": 9.867333
+    },
+    {
+     "V": 0.856,
+     "cf": 0.210567,
+     "M": 0.010182,
+     "kappa": 1.69473,
+     "n_star": 889.793563,
+     "nM_star": 9.059647
+    },
+    {
+     "V": 0.92,
+     "cf": 0.301076,
+     "M": 0.019315,
+     "kappa": 1.548682,
+     "n_star": 575.676544,
+     "nM_star": 11.119359
+    },
+    {
+     "V": 1.0,
+     "cf": 0.414214,
+     "M": 0.018423,
+     "kappa": 0.762707,
+     "n_star": 626.780447,
+     "nM_star": 11.546891
+    }
+   ],
+   "note": "kappa is NOT constant: 1.750 -> 0.763 across the sweep. A defensible replacement figure is N* vs M (log-log, 5 stored points) with nM_star labelled and kappa's drift shown, but that is a different claim from the instructed one, so it was not drawn without approval."
+  },
+  "recommendation": "표로 대체 권고 (as the instruction itself specifies for the missing-value branch)"
+ },
+ "fig4a_cf2_law": {
+  "source_files": [
+   "results2/gate_e/gate_e.json"
+  ],
+  "filters": {
+   "directions": "4 quadratic only (CHSH/uniform, CHSH/det_vertex_0101, KCBS5/uniform, KCBS5/det_vertex_all0)"
+  },
+  "rows_used": 4,
+  "rows_excluded": 2,
+  "exclusion_reasons": [
+   "2 linear directions moved to fig4b_linear_regime"
+  ],
+  "fields": [
+   "results.<scn>.<dir>.points[].cf",
+   "results.<scn>.<dir>.points[].ncfloor",
+   "alpha",
+   "c_fit",
+   "c_pred_limit",
+   "r2_fit",
+   "regime",
+   "smooth"
+  ],
+  "field_name_correction": "the instruction asked for `c_pred`; at direction level the stored key is `c_pred_limit` (a per-point `c_pred` also exists inside points[]). Prediction curves use c_pred_limit.",
+  "theoretical_points_added": [],
+  "curves_drawn_not_from_data": [
+   "c_pred_limit * CF^2 per direction",
+   "slope-2 reference anchored at median c_fit = 0.1489"
+  ],
+  "verified_values": {
+   "alpha": {
+    "CHSH/uniform": 2.0057,
+    "CHSH/det_vertex_0101": 2.0033,
+    "KCBS5/uniform": 2.0066,
+    "KCBS5/det_vertex_all0": 2.0079,
+    "CHSH/det_vertex_0000": 1.0021,
+    "CHSH/local_perfect_corr": 1.0065
+   },
+   "r2_fit": {
+    "CHSH/uniform": 0.99997,
+    "CHSH/det_vertex_0101": 0.99999,
+    "KCBS5/uniform": 0.99997,
+    "KCBS5/det_vertex_all0": 0.99997,
+    "CHSH/det_vertex_0000": 0.78392,
+    "CHSH/local_perfect_corr": 0.79157
+   }
+  },
+  "split_note": "fig4_cf2_law 를 둘로 쪼갠 것 중 첫 번째. 가독성 문제(6계열×12점 + 예측곡선 + 기준선 + 인셋)로 분리했다.",
+  "panels": "single log-log panel; the linear-axes panel and the zoom inset were dropped"
+ },
+ "fig4b_linear_regime": {
+  "source_files": [
+   "results2/gate_e/gate_e.json"
+  ],
+  "split_note": "fig4_cf2_law 의 두 번째 조각. 법칙이 깨지는 두 방향만 보인다.",
+  "filters": {
+   "directions": "2 linear only (CHSH/det_vertex_0000, CHSH/local_perfect_corr)"
+  },
+  "rows_used": 2,
+  "rows_excluded": 4,
+  "exclusion_reasons": [
+   "4 quadratic directions collapsed into a single grey range band for contrast"
+  ],
+  "fields": [
+   "points[].cf",
+   "points[].ncfloor",
+   "alpha",
+   "r2_fit",
+   "qmin_ref",
+   "c_fit"
+  ],
+  "band_construction": "the 4 quadratic directions have different CF grids, so each is interpolated in log-log onto a common grid over their overlap CF in [0.0050, 0.0950]; the band is the pointwise min/max.",
+  "curves_drawn_not_from_data": [
+   "slope-1 reference anchored at median NC/CF = 0.1907"
+  ],
+  "verified_values": {
+   "alpha": {
+    "CHSH/det_vertex_0000": 1.0021,
+    "CHSH/local_perfect_corr": 1.0065
+   },
+   "r2_of_forced_CF2_fit": {
+    "CHSH/det_vertex_0000": 0.78392,
+    "CHSH/local_perfect_corr": 0.79157
+   },
+   "qmin_ref": {
+    "CHSH/det_vertex_0000": 2.62e-37,
+    "CHSH/local_perfect_corr": 3.68e-34
+   }
+  }
+ },
+ "fig5a_anchors": {
+  "source_files": [
+   "results2/gate_r2/r2.json",
+   "results2/gate_r3/r3.json"
+  ],
+  "filters": {
+   "r2": "anchor_placement.{kcbs,delft} + reference_sweep"
+  },
+  "rows_used": {
+   "r2_anchors": 2,
+   "r2_reference_sweep": 21
+  },
+  "rows_excluded": 0,
+  "exclusion_reasons": [
+   "18 N-BaIoT cells moved to fig5b_iot_off_anchor"
+  ],
+  "fields": [
+   "anchor_placement.<k>.cf",
+   "anchor_placement.<k>.gap",
+   "anchor_placement.<k>.curve_pred",
+   "anchor_placement.<k>.rel_dev",
+   "track_A_kcbs.cf_ci",
+   "track_B_delft.cf_ci",
+   "reference_sweep[].cf",
+   "reference_sweep[].ncfloor",
+   "r3.cells[].cf",
+   "r3.cells[].gap_upper",
+   "r3.cells[].definition"
+  ],
+  "theoretical_points_added": [],
+  "curves_drawn_not_from_data": [
+   "CF^2/6 (gate_e CHSH uniform-direction boundary limit c=1/6)"
+  ],
+  "prediction_curve_correction": "the instruction named CF^2/6 as THE prediction curve, but r2.json's rel_dev (3.68% / 5.28%) is measured against the NUMERICAL reference_sweep, whose local coefficient NC/CF^2 drifts from 0.171 to 0.288 and equals 0.185 (KCBS) / 0.180 (Delft) at the anchor positions. Both curves are therefore drawn, with the numerical sweep solid (the one rel_dev refers to) and CF^2/6 thin grey dashed. Reading the quoted 3.7% / 5.3% off the CF^2/6 curve would be wrong (that comparison gives 7.0% / 13.8%).",
+  "anchor_values": {
+   "kcbs": {
+    "cf": 0.2629,
+    "cf_ci": [
+     0.24817096622715026,
+     0.27953726708335047
+    ],
+    "gap": 0.0123251148001928,
+    "curve_pred": 0.012795622167849855,
+    "rel_dev_pct": 3.68
+   },
+   "delft": {
+    "cf": 0.21124993523068514,
+    "cf_ci": [
+     0.11505656905199085,
+     0.4184878311938136
+    ],
+    "gap": 0.00846309086408372,
+    "curve_pred": 0.008038301789065299,
+    "rel_dev_pct": 5.28
+   }
+  },
+  "ci_note": "the instruction quoted the KCBS CI upper end as 0.278; the stored value is 0.27954 (rounds to 0.280). The stored value is used.",
+  "split_note": "fig5_anchors 를 둘로 쪼갠 것 중 첫 번째. 앵커 2점만 남기고 N-BaIoT 18점과 인셋을 제거했다."
+ },
+ "fig5b_iot_off_anchor": {
+  "source_files": [
+   "results2/gate_r3/r3.json",
+   "results2/gate_r2/r2.json"
+  ],
+  "split_note": "fig5_anchors 의 두 번째 조각. 실 IoT 앵커가 꺼져 있다는 것만 보인다.",
+  "filters": {
+   "r3": "all 18 cells, grouped by definition"
+  },
+  "rows_used": {
+   "definition_a": 15,
+   "definition_b": 3
+  },
+  "rows_excluded": 0,
+  "fields": [
+   "r3.cells[].gap_upper",
+   "r3.cells[].definition",
+   "r2.anchor_placement.<k>.gap"
+  ],
+  "axis": "log y from 1e-34 to 0.09; values below 1e-34 are numerical zeros clipped to the axis floor",
+  "shaded_band": "quantum anchor gap range 0.008463 - 0.012325 nats (KCBS, Delft)",
+  "headline": "max IoT gap upper bound 2.909e-09 — six orders of magnitude below the quantum anchors",
+  "verified_values": {
+   "definition_a_gap_upper": {
+    "max": 5.562e-31,
+    "min": 6.163e-33
+   },
+   "definition_b_gap_upper": {
+    "max": 2.909e-09,
+    "min": 8.177e-11
+   },
+   "cf_upper_max": 0.0001525436656243384
+  }
+ }
+}
